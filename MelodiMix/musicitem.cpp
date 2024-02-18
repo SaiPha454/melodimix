@@ -5,11 +5,12 @@
 #include <QWidget>
 #include<QPixmap>
 
-MusicItem::MusicItem(const QString& subtitle)
+MusicItem::MusicItem(const QString& subtitle, const QString& id)
     : QListWidgetItem(subtitle)
 {
     QPixmap mp3_icon(":/img/img/music_icon.png");
     Item = new QWidget();
+    mp3_id = id;
 
     QHBoxLayout *layout = new QHBoxLayout(Item);
 

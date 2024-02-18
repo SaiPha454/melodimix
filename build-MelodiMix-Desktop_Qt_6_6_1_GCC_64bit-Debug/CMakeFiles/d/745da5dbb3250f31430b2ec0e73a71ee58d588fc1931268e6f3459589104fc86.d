@@ -9,6 +9,8 @@ MelodiMix_autogen/timestamp: \
   /home/sai/Desktop/C++/MelodiMix/MelodiMix/musiceventhandler.h \
   /home/sai/Desktop/C++/MelodiMix/MelodiMix/musicitem.cpp \
   /home/sai/Desktop/C++/MelodiMix/MelodiMix/musicitem.h \
+  /home/sai/Desktop/C++/MelodiMix/MelodiMix/player.cpp \
+  /home/sai/Desktop/C++/MelodiMix/MelodiMix/player.h \
   .qtc/package-manager/auto-setup.cmake \
   CMakeFiles/3.27.7/CMakeCXXCompiler.cmake \
   CMakeFiles/3.27.7/CMakeSystem.cmake \
@@ -164,6 +166,7 @@ MelodiMix_autogen/timestamp: \
   /home/sai/Qt/6.6.1/gcc_64/include/QtWidgets/QListWidgetItem \
   /home/sai/Qt/6.6.1/gcc_64/include/QtWidgets/QMainWindow \
   /home/sai/Qt/6.6.1/gcc_64/include/QtWidgets/QPushButton \
+  /home/sai/Qt/6.6.1/gcc_64/include/QtWidgets/QWidget \
   /home/sai/Qt/6.6.1/gcc_64/include/QtWidgets/qabstractbutton.h \
   /home/sai/Qt/6.6.1/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
   /home/sai/Qt/6.6.1/gcc_64/include/QtWidgets/qabstractitemview.h \

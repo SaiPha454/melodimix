@@ -42,6 +42,7 @@ public:
     QTextEdit *textEdit;
     QPushButton *pushButton;
     QListWidget *music_list;
+    QFrame *player_frame;
     QWidget *SearchPage;
     QLabel *label_2;
     QWidget *FavPage;
@@ -170,7 +171,13 @@ public:
 "border-radius:\"15px\""));
         music_list = new QListWidget(HomePage);
         music_list->setObjectName("music_list");
-        music_list->setGeometry(QRect(40, 100, 521, 481));
+        music_list->setGeometry(QRect(40, 100, 521, 421));
+        player_frame = new QFrame(HomePage);
+        player_frame->setObjectName("player_frame");
+        player_frame->setGeometry(QRect(0, 510, 571, 80));
+        player_frame->setStyleSheet(QString::fromUtf8("background-color:\"white\""));
+        player_frame->setFrameShape(QFrame::StyledPanel);
+        player_frame->setFrameShadow(QFrame::Raised);
         Pages->addWidget(HomePage);
         SearchPage = new QWidget();
         SearchPage->setObjectName("SearchPage");

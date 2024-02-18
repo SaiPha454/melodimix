@@ -10,9 +10,9 @@
 class MusicItem : public QListWidgetItem
 {
 public:
-    MusicItem(const QString& subtitle);
+    MusicItem(const QString& subtitle, const QString& id);
     QWidget *Item;
-    QString mp3_id="123456";
+    QString mp3_id;
 
 
 private:

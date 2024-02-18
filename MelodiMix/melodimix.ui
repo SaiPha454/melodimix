@@ -425,8 +425,27 @@ border-radius:&quot;15px&quot;</string>
         <x>40</x>
         <y>100</y>
         <width>521</width>
-        <height>481</height>
+        <height>421</height>
        </rect>
+      </property>
+     </widget>
+     <widget class="QFrame" name="player_frame">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>510</y>
+        <width>571</width>
+        <height>80</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:&quot;white&quot;</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
       </property>
      </widget>
     </widget>

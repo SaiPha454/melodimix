@@ -1,10 +1,13 @@
 #include "melodimix.h"
 #include "musicitem.h"
 #include "musiceventhandler.h"
+#include<player.h>
 #include "./ui_melodimix.h"
 #include <QLabel>
 #include <QPixmap>
 #include<QMessageBox>
+#include<QVBoxLayout>
+
 
 MelodiMix::MelodiMix(QWidget *parent)
     : QMainWindow(parent)
@@ -20,17 +23,23 @@ MelodiMix::MelodiMix(QWidget *parent)
     navs={ui->home_nav, ui->search_nav, ui->fav_nav, ui->import_nav};
     nav_icons={ui->home_icon, ui->search_icon, ui->fav_icon, ui->import_icon};
 
+    //load music list
     ui->music_list->setStyleSheet("QListWidget::item { border-bottom: 1px solid white; }");
-
-    MusicItem *item = new MusicItem("Love in the Summer-Taylor swift");
+    MusicItem *item = new MusicItem("Love in the Summer-Taylor swift", "123");
     ui->music_list->addItem(item);
     ui->music_list->setItemWidget(item, item->Item);
 
-    MusicItem *item2 = new MusicItem("Love in the Summer-Taylor swift");
+    MusicItem *item2 = new MusicItem("Love in the Summer-Taylor swift", "456");
     ui->music_list->addItem(item2);
     ui->music_list->setItemWidget(item2, item2->Item);
-
     connect(ui->music_list, &QListWidget::itemClicked, this, &MelodiMix::onMusicItemClicked);
+    //end of load music
+
+    //setup player frame
+
+    Player *player = new Player();
+    QVBoxLayout player_layout = new QVBoxLayout(ui->player_frame);
+    player_layout.addWidget(player);
 
 }
 
