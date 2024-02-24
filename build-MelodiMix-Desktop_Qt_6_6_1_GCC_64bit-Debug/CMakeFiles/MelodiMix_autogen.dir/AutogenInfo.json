@@ -356,12 +356,63 @@
 		"/home/sai/Qt/6.6.1/gcc_64/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsVersionlessTargets.cmake",
 		"/home/sai/Qt/6.6.1/gcc_64/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsMacros.cmake",
 		"/home/sai/Qt/Tools/CMake/share/cmake-3.27/Modules/CMakeParseArguments.cmake",
-		"/home/sai/Qt/Tools/CMake/share/cmake-3.27/Modules/GNUInstallDirs.cmake"
+		"/home/sai/Qt/Tools/CMake/share/cmake-3.27/Modules/GNUInstallDirs.cmake",
+		"/home/sai/Desktop/C++/MelodiMix/MelodiMix/Resources.qrc"
 	],
 	"CMAKE_SOURCE_DIR" : "/home/sai/Desktop/C++/MelodiMix/MelodiMix",
 	"DEP_FILE" : "/home/sai/Desktop/C++/MelodiMix/build-MelodiMix-Desktop_Qt_6_6_1_GCC_64bit-Debug/MelodiMix_autogen/deps",
 	"DEP_FILE_RULE_NAME" : "MelodiMix_autogen/timestamp",
-	"HEADERS" : [],
+	"HEADERS" : 
+	[
+		[
+			"/home/sai/Desktop/C++/MelodiMix/MelodiMix/clickablelabel.h",
+			"MU",
+			"EWIEGA46WW/moc_clickablelabel.cpp",
+			null
+		],
+		[
+			"/home/sai/Desktop/C++/MelodiMix/MelodiMix/melodimix.h",
+			"MU",
+			"EWIEGA46WW/moc_melodimix.cpp",
+			null
+		],
+		[
+			"/home/sai/Desktop/C++/MelodiMix/MelodiMix/musiceventhandler.h",
+			"MU",
+			"EWIEGA46WW/moc_musiceventhandler.cpp",
+			null
+		],
+		[
+			"/home/sai/Desktop/C++/MelodiMix/MelodiMix/musicitem.h",
+			"MU",
+			"EWIEGA46WW/moc_musicitem.cpp",
+			null
+		],
+		[
+			"/home/sai/Desktop/C++/MelodiMix/MelodiMix/nextbutton.h",
+			"MU",
+			"EWIEGA46WW/moc_nextbutton.cpp",
+			null
+		],
+		[
+			"/home/sai/Desktop/C++/MelodiMix/MelodiMix/playbutton.h",
+			"MU",
+			"EWIEGA46WW/moc_playbutton.cpp",
+			null
+		],
+		[
+			"/home/sai/Desktop/C++/MelodiMix/MelodiMix/player.h",
+			"MU",
+			"EWIEGA46WW/moc_player.cpp",
+			null
+		],
+		[
+			"/home/sai/Desktop/C++/MelodiMix/MelodiMix/prevbutton.h",
+			"MU",
+			"EWIEGA46WW/moc_prevbutton.cpp",
+			null
+		]
+	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
 	"INCLUDE_DIR" : "/home/sai/Desktop/C++/MelodiMix/build-MelodiMix-Desktop_Qt_6_6_1_GCC_64bit-Debug/MelodiMix_autogen/include",
 	"MOC_COMPILATION_FILE" : "/home/sai/Desktop/C++/MelodiMix/build-MelodiMix-Desktop_Qt_6_6_1_GCC_64bit-Debug/MelodiMix_autogen/mocs_compilation.cpp",
@@ -418,7 +469,38 @@
 	"QT_VERSION_MAJOR" : 6,
 	"QT_VERSION_MINOR" : 6,
 	"SETTINGS_FILE" : "/home/sai/Desktop/C++/MelodiMix/build-MelodiMix-Desktop_Qt_6_6_1_GCC_64bit-Debug/CMakeFiles/MelodiMix_autogen.dir/AutogenUsed.txt",
-	"SOURCES" : [],
+	"SOURCES" : 
+	[
+		[
+			"/home/sai/Desktop/C++/MelodiMix/MelodiMix/clickablelabel.cpp",
+			"MU",
+			null
+		],
+		[ "/home/sai/Desktop/C++/MelodiMix/MelodiMix/main.cpp", "MU", null ],
+		[ "/home/sai/Desktop/C++/MelodiMix/MelodiMix/melodimix.cpp", "MU", null ],
+		[
+			"/home/sai/Desktop/C++/MelodiMix/MelodiMix/musiceventhandler.cpp",
+			"MU",
+			null
+		],
+		[ "/home/sai/Desktop/C++/MelodiMix/MelodiMix/musicitem.cpp", "MU", null ],
+		[
+			"/home/sai/Desktop/C++/MelodiMix/MelodiMix/nextbutton.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/sai/Desktop/C++/MelodiMix/MelodiMix/playbutton.cpp",
+			"MU",
+			null
+		],
+		[ "/home/sai/Desktop/C++/MelodiMix/MelodiMix/player.cpp", "MU", null ],
+		[
+			"/home/sai/Desktop/C++/MelodiMix/MelodiMix/prevbutton.cpp",
+			"MU",
+			null
+		]
+	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],
 	"UIC_SKIP" : [],

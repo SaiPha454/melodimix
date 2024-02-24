@@ -30,8 +30,13 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         musicitem.h musicitem.cpp
         musiceventhandler.h musiceventhandler.cpp
 
+
+
         player.h player.cpp
-        player.h player.cpp
+        clickablelabel.h clickablelabel.cpp
+        playbutton.h playbutton.cpp
+        prevbutton.h prevbutton.cpp
+        nextbutton.h nextbutton.cpp
 
     )
 # Define target properties for Android with Qt 6 as:

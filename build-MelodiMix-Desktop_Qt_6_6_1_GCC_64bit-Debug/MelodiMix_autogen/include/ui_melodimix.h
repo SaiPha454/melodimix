@@ -43,6 +43,11 @@ public:
     QPushButton *pushButton;
     QListWidget *music_list;
     QFrame *player_frame;
+    QLabel *plyaer_icon;
+    QLabel *player_title;
+    QLabel *prev;
+    QLabel *pause_btn;
+    QLabel *next;
     QWidget *SearchPage;
     QLabel *label_2;
     QWidget *FavPage;
@@ -171,13 +176,47 @@ public:
 "border-radius:\"15px\""));
         music_list = new QListWidget(HomePage);
         music_list->setObjectName("music_list");
-        music_list->setGeometry(QRect(40, 100, 521, 421));
+        music_list->setGeometry(QRect(40, 90, 521, 421));
         player_frame = new QFrame(HomePage);
         player_frame->setObjectName("player_frame");
-        player_frame->setGeometry(QRect(0, 510, 571, 80));
-        player_frame->setStyleSheet(QString::fromUtf8("background-color:\"white\""));
+        player_frame->setGeometry(QRect(0, 499, 581, 101));
+        player_frame->setStyleSheet(QString::fromUtf8("#player_frame{\n"
+"\n"
+"background-color:\"black\";\n"
+"border:1px solid white;\n"
+"\n"
+"}"));
         player_frame->setFrameShape(QFrame::StyledPanel);
         player_frame->setFrameShadow(QFrame::Raised);
+        plyaer_icon = new QLabel(player_frame);
+        plyaer_icon->setObjectName("plyaer_icon");
+        plyaer_icon->setGeometry(QRect(40, 20, 60, 60));
+        plyaer_icon->setMinimumSize(QSize(60, 60));
+        plyaer_icon->setMaximumSize(QSize(60, 60));
+        plyaer_icon->setStyleSheet(QString::fromUtf8("color: white;\n"
+"border-radius:40;"));
+        plyaer_icon->setPixmap(QPixmap(QString::fromUtf8(":/img/img/player_icon.png")));
+        player_title = new QLabel(player_frame);
+        player_title->setObjectName("player_title");
+        player_title->setGeometry(QRect(120, 30, 201, 31));
+        player_title->setStyleSheet(QString::fromUtf8("color: white;"));
+        prev = new QLabel(player_frame);
+        prev->setObjectName("prev");
+        prev->setGeometry(QRect(350, 30, 40, 40));
+        prev->setMinimumSize(QSize(40, 40));
+        prev->setMaximumSize(QSize(40, 40));
+        prev->setStyleSheet(QString::fromUtf8("color:white;"));
+        prev->setPixmap(QPixmap(QString::fromUtf8(":/img/img/prev.png")));
+        pause_btn = new QLabel(player_frame);
+        pause_btn->setObjectName("pause_btn");
+        pause_btn->setGeometry(QRect(430, 30, 41, 41));
+        pause_btn->setStyleSheet(QString::fromUtf8("color:white;"));
+        pause_btn->setPixmap(QPixmap(QString::fromUtf8(":/img/img/pause.png")));
+        next = new QLabel(player_frame);
+        next->setObjectName("next");
+        next->setGeometry(QRect(510, 30, 51, 41));
+        next->setStyleSheet(QString::fromUtf8("color:white;"));
+        next->setPixmap(QPixmap(QString::fromUtf8(":/img/img/next.png")));
         Pages->addWidget(HomePage);
         SearchPage = new QWidget();
         SearchPage->setObjectName("SearchPage");
@@ -226,6 +265,11 @@ public:
         textEdit->setAccessibleDescription(QCoreApplication::translate("MelodiMix", "Enter song name", nullptr));
 #endif // QT_CONFIG(accessibility)
         pushButton->setText(QCoreApplication::translate("MelodiMix", "Search", nullptr));
+        plyaer_icon->setText(QString());
+        player_title->setText(QCoreApplication::translate("MelodiMix", "Love in the summer", nullptr));
+        prev->setText(QString());
+        pause_btn->setText(QString());
+        next->setText(QString());
         label_2->setText(QCoreApplication::translate("MelodiMix", "Search", nullptr));
         label_3->setText(QCoreApplication::translate("MelodiMix", "Fav Page", nullptr));
         label_4->setText(QCoreApplication::translate("MelodiMix", "Import Page", nullptr));

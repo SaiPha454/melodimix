@@ -1,10 +1,15 @@
 // MusicListEventHandler.cpp
 #include "musiceventhandler.h"
+#include"musicitem.h"
+#include<QMessageBox>
+#include<QListWidgetItem>
 
-void MusicEventHandler::onMusicItemClicked(QListWidgetItem *item) {
-    // Handle the item click here
-    if (item) {
+void MusicEventHandler::onMusicItemClicked(QListWidgetItem *item){
+    if(item){
 
-        // Play the selected song or perform any other desired actions
+        MusicItem *music_item = dynamic_cast<MusicItem*>(item);
+        QMessageBox msg;
+        msg.setText(music_item->mp3_id);
+        msg.exec();
     }
 }

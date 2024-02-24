@@ -423,7 +423,7 @@ border-radius:&quot;15px&quot;</string>
       <property name="geometry">
        <rect>
         <x>40</x>
-        <y>100</y>
+        <y>90</y>
         <width>521</width>
         <height>421</height>
        </rect>
@@ -433,13 +433,18 @@ border-radius:&quot;15px&quot;</string>
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>510</y>
-        <width>571</width>
-        <height>80</height>
+        <y>499</y>
+        <width>581</width>
+        <height>101</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color:&quot;white&quot;</string>
+       <string notr="true">#player_frame{
+
+background-color:&quot;black&quot;;
+border:1px solid white;
+
+}</string>
       </property>
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
@@ -447,6 +452,123 @@ border-radius:&quot;15px&quot;</string>
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
+      <widget class="QLabel" name="plyaer_icon">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>20</y>
+         <width>60</width>
+         <height>60</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>60</width>
+         <height>60</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>60</width>
+         <height>60</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: white;
+border-radius:40;</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="Resources.qrc">:/img/img/player_icon.png</pixmap>
+       </property>
+      </widget>
+      <widget class="QLabel" name="player_title">
+       <property name="geometry">
+        <rect>
+         <x>120</x>
+         <y>30</y>
+         <width>201</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: white;</string>
+       </property>
+       <property name="text">
+        <string>Love in the summer</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="prev">
+       <property name="geometry">
+        <rect>
+         <x>350</x>
+         <y>30</y>
+         <width>40</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color:white;</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="Resources.qrc">:/img/img/prev.png</pixmap>
+       </property>
+      </widget>
+      <widget class="QLabel" name="pause_btn">
+       <property name="geometry">
+        <rect>
+         <x>430</x>
+         <y>30</y>
+         <width>41</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color:white;</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="Resources.qrc">:/img/img/pause.png</pixmap>
+       </property>
+      </widget>
+      <widget class="QLabel" name="next">
+       <property name="geometry">
+        <rect>
+         <x>510</x>
+         <y>30</y>
+         <width>51</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color:white;</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="Resources.qrc">:/img/img/next.png</pixmap>
+       </property>
+      </widget>
      </widget>
     </widget>
     <widget class="QWidget" name="SearchPage">

@@ -1,9 +1,9 @@
-/home/sai/Desktop/C++/MelodiMix/build-MelodiMix-Desktop_Qt_6_6_1_GCC_64bit-Debug/MelodiMix_autogen/EWIEGA46WW/moc_player.cpp: /home/sai/Desktop/C++/MelodiMix/MelodiMix/player.h \
+/home/sai/Desktop/C++/MelodiMix/build-MelodiMix-Desktop_Qt_6_6_1_GCC_64bit-Debug/MelodiMix_autogen/EWIEGA46WW/moc_clickablelabel.cpp: /home/sai/Desktop/C++/MelodiMix/MelodiMix/clickablelabel.h \
   /home/sai/Desktop/C++/MelodiMix/build-MelodiMix-Desktop_Qt_6_6_1_GCC_64bit-Debug/MelodiMix_autogen/moc_predefs.h \
-  /home/sai/Qt/6.6.1/gcc_64/include/QtCore/QObject \
   /home/sai/Qt/6.6.1/gcc_64/include/QtCore/q20functional.h \
   /home/sai/Qt/6.6.1/gcc_64/include/QtCore/q20memory.h \
   /home/sai/Qt/6.6.1/gcc_64/include/QtCore/q20type_traits.h \
+  /home/sai/Qt/6.6.1/gcc_64/include/QtCore/q23utility.h \
   /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qalgorithms.h \
   /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qanystringview.h \
   /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qarraydata.h \
@@ -27,8 +27,10 @@
   /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qcontainerfwd.h \
   /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qcontainerinfo.h \
   /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qcontainertools_impl.h \
+  /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qcontiguouscache.h \
   /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qdarwinhelpers.h \
   /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qdatastream.h \
+  /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qdebug.h \
   /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qexceptionhandling.h \
   /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qflags.h \
   /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qfloat16.h \
@@ -38,14 +40,19 @@
   /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qgenericatomic.h \
   /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qglobal.h \
   /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qglobalstatic.h \
+  /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qhash.h \
   /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qhashfunctions.h \
+  /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qiodevice.h \
   /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qiodevicebase.h \
   /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qiterable.h \
   /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qiterator.h \
   /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qlatin1stringview.h \
+  /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qline.h \
   /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qlist.h \
   /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qlogging.h \
   /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qmalloc.h \
+  /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qmap.h \
+  /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qmargins.h \
   /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qmath.h \
   /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qmetacontainer.h \
   /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qmetatype.h \
@@ -58,13 +65,22 @@
   /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qobjectdefs_impl.h \
   /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qoverload.h \
   /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qpair.h \
+  /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qpoint.h \
   /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qprocessordetection.h \
+  /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qrect.h \
   /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qrefcount.h \
   /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qscopedpointer.h \
   /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qscopeguard.h \
+  /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qset.h \
+  /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qshareddata.h \
+  /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qshareddata_impl.h \
+  /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qsharedpointer.h \
+  /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qsharedpointer_impl.h \
+  /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qsize.h \
   /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qstring.h \
   /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qstringalgorithms.h \
   /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qstringbuilder.h \
+  /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qstringconverter_base.h \
   /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qstringfwd.h \
   /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qstringlist.h \
   /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qstringliteral.h \
@@ -82,6 +98,7 @@
   /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qtcoreexports.h \
   /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qtdeprecationmarkers.h \
   /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qtenvironmentvariables.h \
+  /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qtextstream.h \
   /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qtmetamacros.h \
   /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qtnoop.h \
   /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qtpreprocessorsupport.h \
@@ -92,9 +109,46 @@
   /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qtversionchecks.h \
   /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qtypeinfo.h \
   /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qtypes.h \
+  /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qurl.h \
   /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qutf8stringview.h \
+  /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qvariant.h \
+  /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qvarlengtharray.h \
   /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qversiontagging.h \
   /home/sai/Qt/6.6.1/gcc_64/include/QtCore/qxptype_traits.h \
+  /home/sai/Qt/6.6.1/gcc_64/include/QtGui/qaction.h \
+  /home/sai/Qt/6.6.1/gcc_64/include/QtGui/qbitmap.h \
+  /home/sai/Qt/6.6.1/gcc_64/include/QtGui/qbrush.h \
+  /home/sai/Qt/6.6.1/gcc_64/include/QtGui/qcolor.h \
+  /home/sai/Qt/6.6.1/gcc_64/include/QtGui/qcursor.h \
+  /home/sai/Qt/6.6.1/gcc_64/include/QtGui/qfont.h \
+  /home/sai/Qt/6.6.1/gcc_64/include/QtGui/qfontinfo.h \
+  /home/sai/Qt/6.6.1/gcc_64/include/QtGui/qfontmetrics.h \
+  /home/sai/Qt/6.6.1/gcc_64/include/QtGui/qicon.h \
+  /home/sai/Qt/6.6.1/gcc_64/include/QtGui/qimage.h \
+  /home/sai/Qt/6.6.1/gcc_64/include/QtGui/qkeysequence.h \
+  /home/sai/Qt/6.6.1/gcc_64/include/QtGui/qpaintdevice.h \
+  /home/sai/Qt/6.6.1/gcc_64/include/QtGui/qpalette.h \
+  /home/sai/Qt/6.6.1/gcc_64/include/QtGui/qpicture.h \
+  /home/sai/Qt/6.6.1/gcc_64/include/QtGui/qpixelformat.h \
+  /home/sai/Qt/6.6.1/gcc_64/include/QtGui/qpixmap.h \
+  /home/sai/Qt/6.6.1/gcc_64/include/QtGui/qpolygon.h \
+  /home/sai/Qt/6.6.1/gcc_64/include/QtGui/qregion.h \
+  /home/sai/Qt/6.6.1/gcc_64/include/QtGui/qrgb.h \
+  /home/sai/Qt/6.6.1/gcc_64/include/QtGui/qrgba64.h \
+  /home/sai/Qt/6.6.1/gcc_64/include/QtGui/qtextdocument.h \
+  /home/sai/Qt/6.6.1/gcc_64/include/QtGui/qtgui-config.h \
+  /home/sai/Qt/6.6.1/gcc_64/include/QtGui/qtguiexports.h \
+  /home/sai/Qt/6.6.1/gcc_64/include/QtGui/qtguiglobal.h \
+  /home/sai/Qt/6.6.1/gcc_64/include/QtGui/qtransform.h \
+  /home/sai/Qt/6.6.1/gcc_64/include/QtGui/qwindowdefs.h \
+  /home/sai/Qt/6.6.1/gcc_64/include/QtWidgets/QLabel \
+  /home/sai/Qt/6.6.1/gcc_64/include/QtWidgets/qframe.h \
+  /home/sai/Qt/6.6.1/gcc_64/include/QtWidgets/qlabel.h \
+  /home/sai/Qt/6.6.1/gcc_64/include/QtWidgets/qsizepolicy.h \
+  /home/sai/Qt/6.6.1/gcc_64/include/QtWidgets/qtwidgets-config.h \
+  /home/sai/Qt/6.6.1/gcc_64/include/QtWidgets/qtwidgetsexports.h \
+  /home/sai/Qt/6.6.1/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
+  /home/sai/Qt/6.6.1/gcc_64/include/QtWidgets/qwidget.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
@@ -186,6 +240,7 @@
   /usr/include/c++/11/cctype \
   /usr/include/c++/11/cerrno \
   /usr/include/c++/11/chrono \
+  /usr/include/c++/11/climits \
   /usr/include/c++/11/clocale \
   /usr/include/c++/11/cmath \
   /usr/include/c++/11/cstddef \
@@ -251,7 +306,9 @@
   /usr/include/errno.h \
   /usr/include/features-time64.h \
   /usr/include/features.h \
+  /usr/include/limits.h \
   /usr/include/linux/errno.h \
+  /usr/include/linux/limits.h \
   /usr/include/locale.h \
   /usr/include/pthread.h \
   /usr/include/sched.h \
@@ -273,8 +330,11 @@
   /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
   /usr/include/x86_64-linux-gnu/bits/floatn.h \
   /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
+  /usr/include/x86_64-linux-gnu/bits/local_lim.h \
   /usr/include/x86_64-linux-gnu/bits/locale.h \
   /usr/include/x86_64-linux-gnu/bits/long-double.h \
+  /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
+  /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
   /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h \
   /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h \
   /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
@@ -319,10 +379,12 @@
   /usr/include/x86_64-linux-gnu/bits/types/wint_t.h \
   /usr/include/x86_64-linux-gnu/bits/typesizes.h \
   /usr/include/x86_64-linux-gnu/bits/uintn-identity.h \
+  /usr/include/x86_64-linux-gnu/bits/uio_lim.h \
   /usr/include/x86_64-linux-gnu/bits/waitflags.h \
   /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
   /usr/include/x86_64-linux-gnu/bits/wchar.h \
   /usr/include/x86_64-linux-gnu/bits/wordsize.h \
+  /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/atomic_word.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/c++allocator.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \

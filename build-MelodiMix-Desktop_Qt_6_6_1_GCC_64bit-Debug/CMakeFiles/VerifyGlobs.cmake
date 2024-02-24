@@ -41,10 +41,15 @@ endif()
 # _directory_contents at /home/sai/Qt/6.6.1/gcc_64/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsMacros.cmake:55 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/home/sai/Desktop/C++/MelodiMix/MelodiMix/*.cpp")
 set(OLD_GLOB
+  "/home/sai/Desktop/C++/MelodiMix/MelodiMix/clickablelabel.cpp"
   "/home/sai/Desktop/C++/MelodiMix/MelodiMix/main.cpp"
   "/home/sai/Desktop/C++/MelodiMix/MelodiMix/melodimix.cpp"
   "/home/sai/Desktop/C++/MelodiMix/MelodiMix/musiceventhandler.cpp"
   "/home/sai/Desktop/C++/MelodiMix/MelodiMix/musicitem.cpp"
+  "/home/sai/Desktop/C++/MelodiMix/MelodiMix/nextbutton.cpp"
+  "/home/sai/Desktop/C++/MelodiMix/MelodiMix/playbutton.cpp"
+  "/home/sai/Desktop/C++/MelodiMix/MelodiMix/player.cpp"
+  "/home/sai/Desktop/C++/MelodiMix/MelodiMix/prevbutton.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
@@ -63,10 +68,15 @@ endif()
 # _directory_contents at /home/sai/Qt/6.6.1/gcc_64/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsMacros.cmake:55 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/home/sai/Desktop/C++/MelodiMix/MelodiMix/*.h")
 set(OLD_GLOB
+  "/home/sai/Desktop/C++/MelodiMix/MelodiMix/clickablelabel.h"
   "/home/sai/Desktop/C++/MelodiMix/MelodiMix/homepage.h"
   "/home/sai/Desktop/C++/MelodiMix/MelodiMix/melodimix.h"
   "/home/sai/Desktop/C++/MelodiMix/MelodiMix/musiceventhandler.h"
   "/home/sai/Desktop/C++/MelodiMix/MelodiMix/musicitem.h"
+  "/home/sai/Desktop/C++/MelodiMix/MelodiMix/nextbutton.h"
+  "/home/sai/Desktop/C++/MelodiMix/MelodiMix/playbutton.h"
+  "/home/sai/Desktop/C++/MelodiMix/MelodiMix/player.h"
+  "/home/sai/Desktop/C++/MelodiMix/MelodiMix/prevbutton.h"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
