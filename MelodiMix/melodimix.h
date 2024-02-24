@@ -36,6 +36,10 @@ private slots:
 
     void onMusicItemClicked(QListWidgetItem *item);
 
+
+
+    void on_import_btn_clicked();
+
 private:
     Ui::MelodiMix *ui;
 };

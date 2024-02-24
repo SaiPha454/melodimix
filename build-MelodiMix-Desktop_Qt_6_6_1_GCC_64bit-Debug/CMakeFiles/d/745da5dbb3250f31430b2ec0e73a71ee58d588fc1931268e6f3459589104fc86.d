@@ -3,6 +3,8 @@ MelodiMix_autogen/timestamp: \
   /home/sai/Desktop/C++/MelodiMix/MelodiMix/Resources.qrc \
   /home/sai/Desktop/C++/MelodiMix/MelodiMix/clickablelabel.cpp \
   /home/sai/Desktop/C++/MelodiMix/MelodiMix/clickablelabel.h \
+  /home/sai/Desktop/C++/MelodiMix/MelodiMix/importfolder.cpp \
+  /home/sai/Desktop/C++/MelodiMix/MelodiMix/importfolder.h \
   /home/sai/Desktop/C++/MelodiMix/MelodiMix/main.cpp \
   /home/sai/Desktop/C++/MelodiMix/MelodiMix/melodimix.cpp \
   /home/sai/Desktop/C++/MelodiMix/MelodiMix/melodimix.h \
@@ -15,8 +17,6 @@ MelodiMix_autogen/timestamp: \
   /home/sai/Desktop/C++/MelodiMix/MelodiMix/nextbutton.h \
   /home/sai/Desktop/C++/MelodiMix/MelodiMix/playbutton.cpp \
   /home/sai/Desktop/C++/MelodiMix/MelodiMix/playbutton.h \
-  /home/sai/Desktop/C++/MelodiMix/MelodiMix/player.cpp \
-  /home/sai/Desktop/C++/MelodiMix/MelodiMix/player.h \
   /home/sai/Desktop/C++/MelodiMix/MelodiMix/prevbutton.cpp \
   /home/sai/Desktop/C++/MelodiMix/MelodiMix/prevbutton.h \
   .qtc/package-manager/auto-setup.cmake \

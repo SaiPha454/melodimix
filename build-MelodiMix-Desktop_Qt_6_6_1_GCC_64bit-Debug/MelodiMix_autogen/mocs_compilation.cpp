@@ -2,4 +2,3 @@
 #include "EWIEGA46WW/moc_clickablelabel.cpp"
 #include "EWIEGA46WW/moc_melodimix.cpp"
 #include "EWIEGA46WW/moc_musiceventhandler.cpp"
-#include "EWIEGA46WW/moc_player.cpp"

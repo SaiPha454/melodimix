@@ -89,14 +89,6 @@ build CMakeFiles/MelodiMix.dir/musiceventhandler.cpp.o: CXX_COMPILER__MelodiMix_
   OBJECT_DIR = CMakeFiles/MelodiMix.dir
   OBJECT_FILE_DIR = CMakeFiles/MelodiMix.dir
 
-build CMakeFiles/MelodiMix.dir/player.cpp.o: CXX_COMPILER__MelodiMix_unscanned_Debug /home/sai/Desktop/C++/MelodiMix/MelodiMix/player.cpp || cmake_object_order_depends_target_MelodiMix
-  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
-  DEP_FILE = CMakeFiles/MelodiMix.dir/player.cpp.o.d
-  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always -fPIC
-  INCLUDES = -I/home/sai/Desktop/C++/MelodiMix/build-MelodiMix-Desktop_Qt_6_6_1_GCC_64bit-Debug/MelodiMix_autogen/include -isystem /home/sai/Qt/6.6.1/gcc_64/include/QtCore -isystem /home/sai/Qt/6.6.1/gcc_64/include -isystem /home/sai/Qt/6.6.1/gcc_64/mkspecs/linux-g++ -isystem /home/sai/Qt/6.6.1/gcc_64/include/QtWidgets -isystem /home/sai/Qt/6.6.1/gcc_64/include/QtGui
-  OBJECT_DIR = CMakeFiles/MelodiMix.dir
-  OBJECT_FILE_DIR = CMakeFiles/MelodiMix.dir
-
 build CMakeFiles/MelodiMix.dir/clickablelabel.cpp.o: CXX_COMPILER__MelodiMix_unscanned_Debug /home/sai/Desktop/C++/MelodiMix/MelodiMix/clickablelabel.cpp || cmake_object_order_depends_target_MelodiMix
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = CMakeFiles/MelodiMix.dir/clickablelabel.cpp.o.d
@@ -129,6 +121,14 @@ build CMakeFiles/MelodiMix.dir/nextbutton.cpp.o: CXX_COMPILER__MelodiMix_unscann
   OBJECT_DIR = CMakeFiles/MelodiMix.dir
   OBJECT_FILE_DIR = CMakeFiles/MelodiMix.dir
 
+build CMakeFiles/MelodiMix.dir/importfolder.cpp.o: CXX_COMPILER__MelodiMix_unscanned_Debug /home/sai/Desktop/C++/MelodiMix/MelodiMix/importfolder.cpp || cmake_object_order_depends_target_MelodiMix
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles/MelodiMix.dir/importfolder.cpp.o.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always -fPIC
+  INCLUDES = -I/home/sai/Desktop/C++/MelodiMix/build-MelodiMix-Desktop_Qt_6_6_1_GCC_64bit-Debug/MelodiMix_autogen/include -isystem /home/sai/Qt/6.6.1/gcc_64/include/QtCore -isystem /home/sai/Qt/6.6.1/gcc_64/include -isystem /home/sai/Qt/6.6.1/gcc_64/mkspecs/linux-g++ -isystem /home/sai/Qt/6.6.1/gcc_64/include/QtWidgets -isystem /home/sai/Qt/6.6.1/gcc_64/include/QtGui
+  OBJECT_DIR = CMakeFiles/MelodiMix.dir
+  OBJECT_FILE_DIR = CMakeFiles/MelodiMix.dir
+
 build CMakeFiles/MelodiMix.dir/MelodiMix_autogen/EWIEGA46WW/qrc_Resources.cpp.o: CXX_COMPILER__MelodiMix_unscanned_Debug /home/sai/Desktop/C++/MelodiMix/build-MelodiMix-Desktop_Qt_6_6_1_GCC_64bit-Debug/MelodiMix_autogen/EWIEGA46WW/qrc_Resources.cpp || cmake_object_order_depends_target_MelodiMix
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
   DEP_FILE = CMakeFiles/MelodiMix.dir/MelodiMix_autogen/EWIEGA46WW/qrc_Resources.cpp.o.d
@@ -145,7 +145,7 @@ build CMakeFiles/MelodiMix.dir/MelodiMix_autogen/EWIEGA46WW/qrc_Resources.cpp.o:
 #############################################
 # Link the executable MelodiMix
 
-build MelodiMix: CXX_EXECUTABLE_LINKER__MelodiMix_Debug CMakeFiles/MelodiMix.dir/MelodiMix_autogen/mocs_compilation.cpp.o CMakeFiles/MelodiMix.dir/main.cpp.o CMakeFiles/MelodiMix.dir/melodimix.cpp.o CMakeFiles/MelodiMix.dir/musicitem.cpp.o CMakeFiles/MelodiMix.dir/musiceventhandler.cpp.o CMakeFiles/MelodiMix.dir/player.cpp.o CMakeFiles/MelodiMix.dir/clickablelabel.cpp.o CMakeFiles/MelodiMix.dir/playbutton.cpp.o CMakeFiles/MelodiMix.dir/prevbutton.cpp.o CMakeFiles/MelodiMix.dir/nextbutton.cpp.o CMakeFiles/MelodiMix.dir/MelodiMix_autogen/EWIEGA46WW/qrc_Resources.cpp.o | /home/sai/Qt/6.6.1/gcc_64/lib/libQt6Widgets.so.6.6.1 /home/sai/Qt/6.6.1/gcc_64/lib/libQt6Gui.so.6.6.1 /home/sai/Qt/6.6.1/gcc_64/lib/libQt6Core.so.6.6.1 /usr/lib/x86_64-linux-gnu/libGLX.so /usr/lib/x86_64-linux-gnu/libOpenGL.so || MelodiMix_autogen MelodiMix_autogen_timestamp_deps
+build MelodiMix: CXX_EXECUTABLE_LINKER__MelodiMix_Debug CMakeFiles/MelodiMix.dir/MelodiMix_autogen/mocs_compilation.cpp.o CMakeFiles/MelodiMix.dir/main.cpp.o CMakeFiles/MelodiMix.dir/melodimix.cpp.o CMakeFiles/MelodiMix.dir/musicitem.cpp.o CMakeFiles/MelodiMix.dir/musiceventhandler.cpp.o CMakeFiles/MelodiMix.dir/clickablelabel.cpp.o CMakeFiles/MelodiMix.dir/playbutton.cpp.o CMakeFiles/MelodiMix.dir/prevbutton.cpp.o CMakeFiles/MelodiMix.dir/nextbutton.cpp.o CMakeFiles/MelodiMix.dir/importfolder.cpp.o CMakeFiles/MelodiMix.dir/MelodiMix_autogen/EWIEGA46WW/qrc_Resources.cpp.o | /home/sai/Qt/6.6.1/gcc_64/lib/libQt6Widgets.so.6.6.1 /home/sai/Qt/6.6.1/gcc_64/lib/libQt6Gui.so.6.6.1 /home/sai/Qt/6.6.1/gcc_64/lib/libQt6Core.so.6.6.1 /usr/lib/x86_64-linux-gnu/libGLX.so /usr/lib/x86_64-linux-gnu/libOpenGL.so || MelodiMix_autogen MelodiMix_autogen_timestamp_deps
   FLAGS = -DQT_QML_DEBUG -g
   LINK_LIBRARIES = -Wl,-rpath,/home/sai/Qt/6.6.1/gcc_64/lib:  /home/sai/Qt/6.6.1/gcc_64/lib/libQt6Widgets.so.6.6.1  /home/sai/Qt/6.6.1/gcc_64/lib/libQt6Gui.so.6.6.1  /home/sai/Qt/6.6.1/gcc_64/lib/libQt6Core.so.6.6.1  /usr/lib/x86_64-linux-gnu/libGLX.so  /usr/lib/x86_64-linux-gnu/libOpenGL.so
   OBJECT_DIR = CMakeFiles/MelodiMix.dir

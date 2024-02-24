@@ -1,7 +1,6 @@
 #include "melodimix.h"
 #include "musicitem.h"
 #include "musiceventhandler.h"
-#include "player.h"
 #include "./ui_melodimix.h"
 #include "clickablelabel.h"
 #include <QLabel>
@@ -11,6 +10,7 @@
 #include "playbutton.h"
 #include "prevbutton.h"
 #include "nextbutton.h"
+#include "importfolder.h"
 
 MelodiMix::MelodiMix(QWidget *parent)
     : QMainWindow(parent)
@@ -42,26 +42,15 @@ MelodiMix::MelodiMix(QWidget *parent)
     //setup player frame
 
     ui->player_frame->setParent(ui->Pages->widget(0));
-
     PlayButton *playbutton = new PlayButton(ui->player_frame, ":/img/img/pause.png");
     playbutton->setGeometry(430,30,41,41);
-
     PrevButton *prevbutton = new PrevButton(ui->player_frame, ":/img/img/prev.png");
     prevbutton->setGeometry(350,30,41,41);
-
     NextButton *nextbutton = new NextButton(ui->player_frame, ":/img/img/next.png");
     nextbutton->setGeometry(510,30,41,41);
 
-    // Player *player= new Player();
-    // ClickableLabel *pause_btn = new ClickableLabel(this); // Create a ClickableLabel instance
-    // pause_btn->setText("Hello I am puase");
-    // pause_btn->setParent(ui->player_frame);
-    // pause_btn->setGeometry(430,30,41,41);
-    // // ui->pause_btn = pause_btn;
-    // QObject::connect(pause_btn, &ClickableLabel::clicked, player, &Player::onPauseClick);
-
-
-
+    // create default folder
+    ImportFolder *imp = new ImportFolder("MelodiMix");
 }
 
 MelodiMix::~MelodiMix()
@@ -73,6 +62,7 @@ void MelodiMix::on_home_nav_clicked()
 {
     ui->player_frame->setParent(ui->Pages->widget(0));
     ui->Pages->setCurrentIndex(0);
+    ui->player_frame->show();
 
     QPushButton* home_nav= ui->home_nav;
     QLabel* home_icon = ui->home_icon;
@@ -98,7 +88,7 @@ void MelodiMix::on_search_nav_clicked()
 
     ui->player_frame->setParent(ui->Pages->widget(1));
     ui->Pages->setCurrentIndex(1);
-
+    ui->player_frame->hide();
     ui->player_frame->setParent(ui->Pages->widget(1));
 
     QPushButton* search_nav= ui->search_nav;
@@ -152,6 +142,7 @@ void MelodiMix::on_import_nav_clicked()
 
     ui->player_frame->setParent(ui->Pages->widget(3));
     ui->Pages->setCurrentIndex(3);
+    ui->player_frame->hide();
 
     QPushButton* import_nav= ui->import_nav;
     QLabel* import_icon = ui->import_icon;
@@ -187,5 +178,15 @@ void MelodiMix::onMusicItemClicked(QListWidgetItem *item){
 void MelodiMix::on_pushButton_clicked()
 {
 
+}
+
+
+
+
+
+void MelodiMix::on_import_btn_clicked()
+{
+    QStringList filenames = ImportFolder::import();
+    ui->imported_files_label->setText(QString::number(filenames.length()) + " files were imported");
 }
 

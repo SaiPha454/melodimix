@@ -371,6 +371,12 @@
 			null
 		],
 		[
+			"/home/sai/Desktop/C++/MelodiMix/MelodiMix/importfolder.h",
+			"MU",
+			"EWIEGA46WW/moc_importfolder.cpp",
+			null
+		],
+		[
 			"/home/sai/Desktop/C++/MelodiMix/MelodiMix/melodimix.h",
 			"MU",
 			"EWIEGA46WW/moc_melodimix.cpp",
@@ -398,12 +404,6 @@
 			"/home/sai/Desktop/C++/MelodiMix/MelodiMix/playbutton.h",
 			"MU",
 			"EWIEGA46WW/moc_playbutton.cpp",
-			null
-		],
-		[
-			"/home/sai/Desktop/C++/MelodiMix/MelodiMix/player.h",
-			"MU",
-			"EWIEGA46WW/moc_player.cpp",
 			null
 		],
 		[
@@ -476,6 +476,11 @@
 			"MU",
 			null
 		],
+		[
+			"/home/sai/Desktop/C++/MelodiMix/MelodiMix/importfolder.cpp",
+			"MU",
+			null
+		],
 		[ "/home/sai/Desktop/C++/MelodiMix/MelodiMix/main.cpp", "MU", null ],
 		[ "/home/sai/Desktop/C++/MelodiMix/MelodiMix/melodimix.cpp", "MU", null ],
 		[
@@ -494,7 +499,6 @@
 			"MU",
 			null
 		],
-		[ "/home/sai/Desktop/C++/MelodiMix/MelodiMix/player.cpp", "MU", null ],
 		[
 			"/home/sai/Desktop/C++/MelodiMix/MelodiMix/prevbutton.cpp",
 			"MU",

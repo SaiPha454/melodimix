@@ -7,7 +7,7 @@
 				{
 					"build" : ".",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-Debug-8437b469d34f87a21ac3.json",
+					"jsonFile" : "directory-.-Debug-8dcda3c26a49f9d76b9e.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.16"
@@ -44,7 +44,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "MelodiMix::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-MelodiMix-Debug-c61a7cda7de6feecff52.json",
+					"jsonFile" : "target-MelodiMix-Debug-131030fda76da2cc1850.json",
 					"name" : "MelodiMix",
 					"projectIndex" : 0
 				},

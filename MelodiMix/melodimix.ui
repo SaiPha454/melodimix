@@ -608,20 +608,75 @@ border-radius:40;</string>
      </widget>
     </widget>
     <widget class="QWidget" name="ImportPage">
-     <widget class="QLabel" name="label_4">
+     <widget class="QLabel" name="import_page_header">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>30</y>
+        <width>201</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>17</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:&quot;white&quot;</string>
+      </property>
+      <property name="text">
+       <string>Import song files</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="import_btn">
       <property name="geometry">
        <rect>
         <x>140</x>
-        <y>180</y>
-        <width>131</width>
-        <height>17</height>
+        <y>110</y>
+        <width>331</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>15</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:&quot;black&quot;;
+background-color:&quot;white&quot;;
+border-radius:&quot;20px&quot;</string>
+      </property>
+      <property name="text">
+       <string>+ Import </string>
+      </property>
+     </widget>
+     <widget class="QListWidget" name="listWidget">
+      <property name="geometry">
+       <rect>
+        <x>45</x>
+        <y>231</y>
+        <width>501</width>
+        <height>331</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="imported_files_label">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>190</y>
+        <width>431</width>
+        <height>21</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color:&quot;red&quot;</string>
+       <string notr="true">color:&quot;white&quot;</string>
       </property>
       <property name="text">
-       <string>Import Page</string>
+       <string/>
       </property>
      </widget>
     </widget>

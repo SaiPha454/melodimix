@@ -53,7 +53,10 @@ public:
     QWidget *FavPage;
     QLabel *label_3;
     QWidget *ImportPage;
-    QLabel *label_4;
+    QLabel *import_page_header;
+    QPushButton *import_btn;
+    QListWidget *listWidget;
+    QLabel *imported_files_label;
 
     void setupUi(QMainWindow *MelodiMix)
     {
@@ -234,10 +237,30 @@ public:
         Pages->addWidget(FavPage);
         ImportPage = new QWidget();
         ImportPage->setObjectName("ImportPage");
-        label_4 = new QLabel(ImportPage);
-        label_4->setObjectName("label_4");
-        label_4->setGeometry(QRect(140, 180, 131, 17));
-        label_4->setStyleSheet(QString::fromUtf8("color:\"red\""));
+        import_page_header = new QLabel(ImportPage);
+        import_page_header->setObjectName("import_page_header");
+        import_page_header->setGeometry(QRect(210, 30, 201, 41));
+        QFont font1;
+        font1.setPointSize(17);
+        import_page_header->setFont(font1);
+        import_page_header->setStyleSheet(QString::fromUtf8("color:\"white\""));
+        import_btn = new QPushButton(ImportPage);
+        import_btn->setObjectName("import_btn");
+        import_btn->setGeometry(QRect(140, 110, 331, 41));
+        QFont font2;
+        font2.setPointSize(15);
+        font2.setBold(true);
+        import_btn->setFont(font2);
+        import_btn->setStyleSheet(QString::fromUtf8("color:\"black\";\n"
+"background-color:\"white\";\n"
+"border-radius:\"20px\""));
+        listWidget = new QListWidget(ImportPage);
+        listWidget->setObjectName("listWidget");
+        listWidget->setGeometry(QRect(45, 231, 501, 331));
+        imported_files_label = new QLabel(ImportPage);
+        imported_files_label->setObjectName("imported_files_label");
+        imported_files_label->setGeometry(QRect(60, 190, 431, 21));
+        imported_files_label->setStyleSheet(QString::fromUtf8("color:\"white\""));
         Pages->addWidget(ImportPage);
         MelodiMix->setCentralWidget(centralwidget);
 
@@ -272,7 +295,9 @@ public:
         next->setText(QString());
         label_2->setText(QCoreApplication::translate("MelodiMix", "Search", nullptr));
         label_3->setText(QCoreApplication::translate("MelodiMix", "Fav Page", nullptr));
-        label_4->setText(QCoreApplication::translate("MelodiMix", "Import Page", nullptr));
+        import_page_header->setText(QCoreApplication::translate("MelodiMix", "Import song files", nullptr));
+        import_btn->setText(QCoreApplication::translate("MelodiMix", "+ Import ", nullptr));
+        imported_files_label->setText(QString());
     } // retranslateUi
 
 };
