@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'melodimix.ui'
 **
-** Created by: Qt User Interface Compiler version 6.6.1
+** Created by: Qt User Interface Compiler version 6.8.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -45,9 +45,6 @@ public:
     QFrame *player_frame;
     QLabel *plyaer_icon;
     QLabel *player_title;
-    QLabel *prev;
-    QLabel *pause_btn;
-    QLabel *next;
     QWidget *SearchPage;
     QLabel *label_2;
     QWidget *FavPage;
@@ -55,7 +52,7 @@ public:
     QWidget *ImportPage;
     QLabel *import_page_header;
     QPushButton *import_btn;
-    QListWidget *listWidget;
+    QListWidget *imported_songs_list;
     QLabel *imported_files_label;
 
     void setupUi(QMainWindow *MelodiMix)
@@ -193,7 +190,7 @@ public:
         player_frame->setFrameShadow(QFrame::Raised);
         plyaer_icon = new QLabel(player_frame);
         plyaer_icon->setObjectName("plyaer_icon");
-        plyaer_icon->setGeometry(QRect(40, 20, 60, 60));
+        plyaer_icon->setGeometry(QRect(30, 20, 60, 60));
         plyaer_icon->setMinimumSize(QSize(60, 60));
         plyaer_icon->setMaximumSize(QSize(60, 60));
         plyaer_icon->setStyleSheet(QString::fromUtf8("color: white;\n"
@@ -201,25 +198,11 @@ public:
         plyaer_icon->setPixmap(QPixmap(QString::fromUtf8(":/img/img/player_icon.png")));
         player_title = new QLabel(player_frame);
         player_title->setObjectName("player_title");
-        player_title->setGeometry(QRect(120, 30, 201, 31));
+        player_title->setGeometry(QRect(100, 30, 201, 31));
+        QFont font1;
+        font1.setPointSize(10);
+        player_title->setFont(font1);
         player_title->setStyleSheet(QString::fromUtf8("color: white;"));
-        prev = new QLabel(player_frame);
-        prev->setObjectName("prev");
-        prev->setGeometry(QRect(350, 30, 40, 40));
-        prev->setMinimumSize(QSize(40, 40));
-        prev->setMaximumSize(QSize(40, 40));
-        prev->setStyleSheet(QString::fromUtf8("color:white;"));
-        prev->setPixmap(QPixmap(QString::fromUtf8(":/img/img/prev.png")));
-        pause_btn = new QLabel(player_frame);
-        pause_btn->setObjectName("pause_btn");
-        pause_btn->setGeometry(QRect(430, 30, 41, 41));
-        pause_btn->setStyleSheet(QString::fromUtf8("color:white;"));
-        pause_btn->setPixmap(QPixmap(QString::fromUtf8(":/img/img/pause.png")));
-        next = new QLabel(player_frame);
-        next->setObjectName("next");
-        next->setGeometry(QRect(510, 30, 51, 41));
-        next->setStyleSheet(QString::fromUtf8("color:white;"));
-        next->setPixmap(QPixmap(QString::fromUtf8(":/img/img/next.png")));
         Pages->addWidget(HomePage);
         SearchPage = new QWidget();
         SearchPage->setObjectName("SearchPage");
@@ -240,26 +223,26 @@ public:
         import_page_header = new QLabel(ImportPage);
         import_page_header->setObjectName("import_page_header");
         import_page_header->setGeometry(QRect(210, 30, 201, 41));
-        QFont font1;
-        font1.setPointSize(17);
-        import_page_header->setFont(font1);
+        QFont font2;
+        font2.setPointSize(17);
+        import_page_header->setFont(font2);
         import_page_header->setStyleSheet(QString::fromUtf8("color:\"white\""));
         import_btn = new QPushButton(ImportPage);
         import_btn->setObjectName("import_btn");
         import_btn->setGeometry(QRect(140, 110, 331, 41));
-        QFont font2;
-        font2.setPointSize(15);
-        font2.setBold(true);
-        import_btn->setFont(font2);
+        QFont font3;
+        font3.setPointSize(15);
+        font3.setBold(true);
+        import_btn->setFont(font3);
         import_btn->setStyleSheet(QString::fromUtf8("color:\"black\";\n"
 "background-color:\"white\";\n"
 "border-radius:\"20px\""));
-        listWidget = new QListWidget(ImportPage);
-        listWidget->setObjectName("listWidget");
-        listWidget->setGeometry(QRect(45, 231, 501, 331));
+        imported_songs_list = new QListWidget(ImportPage);
+        imported_songs_list->setObjectName("imported_songs_list");
+        imported_songs_list->setGeometry(QRect(35, 231, 511, 331));
         imported_files_label = new QLabel(ImportPage);
         imported_files_label->setObjectName("imported_files_label");
-        imported_files_label->setGeometry(QRect(60, 190, 431, 21));
+        imported_files_label->setGeometry(QRect(40, 190, 431, 21));
         imported_files_label->setStyleSheet(QString::fromUtf8("color:\"white\""));
         Pages->addWidget(ImportPage);
         MelodiMix->setCentralWidget(centralwidget);
@@ -290,9 +273,6 @@ public:
         pushButton->setText(QCoreApplication::translate("MelodiMix", "Search", nullptr));
         plyaer_icon->setText(QString());
         player_title->setText(QCoreApplication::translate("MelodiMix", "Love in the summer", nullptr));
-        prev->setText(QString());
-        pause_btn->setText(QString());
-        next->setText(QString());
         label_2->setText(QCoreApplication::translate("MelodiMix", "Search", nullptr));
         label_3->setText(QCoreApplication::translate("MelodiMix", "Fav Page", nullptr));
         import_page_header->setText(QCoreApplication::translate("MelodiMix", "Import song files", nullptr));

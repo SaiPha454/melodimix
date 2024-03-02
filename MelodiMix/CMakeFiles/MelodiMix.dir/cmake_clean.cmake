@@ -1,0 +1,43 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/MelodiMix_autogen.dir/AutogenUsed.txt"
+  "CMakeFiles/MelodiMix_autogen.dir/ParseCache.txt"
+  "MelodiMix_autogen"
+  "CMakeFiles/MelodiMix.dir/MelodiMix_autogen/EWIEGA46WW/qrc_Resources.cpp.o"
+  "CMakeFiles/MelodiMix.dir/MelodiMix_autogen/EWIEGA46WW/qrc_Resources.cpp.o.d"
+  "CMakeFiles/MelodiMix.dir/MelodiMix_autogen/mocs_compilation.cpp.o"
+  "CMakeFiles/MelodiMix.dir/MelodiMix_autogen/mocs_compilation.cpp.o.d"
+  "CMakeFiles/MelodiMix.dir/clickablelabel.cpp.o"
+  "CMakeFiles/MelodiMix.dir/clickablelabel.cpp.o.d"
+  "CMakeFiles/MelodiMix.dir/deletebutton.cpp.o"
+  "CMakeFiles/MelodiMix.dir/deletebutton.cpp.o.d"
+  "CMakeFiles/MelodiMix.dir/favbutton.cpp.o"
+  "CMakeFiles/MelodiMix.dir/favbutton.cpp.o.d"
+  "CMakeFiles/MelodiMix.dir/importfolder.cpp.o"
+  "CMakeFiles/MelodiMix.dir/importfolder.cpp.o.d"
+  "CMakeFiles/MelodiMix.dir/main.cpp.o"
+  "CMakeFiles/MelodiMix.dir/main.cpp.o.d"
+  "CMakeFiles/MelodiMix.dir/melodimix.cpp.o"
+  "CMakeFiles/MelodiMix.dir/melodimix.cpp.o.d"
+  "CMakeFiles/MelodiMix.dir/musiceventhandler.cpp.o"
+  "CMakeFiles/MelodiMix.dir/musiceventhandler.cpp.o.d"
+  "CMakeFiles/MelodiMix.dir/musicitem.cpp.o"
+  "CMakeFiles/MelodiMix.dir/musicitem.cpp.o.d"
+  "CMakeFiles/MelodiMix.dir/nextbutton.cpp.o"
+  "CMakeFiles/MelodiMix.dir/nextbutton.cpp.o.d"
+  "CMakeFiles/MelodiMix.dir/playbutton.cpp.o"
+  "CMakeFiles/MelodiMix.dir/playbutton.cpp.o.d"
+  "CMakeFiles/MelodiMix.dir/prevbutton.cpp.o"
+  "CMakeFiles/MelodiMix.dir/prevbutton.cpp.o.d"
+  "CMakeFiles/MelodiMix.dir/removeablemusicitem.cpp.o"
+  "CMakeFiles/MelodiMix.dir/removeablemusicitem.cpp.o.d"
+  "MelodiMix"
+  "MelodiMix.pdb"
+  "MelodiMix_autogen/EWIEGA46WW/qrc_Resources.cpp"
+  "MelodiMix_autogen/mocs_compilation.cpp"
+  "MelodiMix_autogen/timestamp"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/MelodiMix.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

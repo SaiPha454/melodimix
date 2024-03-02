@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'melodimix.h'
 **
-** Created by: The Qt Meta Object Compiler version 68 (Qt 6.6.1)
+** Created by: The Qt Meta Object Compiler version 68 (Qt 6.8.0)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -10,19 +10,14 @@
 #include <QtGui/qtextcursor.h>
 #include <QtCore/qmetatype.h>
 
-#if __has_include(<QtCore/qtmochelpers.h>)
 #include <QtCore/qtmochelpers.h>
-#else
-QT_BEGIN_MOC_NAMESPACE
-#endif
-
 
 #include <memory>
 
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'melodimix.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 68
-#error "This file was generated using the moc from 6.6.1. It"
+#error "This file was generated using the moc from 6.8.0. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -38,7 +33,7 @@ namespace {
 
 #ifdef QT_MOC_HAS_STRINGDATA
 struct qt_meta_stringdata_CLASSMelodiMixENDCLASS_t {};
-static constexpr auto qt_meta_stringdata_CLASSMelodiMixENDCLASS = QtMocHelpers::stringData(
+constexpr auto qt_meta_stringdata_CLASSMelodiMixENDCLASS = QtMocHelpers::stringData(
     "MelodiMix",
     "on_home_nav_clicked",
     "",
@@ -51,51 +46,9 @@ static constexpr auto qt_meta_stringdata_CLASSMelodiMixENDCLASS = QtMocHelpers::
     "item",
     "on_import_btn_clicked"
 );
-#else  // !QT_MOC_HAS_STRING_DATA
-struct qt_meta_stringdata_CLASSMelodiMixENDCLASS_t {
-    uint offsetsAndSizes[22];
-    char stringdata0[10];
-    char stringdata1[20];
-    char stringdata2[1];
-    char stringdata3[22];
-    char stringdata4[19];
-    char stringdata5[22];
-    char stringdata6[22];
-    char stringdata7[19];
-    char stringdata8[17];
-    char stringdata9[5];
-    char stringdata10[22];
-};
-#define QT_MOC_LITERAL(ofs, len) \
-    uint(sizeof(qt_meta_stringdata_CLASSMelodiMixENDCLASS_t::offsetsAndSizes) + ofs), len 
-Q_CONSTINIT static const qt_meta_stringdata_CLASSMelodiMixENDCLASS_t qt_meta_stringdata_CLASSMelodiMixENDCLASS = {
-    {
-        QT_MOC_LITERAL(0, 9),  // "MelodiMix"
-        QT_MOC_LITERAL(10, 19),  // "on_home_nav_clicked"
-        QT_MOC_LITERAL(30, 0),  // ""
-        QT_MOC_LITERAL(31, 21),  // "on_search_nav_clicked"
-        QT_MOC_LITERAL(53, 18),  // "on_fav_nav_clicked"
-        QT_MOC_LITERAL(72, 21),  // "on_import_nav_clicked"
-        QT_MOC_LITERAL(94, 21),  // "on_pushButton_clicked"
-        QT_MOC_LITERAL(116, 18),  // "onMusicItemClicked"
-        QT_MOC_LITERAL(135, 16),  // "QListWidgetItem*"
-        QT_MOC_LITERAL(152, 4),  // "item"
-        QT_MOC_LITERAL(157, 21)   // "on_import_btn_clicked"
-    },
-    "MelodiMix",
-    "on_home_nav_clicked",
-    "",
-    "on_search_nav_clicked",
-    "on_fav_nav_clicked",
-    "on_import_nav_clicked",
-    "on_pushButton_clicked",
-    "onMusicItemClicked",
-    "QListWidgetItem*",
-    "item",
-    "on_import_btn_clicked"
-};
-#undef QT_MOC_LITERAL
-#endif // !QT_MOC_HAS_STRING_DATA
+#else  // !QT_MOC_HAS_STRINGDATA
+#error "qtmochelpers.h not found or too old."
+#endif // !QT_MOC_HAS_STRINGDATA
 } // unnamed namespace
 
 Q_CONSTINIT static const uint qt_meta_data_CLASSMelodiMixENDCLASS[] = {

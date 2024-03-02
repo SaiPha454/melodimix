@@ -1,12 +1,12 @@
 #ifndef PREVBUTTON_H
 #define PREVBUTTON_H
 
-#include "playbutton.h"
+#include "clickablelabel.h"
 
-class PrevButton : public PlayButton
+class PrevButton : public ClickableLabel
 {
 public:
-    PrevButton(QWidget *parent = nullptr,const QString img="");
+    PrevButton(QWidget *parent = nullptr);
 
 public slots:
     void onClick();

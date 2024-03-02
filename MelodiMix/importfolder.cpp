@@ -30,10 +30,12 @@ QStringList ImportFolder::import() {
         QString destinationFolder = desktopDir.filePath("MelodiMix");
 
         for (const QString &filePath : filePaths) {
+
             QString filename = QFileInfo(filePath).fileName();
-            importedFiles.push_back(filename);
             QString destination = destinationFolder + QDir::separator() + filename;
+
             if (QFile::copy(filePath, destination)) {
+                importedFiles.push_back(filename);
                 qDebug() << "Successfully copied" << filename;
             } else {
                 qDebug() << "Failed to copy" << filename;
@@ -45,5 +47,15 @@ QStringList ImportFolder::import() {
 
     return importedFiles;
 
+}
+
+QStringList ImportFolder::load() {
+
+    QString desktopLocation = QStandardPaths::writableLocation(QStandardPaths::DesktopLocation);
+    QDir desktopDir(desktopLocation);
+    QString folderPath = desktopDir.filePath("MelodiMix");
+    QDir folder(folderPath);
+
+    return folder.entryList(QDir::Files);
 }
 

@@ -10,6 +10,8 @@ public:
     ImportFolder(const QString foldername);
 
     static QStringList import();
+
+    static QStringList load();
 };
 
 #endif // IMPORTFOLDER_H

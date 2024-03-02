@@ -7,10 +7,10 @@
 class PlayButton : public ClickableLabel
 {
 public:
-    PlayButton(QWidget *parent = nullptr,const QString img="");
+    PlayButton(QWidget *parent = nullptr);
 
 public slots:
-    virtual void onClick();
+    void onClick();
 };
 
 #endif // PLAYBUTTON_H

@@ -1,12 +1,12 @@
 #ifndef NEXTBUTTON_H
 #define NEXTBUTTON_H
 
-#include "playbutton.h"
+#include "clickablelabel.h"
 
-class NextButton : public PlayButton
+class NextButton : public ClickableLabel
 {
 public:
-    NextButton(QWidget *parent = nullptr,const QString img="");
+    NextButton(QWidget *parent = nullptr);
 
 public slots:
     void onClick();

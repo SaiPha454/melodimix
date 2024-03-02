@@ -1,0 +1,5 @@
+# Hashes of file build rules.
+a128bd367ac9df26cfdf8ff6192065f9 CMakeFiles/MelodiMix_autogen
+a128bd367ac9df26cfdf8ff6192065f9 CMakeFiles/MelodiMix_autogen_timestamp_deps
+705627f10b9bf5435bd1c14e66b1f33c MelodiMix_autogen/EWIEGA46WW/qrc_Resources.cpp
+edea47b4b15ad0ab7a5251d77c892b23 MelodiMix_autogen/timestamp

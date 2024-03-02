@@ -11,6 +11,8 @@
 #include "prevbutton.h"
 #include "nextbutton.h"
 #include "importfolder.h"
+#include "removeablemusicitem.h"
+#include <QListWidgetItem>
 
 MelodiMix::MelodiMix(QWidget *parent)
     : QMainWindow(parent)
@@ -28,29 +30,33 @@ MelodiMix::MelodiMix(QWidget *parent)
 
     //load music list
     MusicEventHandler *musicandlers= new MusicEventHandler();
-    ui->music_list->setStyleSheet("QListWidget::item { border-bottom: 1px solid white; }");
-    MusicItem *item = new MusicItem("Love in the Summer-Taylor swift", "123");
-    ui->music_list->addItem(item);
-    ui->music_list->setItemWidget(item, item->Item);
 
-    MusicItem *item2 = new MusicItem("Love in the Summer-Taylor swift", "456");
-    ui->music_list->addItem(item2);
-    ui->music_list->setItemWidget(item2, item2->Item);
+
+    QStringList songs_filenames = ImportFolder::load();
+    ui->music_list->setStyleSheet("QListWidget::item { border-bottom: 1px solid white; }");
+    for(QString& filename : songs_filenames) {
+
+
+        MusicItem *item = new MusicItem(filename, filename);
+        ui->music_list->addItem(item);
+        ui->music_list->setItemWidget(item, item->Item);
+    }
+
     QObject::connect(ui->music_list, &QListWidget::itemClicked, musicandlers, &MusicEventHandler::onMusicItemClicked);
     //end of load music
 
     //setup player frame
 
     ui->player_frame->setParent(ui->Pages->widget(0));
-    PlayButton *playbutton = new PlayButton(ui->player_frame, ":/img/img/pause.png");
-    playbutton->setGeometry(430,30,41,41);
-    PrevButton *prevbutton = new PrevButton(ui->player_frame, ":/img/img/prev.png");
-    prevbutton->setGeometry(350,30,41,41);
-    NextButton *nextbutton = new NextButton(ui->player_frame, ":/img/img/next.png");
-    nextbutton->setGeometry(510,30,41,41);
+    PlayButton *playbutton = new PlayButton(ui->player_frame);
+    playbutton->setGeometry(410,30,32,32);
+    PrevButton *prevbutton = new PrevButton(ui->player_frame);
+    prevbutton->setGeometry(350,30,32,32);
+    NextButton *nextbutton = new NextButton(ui->player_frame);
+    nextbutton->setGeometry(460,30,32,32);
 
     // create default folder
-    ImportFolder *imp = new ImportFolder("MelodiMix");
+    new ImportFolder("MelodiMix");
 }
 
 MelodiMix::~MelodiMix()
@@ -81,6 +87,19 @@ void MelodiMix::on_home_nav_clicked()
             }
         }
     }
+
+    ui->music_list->clear();
+    QStringList songs_filenames = ImportFolder::load();
+    ui->music_list->setStyleSheet("QListWidget::item { border-bottom: 1px solid white; }");
+    for(QString& filename : songs_filenames) {
+
+
+        MusicItem *item = new MusicItem(filename, filename);
+        ui->music_list->addItem(item);
+        ui->music_list->setItemWidget(item, item->Item);
+    }
+
+
 }
 
 void MelodiMix::on_search_nav_clicked()
@@ -161,6 +180,9 @@ void MelodiMix::on_import_nav_clicked()
             }
         }
     }
+
+
+    //load music from the source folder
 }
 
 
@@ -169,7 +191,7 @@ void MelodiMix::onMusicItemClicked(QListWidgetItem *item){
 
         MusicItem *music_item = dynamic_cast<MusicItem*>(item);
         QMessageBox msg;
-        msg.setText(music_item->mp3_id);
+        msg.setText(music_item->id);
         msg.exec();
     }
 }
@@ -181,12 +203,16 @@ void MelodiMix::on_pushButton_clicked()
 }
 
 
-
-
-
 void MelodiMix::on_import_btn_clicked()
 {
     QStringList filenames = ImportFolder::import();
     ui->imported_files_label->setText(QString::number(filenames.length()) + " files were imported");
+    for(QString &filename : filenames) {
+
+        qDebug() << filename;
+        RemoveableMusicItem *item =  new RemoveableMusicItem( filename, filename, ui->imported_songs_list);
+        ui->imported_songs_list->insertItem(0,item);
+        ui->imported_songs_list->setItemWidget(item, item->Item);
+    }
 }
 

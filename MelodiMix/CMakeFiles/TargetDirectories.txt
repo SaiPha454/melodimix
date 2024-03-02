@@ -1,0 +1,9 @@
+/home/sai/Desktop/C++/MelodiMix/MelodiMix/CMakeFiles/MelodiMix.dir
+/home/sai/Desktop/C++/MelodiMix/MelodiMix/CMakeFiles/edit_cache.dir
+/home/sai/Desktop/C++/MelodiMix/MelodiMix/CMakeFiles/rebuild_cache.dir
+/home/sai/Desktop/C++/MelodiMix/MelodiMix/CMakeFiles/list_install_components.dir
+/home/sai/Desktop/C++/MelodiMix/MelodiMix/CMakeFiles/install.dir
+/home/sai/Desktop/C++/MelodiMix/MelodiMix/CMakeFiles/install/local.dir
+/home/sai/Desktop/C++/MelodiMix/MelodiMix/CMakeFiles/install/strip.dir
+/home/sai/Desktop/C++/MelodiMix/MelodiMix/CMakeFiles/MelodiMix_autogen_timestamp_deps.dir
+/home/sai/Desktop/C++/MelodiMix/MelodiMix/CMakeFiles/MelodiMix_autogen.dir

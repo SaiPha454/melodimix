@@ -6,18 +6,20 @@
 #include <QHBoxLayout>
 #include <QLabel>
 #include<QWidget>
+#include <QHBoxLayout>
 
 class MusicItem : public QListWidgetItem
 {
 public:
-    MusicItem(const QString& subtitle, const QString& id);
+    MusicItem(const QString& p_title, const QString& id);
     QWidget *Item;
-    QString mp3_id;
+    QString id;
 
+protected:
 
-private:
-    QLabel *m_titleLabel;
-    QLabel *m_subtitleLabel;
+    QHBoxLayout *layout;
+    // QLabel *music_item_icon;
+    QLabel *title;
 
 };
 

@@ -5,24 +5,25 @@
 #include <QWidget>
 #include<QPixmap>
 
-MusicItem::MusicItem(const QString& subtitle, const QString& id)
-    : QListWidgetItem(subtitle)
+MusicItem::MusicItem(const QString& p_title, const QString& p_id)
+    : QListWidgetItem(p_title)
 {
+
+    id = p_id;
     QPixmap mp3_icon(":/img/img/music_icon.png");
+
     Item = new QWidget();
-    mp3_id = id;
+    layout = new QHBoxLayout();
 
-    QHBoxLayout *layout = new QHBoxLayout(Item);
+    QLabel *music_item_icon = new QLabel("");
+    music_item_icon->setPixmap(mp3_icon.scaled(20,20,Qt::KeepAspectRatio));
+    music_item_icon->setMaximumWidth(65);
 
-    m_titleLabel = new QLabel("");
-    m_titleLabel->setPixmap(mp3_icon.scaled(20,20,Qt::KeepAspectRatio));
-    m_titleLabel->setMaximumWidth(65);
+    title = new QLabel(p_title);
+    title->setStyleSheet("color: white;");
 
-    m_subtitleLabel = new QLabel(subtitle);
-    m_subtitleLabel->setStyleSheet("color: white;");
-
-    layout->addWidget(m_titleLabel);
-    layout->addWidget(m_subtitleLabel);
+    layout->addWidget(music_item_icon);
+    layout->addWidget(title);
 
     Item->setLayout(layout);
     setSizeHint(Item->sizeHint());

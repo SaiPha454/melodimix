@@ -3,15 +3,19 @@
 #define CLICKABLELABEL_H
 
 #include <QLabel>
+#include<QString>
 
 class ClickableLabel : public QLabel {
     Q_OBJECT
 
 public:
-    explicit ClickableLabel(QWidget *parent = nullptr);
+     ClickableLabel(QWidget *parent = nullptr);
 
 signals:
     void clicked(); // Custom signal to emit when the label is clicked
+
+public slots:
+    virtual void onClick();
 
 protected:
     void mousePressEvent(QMouseEvent *event) override; // Override mousePressEvent to handle mouse clicks
