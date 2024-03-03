@@ -4,14 +4,20 @@
 #include <QDebug>
 #include "clickablelabel.h"
 
-PlayButton::PlayButton(QWidget *parent) : ClickableLabel(parent) {
+PlayButton::PlayButton(QWidget *parent, QMediaPlayer *p_player) : ClickableLabel(parent) {
 
-    QPixmap pixel(":/img/img/pause.png");
-    // this->setGeometry(0,0,width, height);
-    // this->setPixmap(pixel.scaled(this->width(), this->height(), Qt::KeepAspectRatio));
-    this->setPixmap(pixel.scaled(21, 21, Qt::KeepAspectRatio));
+    // QPixmap pixel(":/img/img/play.png");
+    this->setPixmap(playPixel.scaled(21, 21, Qt::KeepAspectRatio));
+    player= p_player;
 }
 
 void PlayButton::onClick() {
-    qDebug()<<"Hello I am play button";
+
+    if(player->playbackState() == QMediaPlayer::PlayingState) {
+        this->setPixmap(playPixel.scaled(21, 21, Qt::KeepAspectRatio));
+        player->pause();
+    }else{
+        this->setPixmap(pausePixel.scaled(21, 21, Qt::KeepAspectRatio));
+        player->play();
+    }
 }

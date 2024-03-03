@@ -11,9 +11,10 @@
 class MusicItem : public QListWidgetItem
 {
 public:
-    MusicItem(const QString& p_title, const QString& id);
+    MusicItem(const QString& p_title, const QString& filename, int id);
     QWidget *Item;
-    QString id;
+    QString filename;
+    int id;
 
 protected:
 

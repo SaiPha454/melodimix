@@ -3,11 +3,19 @@
 
 #include "clickablelabel.h"
 #include <QWidget>
+#include <QMediaPlayer>
+#include <QPixmap>
 
 class PlayButton : public ClickableLabel
 {
 public:
-    PlayButton(QWidget *parent = nullptr);
+    PlayButton(QWidget *parent = nullptr, QMediaPlayer *p_player= new QMediaPlayer());
+
+private:
+    QMediaPlayer *player;
+    QPixmap playPixel = QPixmap(":/img/img/play.png");
+    QPixmap pausePixel = QPixmap(":/img/img/pause.png");
+
 
 public slots:
     void onClick();

@@ -59,3 +59,10 @@ QStringList ImportFolder::load() {
     return folder.entryList(QDir::Files);
 }
 
+
+QString ImportFolder::getHomePath(){
+
+    QString desktopLocation = QStandardPaths::writableLocation(QStandardPaths::DesktopLocation);
+    QDir desktopDir(desktopLocation);
+    return desktopDir.filePath("MelodiMix");
+}

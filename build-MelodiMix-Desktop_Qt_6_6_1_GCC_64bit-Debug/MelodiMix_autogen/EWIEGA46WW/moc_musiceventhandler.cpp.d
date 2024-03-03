@@ -1,6 +1,9 @@
 /home/sai/Desktop/C++/MelodiMix/build-MelodiMix-Desktop_Qt_6_6_1_GCC_64bit-Debug/MelodiMix_autogen/EWIEGA46WW/moc_musiceventhandler.cpp: /home/sai/Desktop/C++/MelodiMix/MelodiMix/musiceventhandler.h \
   /home/sai/Desktop/C++/MelodiMix/build-MelodiMix-Desktop_Qt_6_6_1_GCC_64bit-Debug/MelodiMix_autogen/moc_predefs.h \
+  /home/sai/Desktop/C++/MelodiMix/MelodiMix/clickablelabel.h \
+  /home/sai/Desktop/C++/MelodiMix/MelodiMix/playbutton.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/QObject \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtCore/QString \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/q20functional.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/q20memory.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/q20type_traits.h \
@@ -46,6 +49,7 @@
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qglobalstatic.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qhash.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qhashfunctions.h \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qiodevice.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qiodevicebase.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qitemselectionmodel.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qiterable.h \
@@ -60,6 +64,7 @@
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qmargins.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qmath.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qmetacontainer.h \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qmetaobject.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qmetatype.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qminmax.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qnamespace.h \
@@ -116,12 +121,14 @@
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qtversionchecks.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qtypeinfo.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qtypes.h \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qurl.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qutf8stringview.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qvariant.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qvarlengtharray.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qversiontagging.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qxptype_traits.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qyieldcpu.h \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtGui/QPixmap \
   /home/sai/Qt/6.8.0/gcc_64/include/QtGui/qaction.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtGui/qbitmap.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtGui/qbrush.h \
@@ -136,25 +143,37 @@
   /home/sai/Qt/6.8.0/gcc_64/include/QtGui/qkeysequence.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtGui/qpaintdevice.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtGui/qpalette.h \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtGui/qpicture.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtGui/qpixelformat.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtGui/qpixmap.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtGui/qpolygon.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtGui/qregion.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtGui/qrgb.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtGui/qrgba64.h \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtGui/qtextdocument.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtGui/qtgui-config.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtGui/qtguiexports.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtGui/qtguiglobal.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtGui/qtransform.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtGui/qvalidator.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtGui/qwindowdefs.h \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtMultimedia/QMediaPlayer \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtMultimedia/qaudio.h \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtMultimedia/qmediaenumdebug.h \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtMultimedia/qmediaplayer.h \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtMultimedia/qtmultimedia-config.h \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtMultimedia/qtmultimediaexports.h \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtMultimedia/qtmultimediaglobal.h \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/QLabel \
   /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/QListWidgetItem \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/QWidget \
   /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/qabstractitemview.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/qabstractscrollarea.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/qabstractslider.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/qabstractspinbox.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/qframe.h \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/qlabel.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/qlistview.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/qlistwidget.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/qrubberband.h \

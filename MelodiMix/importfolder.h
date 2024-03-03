@@ -3,6 +3,8 @@
 
 #include<QString>
 #include <QStringList>
+#include <QStandardPaths>
+#include <QDir>
 
 class ImportFolder
 {
@@ -12,6 +14,8 @@ public:
     static QStringList import();
 
     static QStringList load();
+
+    static QString getHomePath();
 };
 
 #endif // IMPORTFOLDER_H

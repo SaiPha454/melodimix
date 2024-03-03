@@ -91,6 +91,7 @@ MelodiMix_autogen/timestamp: \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qmargins.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qmath.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qmetacontainer.h \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qmetaobject.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qmetatype.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qminmax.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qnamespace.h \
@@ -154,6 +155,7 @@ MelodiMix_autogen/timestamp: \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qversiontagging.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qxptype_traits.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qyieldcpu.h \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtGui/QPixmap \
   /home/sai/Qt/6.8.0/gcc_64/include/QtGui/qaction.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtGui/qbitmap.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtGui/qbrush.h \
@@ -182,10 +184,18 @@ MelodiMix_autogen/timestamp: \
   /home/sai/Qt/6.8.0/gcc_64/include/QtGui/qtransform.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtGui/qvalidator.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtGui/qwindowdefs.h \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtMultimedia/QMediaPlayer \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtMultimedia/qaudio.h \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtMultimedia/qmediaenumdebug.h \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtMultimedia/qmediaplayer.h \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtMultimedia/qtmultimedia-config.h \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtMultimedia/qtmultimediaexports.h \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtMultimedia/qtmultimediaglobal.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/QLabel \
   /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/QListWidgetItem \
   /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/QMainWindow \
   /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/QPushButton \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/QWidget \
   /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/qabstractbutton.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/qabstractitemview.h \

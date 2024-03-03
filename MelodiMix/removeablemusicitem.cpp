@@ -5,7 +5,7 @@
 #include<QListWidget>
 
 RemoveableMusicItem::RemoveableMusicItem(QString p_title, QString p_id,QListWidget* list)
-    : MusicItem(p_title, p_id) {
+    : MusicItem(p_title, p_id, 0) {
 
     QWidget *test_btn = new QWidget();
     button = new DeleteButton(test_btn, p_id, list);
