@@ -16,11 +16,13 @@ public:
     void setPlayer(QMediaPlayer *player);
     void setList(QListWidget *list);
 
+
 private:
     int *currentSongIndex;
     QStringList songList;
     QMediaPlayer *player;
     QListWidget *list;
+
 
 public slots:
     void onClick();

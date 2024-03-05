@@ -452,19 +452,19 @@ border:1px solid white;
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <widget class="QLabel" name="plyaer_icon">
+      <widget class="QLabel" name="player_icon">
        <property name="geometry">
         <rect>
-         <x>30</x>
-         <y>20</y>
-         <width>60</width>
-         <height>60</height>
+         <x>20</x>
+         <y>30</y>
+         <width>41</width>
+         <height>41</height>
         </rect>
        </property>
        <property name="minimumSize">
         <size>
-         <width>60</width>
-         <height>60</height>
+         <width>41</width>
+         <height>41</height>
         </size>
        </property>
        <property name="maximumSize">
@@ -481,15 +481,15 @@ border-radius:40;</string>
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap resource="Resources.qrc">:/img/img/player_icon.png</pixmap>
+        <pixmap resource="Resources.qrc">:/new/prefix1/img/disk.png</pixmap>
        </property>
       </widget>
-      <widget class="QLabel" name="player_title">
+      <widget class="QLabel" name="song_title">
        <property name="geometry">
         <rect>
-         <x>100</x>
+         <x>80</x>
          <y>30</y>
-         <width>201</width>
+         <width>221</width>
          <height>31</height>
         </rect>
        </property>

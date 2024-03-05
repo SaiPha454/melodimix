@@ -43,8 +43,8 @@ public:
     QPushButton *pushButton;
     QListWidget *music_list;
     QFrame *player_frame;
-    QLabel *plyaer_icon;
-    QLabel *player_title;
+    QLabel *player_icon;
+    QLabel *song_title;
     QWidget *SearchPage;
     QLabel *label_2;
     QWidget *FavPage;
@@ -188,21 +188,21 @@ public:
 "}"));
         player_frame->setFrameShape(QFrame::StyledPanel);
         player_frame->setFrameShadow(QFrame::Raised);
-        plyaer_icon = new QLabel(player_frame);
-        plyaer_icon->setObjectName("plyaer_icon");
-        plyaer_icon->setGeometry(QRect(30, 20, 60, 60));
-        plyaer_icon->setMinimumSize(QSize(60, 60));
-        plyaer_icon->setMaximumSize(QSize(60, 60));
-        plyaer_icon->setStyleSheet(QString::fromUtf8("color: white;\n"
+        player_icon = new QLabel(player_frame);
+        player_icon->setObjectName("player_icon");
+        player_icon->setGeometry(QRect(20, 30, 41, 41));
+        player_icon->setMinimumSize(QSize(41, 41));
+        player_icon->setMaximumSize(QSize(60, 60));
+        player_icon->setStyleSheet(QString::fromUtf8("color: white;\n"
 "border-radius:40;"));
-        plyaer_icon->setPixmap(QPixmap(QString::fromUtf8(":/img/img/player_icon.png")));
-        player_title = new QLabel(player_frame);
-        player_title->setObjectName("player_title");
-        player_title->setGeometry(QRect(100, 30, 201, 31));
+        player_icon->setPixmap(QPixmap(QString::fromUtf8(":/new/prefix1/img/disk.png")));
+        song_title = new QLabel(player_frame);
+        song_title->setObjectName("song_title");
+        song_title->setGeometry(QRect(80, 30, 221, 31));
         QFont font1;
         font1.setPointSize(10);
-        player_title->setFont(font1);
-        player_title->setStyleSheet(QString::fromUtf8("color: white;"));
+        song_title->setFont(font1);
+        song_title->setStyleSheet(QString::fromUtf8("color: white;"));
         Pages->addWidget(HomePage);
         SearchPage = new QWidget();
         SearchPage->setObjectName("SearchPage");
@@ -271,8 +271,8 @@ public:
         textEdit->setAccessibleDescription(QCoreApplication::translate("MelodiMix", "Enter song name", nullptr));
 #endif // QT_CONFIG(accessibility)
         pushButton->setText(QCoreApplication::translate("MelodiMix", "Search", nullptr));
-        plyaer_icon->setText(QString());
-        player_title->setText(QCoreApplication::translate("MelodiMix", "Love in the summer", nullptr));
+        player_icon->setText(QString());
+        song_title->setText(QCoreApplication::translate("MelodiMix", "Love in the summer", nullptr));
         label_2->setText(QCoreApplication::translate("MelodiMix", "Search", nullptr));
         label_3->setText(QCoreApplication::translate("MelodiMix", "Fav Page", nullptr));
         import_page_header->setText(QCoreApplication::translate("MelodiMix", "Import song files", nullptr));

@@ -31,9 +31,13 @@ void NextButton::setList(QListWidget *p_list){
 
 void NextButton::onClick() {
 
+    if(player->playbackState()  != QMediaPlayer::PlayingState ) {
+        return;
+    }
+
     MusicItem *prevmusic_item = dynamic_cast<MusicItem*>(list->item(*currentSongIndex));
     // MusicItem *musicItem = dynamic_cast<MusicItem*>(list[*currentSongIndex]);
-    prevmusic_item->Item->setStyleSheet("background-color:black");
+    prevmusic_item->setUnActive();
 
     if(*currentSongIndex >= songList.length()-1){
         *currentSongIndex = 0;
@@ -50,6 +54,6 @@ void NextButton::onClick() {
     player->play();
 
    MusicItem *music_item = dynamic_cast<MusicItem*>(list->item(*currentSongIndex));
-   music_item->Item->setStyleSheet("background-color:rgb(37,130,37);");
+    music_item->setActive();
 
 }

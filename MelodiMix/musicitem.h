@@ -16,6 +16,9 @@ public:
     QString filename;
     int id;
 
+    void setActive();
+    void setUnActive();
+
 protected:
 
     QHBoxLayout *layout;

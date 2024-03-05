@@ -25,6 +25,7 @@ MelodiMix::MelodiMix(QWidget *parent)
     ui->setupUi(this);
     QPixmap pixel(":/img/img/melodimix.png");
 
+
     int width = ui->logo->width();
     int height = ui->logo->height();
     ui->logo->setPixmap(pixel.scaled(width, height, Qt::KeepAspectRatio));
@@ -33,7 +34,7 @@ MelodiMix::MelodiMix(QWidget *parent)
     nav_icons={ui->home_icon, ui->search_icon, ui->fav_icon, ui->import_icon};
 
 
-    int *currentSongIndex = new int(0);
+    // int *currentSongIndex = new int(0);
     QMediaPlayer *player = new QMediaPlayer;
     QAudioOutput *audioOutput = new QAudioOutput();
 
@@ -47,13 +48,15 @@ MelodiMix::MelodiMix(QWidget *parent)
     prevbutton->setGeometry(350,30,32,32);
     NextButton *nextbutton = new NextButton(ui->player_frame);
     nextbutton->setGeometry(460,30,32,32);
-    nextbutton->setCurrentSongIndex(currentSongIndex);
+
+
+
 
     //load music list
     MusicEventHandler *musicandlers= new MusicEventHandler(player, playbutton);
     musicandlers->setCurrentSongIndex(currentSongIndex);
 
-    QStringList songs_filenames = ImportFolder::load();
+    songs_filenames = ImportFolder::load();
     ui->music_list->setStyleSheet("QListWidget::item { border-bottom: 1px solid white; }");
 
     for(int i=0;i<songs_filenames.length(); i++) {
@@ -63,11 +66,25 @@ MelodiMix::MelodiMix(QWidget *parent)
         ui->music_list->setItemWidget(item, item->Item);
     }
 
+    QObject::connect(ui->music_list, &QListWidget::itemClicked, this, &MelodiMix::onMusicItemClicked);
     QObject::connect(ui->music_list, &QListWidget::itemClicked, musicandlers, &MusicEventHandler::onMusicItemClicked);
+
+
+    connect(nextbutton, &NextButton::clicked, this, &MelodiMix::onSkipClick );
+    connect(prevbutton, &PrevButton::clicked, this, &MelodiMix::onSkipClick );
+
     //end of load music
     nextbutton->setPlayer(player);
     nextbutton->setSongList(songs_filenames);
     nextbutton->setList(ui->music_list);
+    nextbutton->setCurrentSongIndex(currentSongIndex);
+
+    prevbutton->setPlayer(player);
+    prevbutton->setSongList(songs_filenames);
+    prevbutton->setList(ui->music_list);
+    prevbutton->setCurrentSongIndex(currentSongIndex);
+
+
 
     // create default folder
     new ImportFolder("MelodiMix");
@@ -103,11 +120,14 @@ void MelodiMix::on_home_nav_clicked()
     }
 
     ui->music_list->clear();
-    QStringList songs_filenames = ImportFolder::load();
+    songs_filenames = ImportFolder::load();
     ui->music_list->setStyleSheet("QListWidget::item { border-bottom: 1px solid white; }");
     for(int i=0;i<songs_filenames.length(); i++) {
         QString& filename= songs_filenames[i];
         MusicItem *item = new MusicItem(filename, filename, i );
+        if(*currentSongIndex !=-1 && *currentSongIndex == i){
+            item->setActive();
+        }
         ui->music_list->addItem(item);
         ui->music_list->setItemWidget(item, item->Item);
     }
@@ -201,12 +221,17 @@ void MelodiMix::on_import_nav_clicked()
 
 void MelodiMix::onMusicItemClicked(QListWidgetItem *item){
     if(item){
-
+        MusicItem *prev_music_item = dynamic_cast<MusicItem*>(ui->music_list->item(*currentSongIndex));
+        prev_music_item->setUnActive();
         MusicItem *music_item = dynamic_cast<MusicItem*>(item);
-        QMessageBox msg;
-        msg.setText(music_item->filename);
-        msg.exec();
+        ui->song_title->setText(music_item->filename);
     }
+}
+
+void MelodiMix::onSkipClick(){
+
+    ui->song_title->setText(songs_filenames[*currentSongIndex]);
+
 }
 
 
@@ -225,7 +250,7 @@ void MelodiMix::on_import_btn_clicked()
         qDebug() << filename;
         RemoveableMusicItem *item =  new RemoveableMusicItem( filename, filename, ui->imported_songs_list);
         ui->imported_songs_list->insertItem(0,item);
+        songs_filenames.insert(0, filename );
         ui->imported_songs_list->setItemWidget(item, item->Item);
     }
 }
-

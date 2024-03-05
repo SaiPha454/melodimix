@@ -18,6 +18,8 @@ DeleteButton::DeleteButton(QWidget *parent, const QString p_id, QListWidget* lst
     this->setPixmap(pixel.scaled(this->width(), this->height(), Qt::KeepAspectRatio));
 }
 
+
+
 void DeleteButton::onClick(){
 
     QString desktopPath = QStandardPaths::writableLocation(QStandardPaths::DesktopLocation);

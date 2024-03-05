@@ -30,7 +30,7 @@ void MusicEventHandler::onMusicItemClicked(QListWidgetItem *item){
         playbutton->setPixmap(pausePixel.scaled(21, 21, Qt::KeepAspectRatio));
 
         if(prevMusicItem != nullptr){
-            prevMusicItem->setStyleSheet("background-:transparent;");
+            prevMusicItem->setStyleSheet("background:black;");
         }
         prevMusicItem = music_item->Item;
         prevMusicItem->setStyleSheet("background-color:rgb(37,130,37);");

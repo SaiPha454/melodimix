@@ -33,3 +33,11 @@ MusicItem::MusicItem(const QString& p_title, const QString& p_filename, int p_id
 
 }
 
+void MusicItem::setActive() {
+    Item->setStyleSheet("background-color:rgb(37,130,37);");
+}
+
+void MusicItem::setUnActive() {
+    Item->setStyleSheet("background-color:black");
+}
+

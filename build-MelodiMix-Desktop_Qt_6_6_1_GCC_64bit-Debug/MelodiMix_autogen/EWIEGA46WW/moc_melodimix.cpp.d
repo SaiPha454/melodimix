@@ -1,5 +1,6 @@
 /home/sai/Desktop/C++/MelodiMix/build-MelodiMix-Desktop_Qt_6_6_1_GCC_64bit-Debug/MelodiMix_autogen/EWIEGA46WW/moc_melodimix.cpp: /home/sai/Desktop/C++/MelodiMix/MelodiMix/melodimix.h \
   /home/sai/Desktop/C++/MelodiMix/build-MelodiMix-Desktop_Qt_6_6_1_GCC_64bit-Debug/MelodiMix_autogen/moc_predefs.h \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtCore/QStringList \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/q20functional.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/q20memory.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/q20type_traits.h \

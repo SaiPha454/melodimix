@@ -31,6 +31,7 @@ MelodiMix_autogen/timestamp: \
   MelodiMix_autogen/moc_predefs.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/QObject \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/QString \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtCore/QStringList \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/q20functional.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/q20memory.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/q20type_traits.h \
