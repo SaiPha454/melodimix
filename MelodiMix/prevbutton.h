@@ -12,13 +12,11 @@ public:
     PrevButton(QWidget *parent = nullptr);
 
     void setCurrentSongIndex(int *index=0);
-    void setSongList(QStringList list);
     void setPlayer(QMediaPlayer *player);
     void setList(QListWidget *list);
 
 private:
     int *currentSongIndex;
-    QStringList songList;
     QMediaPlayer *player;
     QListWidget *list;
 

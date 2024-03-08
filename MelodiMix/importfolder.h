@@ -9,7 +9,7 @@
 class ImportFolder
 {
 public:
-    ImportFolder(const QString foldername);
+    static void create(const QString foldername);
 
     static QStringList import();
 

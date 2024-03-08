@@ -13,6 +13,10 @@ PlayButton::PlayButton(QWidget *parent, QMediaPlayer *p_player) : ClickableLabel
 
 void PlayButton::onClick() {
 
+    if (player->source().isEmpty()) {
+        return;
+    }
+
     if(player->playbackState() == QMediaPlayer::PlayingState) {
         this->setPixmap(playPixel.scaled(21, 21, Qt::KeepAspectRatio));
         player->pause();

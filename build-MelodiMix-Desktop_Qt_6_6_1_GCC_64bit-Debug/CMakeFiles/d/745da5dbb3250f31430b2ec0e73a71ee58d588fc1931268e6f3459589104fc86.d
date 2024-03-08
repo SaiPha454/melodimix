@@ -23,6 +23,8 @@ MelodiMix_autogen/timestamp: \
   /home/sai/Desktop/C++/MelodiMix/MelodiMix/playbutton.h \
   /home/sai/Desktop/C++/MelodiMix/MelodiMix/prevbutton.cpp \
   /home/sai/Desktop/C++/MelodiMix/MelodiMix/prevbutton.h \
+  /home/sai/Desktop/C++/MelodiMix/MelodiMix/progressbar.cpp \
+  /home/sai/Desktop/C++/MelodiMix/MelodiMix/progressbar.h \
   /home/sai/Desktop/C++/MelodiMix/MelodiMix/removeablemusicitem.cpp \
   /home/sai/Desktop/C++/MelodiMix/MelodiMix/removeablemusicitem.h \
   .qtc/package-manager/auto-setup.cmake \
@@ -185,8 +187,10 @@ MelodiMix_autogen/timestamp: \
   /home/sai/Qt/6.8.0/gcc_64/include/QtGui/qtransform.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtGui/qvalidator.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtGui/qwindowdefs.h \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtMultimedia/QAudioOutput \
   /home/sai/Qt/6.8.0/gcc_64/include/QtMultimedia/QMediaPlayer \
   /home/sai/Qt/6.8.0/gcc_64/include/QtMultimedia/qaudio.h \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtMultimedia/qaudiooutput.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtMultimedia/qmediaenumdebug.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtMultimedia/qmediaplayer.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtMultimedia/qtmultimedia-config.h \
@@ -196,6 +200,7 @@ MelodiMix_autogen/timestamp: \
   /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/QListWidgetItem \
   /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/QMainWindow \
   /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/QPushButton \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/QSlider \
   /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/QWidget \
   /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/qabstractbutton.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/qabstractitemdelegate.h \

@@ -48,6 +48,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         removeablemusicitem.h removeablemusicitem.cpp
         deletebutton.h deletebutton.cpp
         favbutton.h favbutton.cpp
+        progressbar.h progressbar.cpp
 
     )
 # Define target properties for Android with Qt 6 as:

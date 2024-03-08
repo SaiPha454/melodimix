@@ -53,6 +53,7 @@ set(OLD_GLOB
   "/home/sai/Desktop/C++/MelodiMix/MelodiMix/nextbutton.cpp"
   "/home/sai/Desktop/C++/MelodiMix/MelodiMix/playbutton.cpp"
   "/home/sai/Desktop/C++/MelodiMix/MelodiMix/prevbutton.cpp"
+  "/home/sai/Desktop/C++/MelodiMix/MelodiMix/progressbar.cpp"
   "/home/sai/Desktop/C++/MelodiMix/MelodiMix/removeablemusicitem.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
@@ -83,6 +84,7 @@ set(OLD_GLOB
   "/home/sai/Desktop/C++/MelodiMix/MelodiMix/nextbutton.h"
   "/home/sai/Desktop/C++/MelodiMix/MelodiMix/playbutton.h"
   "/home/sai/Desktop/C++/MelodiMix/MelodiMix/prevbutton.h"
+  "/home/sai/Desktop/C++/MelodiMix/MelodiMix/progressbar.h"
   "/home/sai/Desktop/C++/MelodiMix/MelodiMix/removeablemusicitem.h"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")

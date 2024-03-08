@@ -1,5 +1,11 @@
 /home/sai/Desktop/C++/MelodiMix/build-MelodiMix-Desktop_Qt_6_6_1_GCC_64bit-Debug/MelodiMix_autogen/EWIEGA46WW/moc_melodimix.cpp: /home/sai/Desktop/C++/MelodiMix/MelodiMix/melodimix.h \
   /home/sai/Desktop/C++/MelodiMix/build-MelodiMix-Desktop_Qt_6_6_1_GCC_64bit-Debug/MelodiMix_autogen/moc_predefs.h \
+  /home/sai/Desktop/C++/MelodiMix/MelodiMix/clickablelabel.h \
+  /home/sai/Desktop/C++/MelodiMix/MelodiMix/musiceventhandler.h \
+  /home/sai/Desktop/C++/MelodiMix/MelodiMix/playbutton.h \
+  /home/sai/Desktop/C++/MelodiMix/MelodiMix/progressbar.h \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtCore/QObject \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtCore/QString \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/QStringList \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/q20functional.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/q20memory.h \
@@ -61,6 +67,7 @@
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qmargins.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qmath.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qmetacontainer.h \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qmetaobject.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qmetatype.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qminmax.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qnamespace.h \
@@ -124,6 +131,7 @@
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qversiontagging.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qxptype_traits.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qyieldcpu.h \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtGui/QPixmap \
   /home/sai/Qt/6.8.0/gcc_64/include/QtGui/qaction.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtGui/qbitmap.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtGui/qbrush.h \
@@ -152,10 +160,21 @@
   /home/sai/Qt/6.8.0/gcc_64/include/QtGui/qtransform.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtGui/qvalidator.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtGui/qwindowdefs.h \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtMultimedia/QAudioOutput \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtMultimedia/QMediaPlayer \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtMultimedia/qaudio.h \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtMultimedia/qaudiooutput.h \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtMultimedia/qmediaenumdebug.h \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtMultimedia/qmediaplayer.h \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtMultimedia/qtmultimedia-config.h \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtMultimedia/qtmultimediaexports.h \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtMultimedia/qtmultimediaglobal.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/QLabel \
   /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/QListWidgetItem \
   /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/QMainWindow \
   /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/QPushButton \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/QSlider \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/QWidget \
   /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/qabstractbutton.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/qabstractitemview.h \

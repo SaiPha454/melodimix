@@ -7,6 +7,11 @@
 #include<QLabel>
 #include<QListWidgetItem>
 #include <QStringList>
+#include <QMediaPlayer>
+#include <QAudioOutput>
+#include "playbutton.h"
+#include "musiceventhandler.h"
+#include "progressbar.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -25,6 +30,10 @@ public:
     std::vector<QLabel*> nav_icons;
     QStringList songs_filenames;
 
+    void set_app_logo();
+
+    void load_music();
+
 private slots:
     void on_home_nav_clicked();
 
@@ -34,14 +43,20 @@ private slots:
 
     void on_import_nav_clicked();
 
-    void on_pushButton_clicked();
-
     void onMusicItemClicked(QListWidgetItem *item);
-    void onSkipClick();
+    void skip();
     void on_import_btn_clicked();
+
 
 private:
     Ui::MelodiMix *ui;
-    int *currentSongIndex = new int(0);
+    int *currentSongIndex = new int(-1);
+    QMediaPlayer *player;
+    QAudioOutput *audioOutput;
+    PlayButton *playbutton;
+
+    MusicEventHandler *musicandlers;
+    ProgressBar *progressbar;
+
 };
 #endif // MELODIMIX_H

@@ -16,6 +16,7 @@
 #include <QtWidgets/QListWidget>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QSlider>
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QTextEdit>
 #include <QtWidgets/QWidget>
@@ -45,6 +46,7 @@ public:
     QFrame *player_frame;
     QLabel *player_icon;
     QLabel *song_title;
+    QSlider *progressbar;
     QWidget *SearchPage;
     QLabel *label_2;
     QWidget *FavPage;
@@ -203,6 +205,31 @@ public:
         font1.setPointSize(10);
         song_title->setFont(font1);
         song_title->setStyleSheet(QString::fromUtf8("color: white;"));
+        progressbar = new QSlider(player_frame);
+        progressbar->setObjectName("progressbar");
+        progressbar->setGeometry(QRect(0, 0, 581, 10));
+        progressbar->setMinimumSize(QSize(0, 10));
+        progressbar->setMaximumSize(QSize(16777215, 10));
+        QFont font2;
+        font2.setKerning(true);
+        font2.setHintingPreference(QFont::PreferDefaultHinting);
+        progressbar->setFont(font2);
+        progressbar->setCursor(QCursor(Qt::PointingHandCursor));
+        progressbar->setMouseTracking(true);
+        progressbar->setTabletTracking(true);
+        progressbar->setFocusPolicy(Qt::WheelFocus);
+        progressbar->setAcceptDrops(true);
+        progressbar->setAutoFillBackground(true);
+        progressbar->setStyleSheet(QString::fromUtf8("background-color: \"green\";\n"
+"border:\"none\";"));
+        progressbar->setPageStep(0);
+        progressbar->setValue(0);
+        progressbar->setTracking(true);
+        progressbar->setOrientation(Qt::Horizontal);
+        progressbar->setInvertedAppearance(false);
+        progressbar->setInvertedControls(false);
+        progressbar->setTickPosition(QSlider::NoTicks);
+        progressbar->setTickInterval(0);
         Pages->addWidget(HomePage);
         SearchPage = new QWidget();
         SearchPage->setObjectName("SearchPage");
@@ -223,17 +250,17 @@ public:
         import_page_header = new QLabel(ImportPage);
         import_page_header->setObjectName("import_page_header");
         import_page_header->setGeometry(QRect(210, 30, 201, 41));
-        QFont font2;
-        font2.setPointSize(17);
-        import_page_header->setFont(font2);
+        QFont font3;
+        font3.setPointSize(17);
+        import_page_header->setFont(font3);
         import_page_header->setStyleSheet(QString::fromUtf8("color:\"white\""));
         import_btn = new QPushButton(ImportPage);
         import_btn->setObjectName("import_btn");
         import_btn->setGeometry(QRect(140, 110, 331, 41));
-        QFont font3;
-        font3.setPointSize(15);
-        font3.setBold(true);
-        import_btn->setFont(font3);
+        QFont font4;
+        font4.setPointSize(15);
+        font4.setBold(true);
+        import_btn->setFont(font4);
         import_btn->setStyleSheet(QString::fromUtf8("color:\"black\";\n"
 "background-color:\"white\";\n"
 "border-radius:\"20px\""));

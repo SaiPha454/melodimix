@@ -8,6 +8,7 @@
 #include <QDir>
 #include<QStandardPaths>
 #include "playbutton.h"
+#include "importfolder.h"
 
  MusicEventHandler::MusicEventHandler(QMediaPlayer *p_player, PlayButton *p_play_btn){
     player = p_player;
@@ -29,15 +30,46 @@ void MusicEventHandler::onMusicItemClicked(QListWidgetItem *item){
         player->play();
         playbutton->setPixmap(pausePixel.scaled(21, 21, Qt::KeepAspectRatio));
 
-        if(prevMusicItem != nullptr){
-            prevMusicItem->setStyleSheet("background:black;");
-        }
-        prevMusicItem = music_item->Item;
-        prevMusicItem->setStyleSheet("background-color:rgb(37,130,37);");
+        music_item->Item->setStyleSheet("background-color:rgb(37,130,37);");
         *currentSongIndex = music_item->id;
     }
 }
 
+
 void MusicEventHandler::setCurrentSongIndex(int *index){
     currentSongIndex = index;
+}
+
+void MusicEventHandler::setMusicItemActive(QListWidgetItem *item) {
+
+
+    MusicItem *musicItem = dynamic_cast<MusicItem*>(item);
+    musicItem->setActive();
+}
+
+void MusicEventHandler::setMusicItemUnActive(QListWidgetItem *item) {
+
+
+    MusicItem *musicItem = dynamic_cast<MusicItem*>(item);
+    musicItem->setUnActive();
+}
+
+void MusicEventHandler::playAt(QMediaPlayer *player, QStringList song_filenames, int index){
+
+
+    QString filename = song_filenames[index];
+    QString songFilePath = ImportFolder::getHomePath() + "/" + filename;
+    player->setSource(QUrl::fromLocalFile(songFilePath));
+    player->play();
+
+    playbutton->setPixmap(pausePixel.scaled(21, 21, Qt::KeepAspectRatio));
+
+}
+
+void MusicEventHandler::onSetPlayerPostion(qint64 value) {
+
+    // qint64 duration = player->duration();
+    // qint64 position = value * duration / 99;
+    player->setPosition(value);
+
 }

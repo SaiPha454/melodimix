@@ -6,7 +6,7 @@
 #include <QFileDialog>
 #include <QStringList>
 
-ImportFolder::ImportFolder(const QString foldername) {
+void ImportFolder::create(const QString foldername) {
 
     QString deskoplocation = QStandardPaths::writableLocation(QStandardPaths::DesktopLocation);
     QDir desktopDir(deskoplocation);

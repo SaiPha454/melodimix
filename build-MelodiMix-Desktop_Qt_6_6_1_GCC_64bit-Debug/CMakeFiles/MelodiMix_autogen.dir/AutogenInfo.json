@@ -519,6 +519,12 @@
 			null
 		],
 		[
+			"/home/sai/Desktop/C++/MelodiMix/MelodiMix/progressbar.h",
+			"MU",
+			"EWIEGA46WW/moc_progressbar.cpp",
+			null
+		],
+		[
 			"/home/sai/Desktop/C++/MelodiMix/MelodiMix/removeablemusicitem.h",
 			"MU",
 			"EWIEGA46WW/moc_removeablemusicitem.cpp",
@@ -629,6 +635,11 @@
 		],
 		[
 			"/home/sai/Desktop/C++/MelodiMix/MelodiMix/prevbutton.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/sai/Desktop/C++/MelodiMix/MelodiMix/progressbar.cpp",
 			"MU",
 			null
 		],

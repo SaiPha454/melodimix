@@ -4,6 +4,7 @@
 #include<QWidget>
 #include "importfolder.h"
 #include "musicitem.h"
+#include "musiceventhandler.h"
 
 NextButton::NextButton(QWidget *parent) : ClickableLabel(parent) {
 
@@ -17,9 +18,7 @@ void NextButton::setCurrentSongIndex(int *index){
 }
 
 
-void NextButton::setSongList(QStringList list){
-    songList= list;
-}
+
 
 void NextButton::setPlayer(QMediaPlayer *p_player){
     player= p_player;
@@ -31,29 +30,21 @@ void NextButton::setList(QListWidget *p_list){
 
 void NextButton::onClick() {
 
-    if(player->playbackState()  != QMediaPlayer::PlayingState ) {
+    if(*currentSongIndex == -1 ) {
         return;
     }
 
-    MusicItem *prevmusic_item = dynamic_cast<MusicItem*>(list->item(*currentSongIndex));
-    // MusicItem *musicItem = dynamic_cast<MusicItem*>(list[*currentSongIndex]);
-    prevmusic_item->setUnActive();
+    MusicEventHandler::setMusicItemUnActive(list->item(*currentSongIndex));
 
-    if(*currentSongIndex >= songList.length()-1){
+    if(*currentSongIndex >= list->count() -1){
         *currentSongIndex = 0;
     }else{
 
         *currentSongIndex +=1;
     }
 
-
-    QString filename = songList[*currentSongIndex];
-    qDebug() << songList[*currentSongIndex];
-    QString songFilePath = ImportFolder::getHomePath() + "/" + filename;
-    player->setSource(QUrl::fromLocalFile(songFilePath));
-    player->play();
-
-   MusicItem *music_item = dynamic_cast<MusicItem*>(list->item(*currentSongIndex));
-    music_item->setActive();
+    MusicEventHandler::setMusicItemActive(list->item(*currentSongIndex));
 
 }
+
+
