@@ -219,7 +219,7 @@ public:
         progressbar->setTabletTracking(true);
         progressbar->setFocusPolicy(Qt::WheelFocus);
         progressbar->setAcceptDrops(true);
-        progressbar->setAutoFillBackground(true);
+        progressbar->setAutoFillBackground(false);
         progressbar->setStyleSheet(QString::fromUtf8("background-color: \"green\";\n"
 "border:\"none\";"));
         progressbar->setPageStep(0);
@@ -299,7 +299,7 @@ public:
 #endif // QT_CONFIG(accessibility)
         pushButton->setText(QCoreApplication::translate("MelodiMix", "Search", nullptr));
         player_icon->setText(QString());
-        song_title->setText(QCoreApplication::translate("MelodiMix", "Love in the summer", nullptr));
+        song_title->setText(QString());
         label_2->setText(QCoreApplication::translate("MelodiMix", "Search", nullptr));
         label_3->setText(QCoreApplication::translate("MelodiMix", "Fav Page", nullptr));
         import_page_header->setText(QCoreApplication::translate("MelodiMix", "Import song files", nullptr));

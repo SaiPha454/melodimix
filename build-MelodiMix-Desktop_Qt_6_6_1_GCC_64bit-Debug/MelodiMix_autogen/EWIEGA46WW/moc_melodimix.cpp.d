@@ -1,7 +1,9 @@
 /home/sai/Desktop/C++/MelodiMix/build-MelodiMix-Desktop_Qt_6_6_1_GCC_64bit-Debug/MelodiMix_autogen/EWIEGA46WW/moc_melodimix.cpp: /home/sai/Desktop/C++/MelodiMix/MelodiMix/melodimix.h \
   /home/sai/Desktop/C++/MelodiMix/build-MelodiMix-Desktop_Qt_6_6_1_GCC_64bit-Debug/MelodiMix_autogen/moc_predefs.h \
   /home/sai/Desktop/C++/MelodiMix/MelodiMix/clickablelabel.h \
+  /home/sai/Desktop/C++/MelodiMix/MelodiMix/favbutton.h \
   /home/sai/Desktop/C++/MelodiMix/MelodiMix/musiceventhandler.h \
+  /home/sai/Desktop/C++/MelodiMix/MelodiMix/musicstore.h \
   /home/sai/Desktop/C++/MelodiMix/MelodiMix/playbutton.h \
   /home/sai/Desktop/C++/MelodiMix/MelodiMix/progressbar.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/QObject \
@@ -169,6 +171,12 @@
   /home/sai/Qt/6.8.0/gcc_64/include/QtMultimedia/qtmultimedia-config.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtMultimedia/qtmultimediaexports.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtMultimedia/qtmultimediaglobal.h \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtSql/QSql \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtSql/QSqlDatabase \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtSql/qsqldatabase.h \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtSql/qtsql-config.h \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtSql/qtsqlexports.h \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtSql/qtsqlglobal.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/QLabel \
   /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/QListWidgetItem \
   /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/QMainWindow \

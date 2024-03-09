@@ -16,14 +16,15 @@
 #include "progressbar.h"
 #include<QAudioOutput>
 #include <QMediaPlayer>
-
+#include "favbutton.h"
+#include "musicstore.h"
 
 MelodiMix::MelodiMix(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MelodiMix)
 {
     ui->setupUi(this);
-
+    musicStore = new MusicStore("melodimix.db", "music");
 
     set_app_logo();
 
@@ -42,11 +43,15 @@ MelodiMix::MelodiMix(QWidget *parent)
     //setup player frame
     ui->player_frame->setParent(ui->Pages->widget(0));
     playbutton = new PlayButton(ui->player_frame, player);
-    playbutton->setGeometry(410,30,32,32);
+    playbutton->setGeometry(390,30,32,32);
     PrevButton *prevbutton = new PrevButton(ui->player_frame);
-    prevbutton->setGeometry(350,30,32,32);
+    prevbutton->setGeometry(330,30,32,32);
     NextButton *nextbutton = new NextButton(ui->player_frame);
-    nextbutton->setGeometry(460,30,32,32);
+    nextbutton->setGeometry(450,30,32,32);
+
+
+    favbutton = new FavButton(ui->player_frame);
+    favbutton->setGeometry(520,30,32,32);
 
 
     //load music list
@@ -79,11 +84,16 @@ MelodiMix::MelodiMix(QWidget *parent)
     connect(nextbutton, &NextButton::clicked, this, &MelodiMix::skip );
     connect(prevbutton, &PrevButton::clicked, this, &MelodiMix::skip );
 
+    connect(favbutton, &FavButton::clicked, this, &MelodiMix::on_add_to_fav_btn_clciked);
+
 }
 
 MelodiMix::~MelodiMix()
 {
     delete ui;
+    if(musicStore != nullptr){
+        musicStore->close();
+    }
 }
 
 
@@ -209,7 +219,7 @@ void MelodiMix::on_import_btn_clicked()
     ui->imported_files_label->setText(QString::number(filenames.length()) + " files were imported");
     for(QString &filename : filenames) {
 
-        qDebug() << filename;
+        musicStore->add(filename);
         RemoveableMusicItem *item =  new RemoveableMusicItem( filename, filename, ui->imported_songs_list);
         ui->imported_songs_list->insertItem(0,item);
         songs_filenames.insert(0, filename );
@@ -232,7 +242,8 @@ void MelodiMix::onMusicItemClicked(QListWidgetItem *item){
 void MelodiMix::load_music(){
 
     ui->music_list->clear();
-    songs_filenames = ImportFolder::load();
+    // songs_filenames = ImportFolder::load();
+    songs_filenames = musicStore->loadAll();
     ui->music_list->setStyleSheet("QListWidget::item { border-bottom: 1px solid white; }");
 
     for(int i=0;i<songs_filenames.length(); i++) {
@@ -255,7 +266,14 @@ void MelodiMix::skip(){
 
 }
 
+void MelodiMix::on_add_to_fav_btn_clciked() {
 
+    if(*currentSongIndex == -1){
+        return;
+    }
+    musicStore->add(songs_filenames[*currentSongIndex]);
+    // favbutton->addToFav(songs_filenames[*currentSongIndex]);
+}
 
 void MelodiMix::set_app_logo(){
 

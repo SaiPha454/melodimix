@@ -502,7 +502,7 @@ border-radius:40;</string>
         <string notr="true">color: white;</string>
        </property>
        <property name="text">
-        <string>Love in the summer</string>
+        <string/>
        </property>
       </widget>
       <widget class="QSlider" name="progressbar">
@@ -548,7 +548,7 @@ border-radius:40;</string>
         <bool>true</bool>
        </property>
        <property name="autoFillBackground">
-        <bool>true</bool>
+        <bool>false</bool>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: &quot;green&quot;;

@@ -450,6 +450,41 @@
 		"/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Multimedia/Qt6QGstreamerMediaPluginTargets.cmake",
 		"/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Multimedia/Qt6QGstreamerMediaPluginTargets-relwithdebinfo.cmake",
 		"/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Multimedia/Qt6QGstreamerMediaPluginAdditionalTargetInfo.cmake",
+		"/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Sql/Qt6SqlConfigVersion.cmake",
+		"/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Sql/Qt6SqlConfigVersionImpl.cmake",
+		"/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Sql/Qt6SqlConfig.cmake",
+		"/home/sai/Qt/Tools/CMake/share/cmake-3.27/Modules/CMakeFindDependencyMacro.cmake",
+		"/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Sql/Qt6SqlDependencies.cmake",
+		"/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Sql/Qt6SqlTargets.cmake",
+		"/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Sql/Qt6SqlTargets-relwithdebinfo.cmake",
+		"/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Sql/Qt6SqlAdditionalTargetInfo.cmake",
+		"/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Sql/Qt6SqlVersionlessTargets.cmake",
+		"/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Sql/Qt6SqlPlugins.cmake",
+		"/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Sql/Qt6QMYSQLDriverPluginConfig.cmake",
+		"/home/sai/Qt/Tools/CMake/share/cmake-3.27/Modules/CMakeFindDependencyMacro.cmake",
+		"/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Sql/Qt6QMYSQLDriverPluginTargets.cmake",
+		"/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Sql/Qt6QMYSQLDriverPluginTargets-relwithdebinfo.cmake",
+		"/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Sql/Qt6QMYSQLDriverPluginAdditionalTargetInfo.cmake",
+		"/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Sql/Qt6QMimerSQLDriverPluginConfig.cmake",
+		"/home/sai/Qt/Tools/CMake/share/cmake-3.27/Modules/CMakeFindDependencyMacro.cmake",
+		"/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Sql/Qt6QMimerSQLDriverPluginTargets.cmake",
+		"/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Sql/Qt6QMimerSQLDriverPluginTargets-relwithdebinfo.cmake",
+		"/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Sql/Qt6QMimerSQLDriverPluginAdditionalTargetInfo.cmake",
+		"/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Sql/Qt6QODBCDriverPluginConfig.cmake",
+		"/home/sai/Qt/Tools/CMake/share/cmake-3.27/Modules/CMakeFindDependencyMacro.cmake",
+		"/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Sql/Qt6QODBCDriverPluginTargets.cmake",
+		"/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Sql/Qt6QODBCDriverPluginTargets-relwithdebinfo.cmake",
+		"/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Sql/Qt6QODBCDriverPluginAdditionalTargetInfo.cmake",
+		"/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginConfig.cmake",
+		"/home/sai/Qt/Tools/CMake/share/cmake-3.27/Modules/CMakeFindDependencyMacro.cmake",
+		"/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginTargets.cmake",
+		"/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginTargets-relwithdebinfo.cmake",
+		"/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginAdditionalTargetInfo.cmake",
+		"/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginConfig.cmake",
+		"/home/sai/Qt/Tools/CMake/share/cmake-3.27/Modules/CMakeFindDependencyMacro.cmake",
+		"/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginTargets.cmake",
+		"/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginTargets-relwithdebinfo.cmake",
+		"/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginAdditionalTargetInfo.cmake",
 		"/home/sai/Qt/Tools/CMake/share/cmake-3.27/Modules/GNUInstallDirs.cmake",
 		"/home/sai/Desktop/C++/MelodiMix/MelodiMix/Resources.qrc"
 	],
@@ -501,6 +536,12 @@
 			null
 		],
 		[
+			"/home/sai/Desktop/C++/MelodiMix/MelodiMix/musicstore.h",
+			"MU",
+			"EWIEGA46WW/moc_musicstore.cpp",
+			null
+		],
+		[
 			"/home/sai/Desktop/C++/MelodiMix/MelodiMix/nextbutton.h",
 			"MU",
 			"EWIEGA46WW/moc_nextbutton.cpp",
@@ -540,6 +581,7 @@
 		"QT_GUI_LIB",
 		"QT_MULTIMEDIA_LIB",
 		"QT_NETWORK_LIB",
+		"QT_SQL_LIB",
 		"QT_WIDGETS_LIB"
 	],
 	"MOC_DEPEND_FILTERS" : 
@@ -558,6 +600,7 @@
 		"/home/sai/Qt/6.8.0/gcc_64/include/QtGui",
 		"/home/sai/Qt/6.8.0/gcc_64/include/QtMultimedia",
 		"/home/sai/Qt/6.8.0/gcc_64/include/QtNetwork",
+		"/home/sai/Qt/6.8.0/gcc_64/include/QtSql",
 		"/usr/include",
 		"/usr/include/c++/11",
 		"/usr/include/x86_64-linux-gnu/c++/11",
@@ -623,6 +666,11 @@
 			null
 		],
 		[ "/home/sai/Desktop/C++/MelodiMix/MelodiMix/musicitem.cpp", "MU", null ],
+		[
+			"/home/sai/Desktop/C++/MelodiMix/MelodiMix/musicstore.cpp",
+			"MU",
+			null
+		],
 		[
 			"/home/sai/Desktop/C++/MelodiMix/MelodiMix/nextbutton.cpp",
 			"MU",

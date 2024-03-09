@@ -16,6 +16,8 @@ MelodiMix_autogen/timestamp: \
 	/home/sai/Desktop/C++/MelodiMix/MelodiMix/musiceventhandler.h \
 	/home/sai/Desktop/C++/MelodiMix/MelodiMix/musicitem.cpp \
 	/home/sai/Desktop/C++/MelodiMix/MelodiMix/musicitem.h \
+	/home/sai/Desktop/C++/MelodiMix/MelodiMix/musicstore.cpp \
+	/home/sai/Desktop/C++/MelodiMix/MelodiMix/musicstore.h \
 	/home/sai/Desktop/C++/MelodiMix/MelodiMix/nextbutton.cpp \
 	/home/sai/Desktop/C++/MelodiMix/MelodiMix/nextbutton.h \
 	/home/sai/Desktop/C++/MelodiMix/MelodiMix/playbutton.cpp \
@@ -195,6 +197,12 @@ MelodiMix_autogen/timestamp: \
 	/home/sai/Qt/6.8.0/gcc_64/include/QtMultimedia/qtmultimedia-config.h \
 	/home/sai/Qt/6.8.0/gcc_64/include/QtMultimedia/qtmultimediaexports.h \
 	/home/sai/Qt/6.8.0/gcc_64/include/QtMultimedia/qtmultimediaglobal.h \
+	/home/sai/Qt/6.8.0/gcc_64/include/QtSql/QSql \
+	/home/sai/Qt/6.8.0/gcc_64/include/QtSql/QSqlDatabase \
+	/home/sai/Qt/6.8.0/gcc_64/include/QtSql/qsqldatabase.h \
+	/home/sai/Qt/6.8.0/gcc_64/include/QtSql/qtsql-config.h \
+	/home/sai/Qt/6.8.0/gcc_64/include/QtSql/qtsqlexports.h \
+	/home/sai/Qt/6.8.0/gcc_64/include/QtSql/qtsqlglobal.h \
 	/home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/QLabel \
 	/home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/QListWidgetItem \
 	/home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/QMainWindow \
@@ -501,6 +509,35 @@ MelodiMix_autogen/timestamp: \
 	/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginConfig.cmake \
 	/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginTargets-relwithdebinfo.cmake \
 	/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginTargets.cmake \
+	/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Sql/Qt6QMYSQLDriverPluginAdditionalTargetInfo.cmake \
+	/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Sql/Qt6QMYSQLDriverPluginConfig.cmake \
+	/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Sql/Qt6QMYSQLDriverPluginTargets-relwithdebinfo.cmake \
+	/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Sql/Qt6QMYSQLDriverPluginTargets.cmake \
+	/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Sql/Qt6QMimerSQLDriverPluginAdditionalTargetInfo.cmake \
+	/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Sql/Qt6QMimerSQLDriverPluginConfig.cmake \
+	/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Sql/Qt6QMimerSQLDriverPluginTargets-relwithdebinfo.cmake \
+	/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Sql/Qt6QMimerSQLDriverPluginTargets.cmake \
+	/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Sql/Qt6QODBCDriverPluginAdditionalTargetInfo.cmake \
+	/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Sql/Qt6QODBCDriverPluginConfig.cmake \
+	/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Sql/Qt6QODBCDriverPluginTargets-relwithdebinfo.cmake \
+	/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Sql/Qt6QODBCDriverPluginTargets.cmake \
+	/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginAdditionalTargetInfo.cmake \
+	/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginConfig.cmake \
+	/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginTargets-relwithdebinfo.cmake \
+	/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginTargets.cmake \
+	/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginAdditionalTargetInfo.cmake \
+	/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginConfig.cmake \
+	/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginTargets-relwithdebinfo.cmake \
+	/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Sql/Qt6QSQLiteDriverPluginTargets.cmake \
+	/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Sql/Qt6SqlAdditionalTargetInfo.cmake \
+	/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Sql/Qt6SqlConfig.cmake \
+	/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Sql/Qt6SqlConfigVersion.cmake \
+	/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Sql/Qt6SqlConfigVersionImpl.cmake \
+	/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Sql/Qt6SqlDependencies.cmake \
+	/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Sql/Qt6SqlPlugins.cmake \
+	/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Sql/Qt6SqlTargets-relwithdebinfo.cmake \
+	/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Sql/Qt6SqlTargets.cmake \
+	/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Sql/Qt6SqlVersionlessTargets.cmake \
 	/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Widgets/Qt6WidgetsAdditionalTargetInfo.cmake \
 	/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake \
 	/home/sai/Qt/6.8.0/gcc_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfigVersion.cmake \

@@ -7,7 +7,9 @@
 	"INCLUDE_DIR" : "/home/sai/Desktop/C++/MelodiMix/build-MelodiMix-Desktop_Qt_6_6_1_GCC_64bit-Debug/MelodiMix_autogen/include",
 	"INPUTS" : 
 	[
+		"/home/sai/Desktop/C++/MelodiMix/MelodiMix/img/fav_outlined.png",
 		"/home/sai/Desktop/C++/MelodiMix/MelodiMix/img/delete.png",
+		"/home/sai/Desktop/C++/MelodiMix/MelodiMix/img/fav_filled.png",
 		"/home/sai/Desktop/C++/MelodiMix/MelodiMix/img/music_icon.png",
 		"/home/sai/Desktop/C++/MelodiMix/MelodiMix/img/search.png",
 		"/home/sai/Desktop/C++/MelodiMix/MelodiMix/img/pause.png",

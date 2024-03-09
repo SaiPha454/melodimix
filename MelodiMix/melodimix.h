@@ -12,6 +12,9 @@
 #include "playbutton.h"
 #include "musiceventhandler.h"
 #include "progressbar.h"
+#include "favbutton.h"
+// #include <QtSql/QSqlDatabase>
+#include "musicstore.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -47,6 +50,8 @@ private slots:
     void skip();
     void on_import_btn_clicked();
 
+    void on_add_to_fav_btn_clciked();
+
 
 private:
     Ui::MelodiMix *ui;
@@ -57,6 +62,9 @@ private:
 
     MusicEventHandler *musicandlers;
     ProgressBar *progressbar;
+    FavButton *favbutton;
+
+    MusicStore *musicStore = nullptr;
 
 };
 #endif // MELODIMIX_H

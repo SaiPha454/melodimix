@@ -22,7 +22,6 @@ ProgressBar::ProgressBar(QSlider *slider) {
 
 void ProgressBar::updateProgressbar(qint64 pos){
 
-    qDebug() << pos;
     progressbar->setValue(pos);
 }
 

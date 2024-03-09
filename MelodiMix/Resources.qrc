@@ -11,6 +11,8 @@
         <file>img/next.png</file>
         <file>img/delete.png</file>
         <file>img/play.png</file>
+        <file>img/fav_filled.png</file>
+        <file>img/fav_outlined.png</file>
     </qresource>
     <qresource prefix="/new/prefix1">
         <file>img/play.png</file>

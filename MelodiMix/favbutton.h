@@ -4,12 +4,22 @@
 #include "clickablelabel.h"
 #include <QWidget>
 #include <QString>
-#include <QListWidget>
+#include <QPixmap>
 
-class FavButton
+class FavButton : public ClickableLabel
 {
 public:
-    FavButton();
+    FavButton(QWidget *parent = nullptr);
+
+    void addToFav(QString filename);
+
+public slots:
+    void onClick();
+
+
+private:
+    QPixmap fav_outlined= QPixmap(":/img/img/fav_outlined.png");
+    QPixmap fav_filled = QPixmap(":/img/img/fav_filled.png");
 };
 
 #endif // FAVBUTTON_H

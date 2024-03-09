@@ -68,8 +68,6 @@ void MusicEventHandler::playAt(QMediaPlayer *player, QStringList song_filenames,
 
 void MusicEventHandler::onSetPlayerPostion(qint64 value) {
 
-    // qint64 duration = player->duration();
-    // qint64 position = value * duration / 99;
     player->setPosition(value);
 
 }
