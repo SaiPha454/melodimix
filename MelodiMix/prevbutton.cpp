@@ -31,7 +31,7 @@ void PrevButton::setList(QListWidget *p_list){
 
 void PrevButton::onClick() {
 
-    if(*currentSongIndex == -1 ) {
+    if(*currentSongIndex == -1 || list->count() <= 0 ) {
         return;
     }
 

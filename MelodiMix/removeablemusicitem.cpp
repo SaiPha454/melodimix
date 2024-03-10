@@ -4,11 +4,11 @@
 #include <QWidget>
 #include<QListWidget>
 
-RemoveableMusicItem::RemoveableMusicItem(QString p_title, QString p_id,QListWidget* list)
-    : MusicItem(p_title, p_id, 0) {
+RemoveableMusicItem::RemoveableMusicItem(QString p_title, int p_id,QListWidget* list)
+    : MusicItem(p_title, p_id, 0, false) {
 
     QWidget *btn_frame = new QWidget();
-    button = new DeleteButton(btn_frame, p_id, list);
+    button = new DeleteButton(btn_frame, p_title, list);
     button->setParent(btn_frame);
 
     layout->addWidget(btn_frame);

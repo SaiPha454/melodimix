@@ -16,6 +16,9 @@
 }
 
 void MusicEventHandler::onMusicItemClicked(QListWidgetItem *item){
+
+    qDebug() <<"Music hndler is clicked";
+
     if(item){
 
         MusicItem *music_item = dynamic_cast<MusicItem*>(item);
@@ -31,13 +34,15 @@ void MusicEventHandler::onMusicItemClicked(QListWidgetItem *item){
         playbutton->setPixmap(pausePixel.scaled(21, 21, Qt::KeepAspectRatio));
 
         music_item->Item->setStyleSheet("background-color:rgb(37,130,37);");
-        *currentSongIndex = music_item->id;
+        (*currentSong).id = music_item->id;
+        (*currentSong).index = music_item->index;
+        (*currentSong).type = Enums::Library;
     }
 }
 
 
-void MusicEventHandler::setCurrentSongIndex(int *index){
-    currentSongIndex = index;
+void MusicEventHandler::setCurrentSongIndex(currentPlayItem *currentItem){
+    currentSong = currentItem;
 }
 
 void MusicEventHandler::setMusicItemActive(QListWidgetItem *item) {
@@ -54,10 +59,10 @@ void MusicEventHandler::setMusicItemUnActive(QListWidgetItem *item) {
     musicItem->setUnActive();
 }
 
-void MusicEventHandler::playAt(QMediaPlayer *player, QStringList song_filenames, int index){
+void MusicEventHandler::playAt(QMediaPlayer *player, QString filename){
 
 
-    QString filename = song_filenames[index];
+    // QString filename = song_filenames[index];
     QString songFilePath = ImportFolder::getHomePath() + "/" + filename;
     player->setSource(QUrl::fromLocalFile(songFilePath));
     player->play();

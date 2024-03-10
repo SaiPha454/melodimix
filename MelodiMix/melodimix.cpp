@@ -18,6 +18,7 @@
 #include <QMediaPlayer>
 #include "favbutton.h"
 #include "musicstore.h"
+#include "favmusicitem.h"
 
 MelodiMix::MelodiMix(QWidget *parent)
     : QMainWindow(parent)
@@ -25,8 +26,10 @@ MelodiMix::MelodiMix(QWidget *parent)
 {
     ui->setupUi(this);
     musicStore = new MusicStore("melodimix.db", "music");
-
+    uiPlayList = ui->music_list;
     set_app_logo();
+    currentlyPlayingSong.id=0;
+    currentlyPlayingSong.fav = false;
 
     // create default folder
     ImportFolder::create("MelodiMix");
@@ -44,9 +47,9 @@ MelodiMix::MelodiMix(QWidget *parent)
     ui->player_frame->setParent(ui->Pages->widget(0));
     playbutton = new PlayButton(ui->player_frame, player);
     playbutton->setGeometry(390,30,32,32);
-    PrevButton *prevbutton = new PrevButton(ui->player_frame);
+    prevbutton = new PrevButton(ui->player_frame);
     prevbutton->setGeometry(330,30,32,32);
-    NextButton *nextbutton = new NextButton(ui->player_frame);
+    nextbutton = new NextButton(ui->player_frame, uiPlayList);
     nextbutton->setGeometry(450,30,32,32);
 
 
@@ -56,26 +59,28 @@ MelodiMix::MelodiMix(QWidget *parent)
 
     //load music list
     musicandlers= new MusicEventHandler(player, playbutton);
-    musicandlers->setCurrentSongIndex(currentSongIndex);
+    musicandlers->setCurrentSongIndex(currentSong);
 
     progressbar = new ProgressBar(ui->progressbar);
 
     load_music();
-
+    load_fav_music();
 
 
     nextbutton->setPlayer(player);
-    nextbutton->setList(ui->music_list);
-    nextbutton->setCurrentSongIndex(currentSongIndex);
+    // nextbutton->setList(uiPlayList);
+    nextbutton->setCurrentSongIndex(&(*currentSong).index);
 
     prevbutton->setPlayer(player);
-    prevbutton->setList(ui->music_list);
-    prevbutton->setCurrentSongIndex(currentSongIndex);
-
+    // prevbutton->setList(uiPlayList);
+    prevbutton->setCurrentSongIndex(&(*currentSong).index);
 
     //Events
     connect(ui->music_list, &QListWidget::itemClicked, this, &MelodiMix::onMusicItemClicked);
     connect(ui->music_list, &QListWidget::itemClicked, musicandlers, &MusicEventHandler::onMusicItemClicked);
+
+    connect(ui->fav_list, &QListWidget::itemClicked, this, &MelodiMix::on_fav_music_clicked);
+
 
     connect(player, &QMediaPlayer::positionChanged, progressbar, &ProgressBar::updateProgressbar);
     connect(player, &QMediaPlayer::durationChanged, progressbar, &ProgressBar::updateProgressbarDuration);
@@ -85,6 +90,11 @@ MelodiMix::MelodiMix(QWidget *parent)
     connect(prevbutton, &PrevButton::clicked, this, &MelodiMix::skip );
 
     connect(favbutton, &FavButton::clicked, this, &MelodiMix::on_add_to_fav_btn_clciked);
+
+
+
+
+    connect(this, &MelodiMix::playListChange, this, &MelodiMix::on_playlist_change);
 
 }
 
@@ -180,6 +190,8 @@ void MelodiMix::on_fav_nav_clicked()
             }
         }
     }
+
+    load_fav_music();
 }
 
 void MelodiMix::on_import_nav_clicked()
@@ -219,23 +231,38 @@ void MelodiMix::on_import_btn_clicked()
     ui->imported_files_label->setText(QString::number(filenames.length()) + " files were imported");
     for(QString &filename : filenames) {
 
-        musicStore->add(filename);
-        RemoveableMusicItem *item =  new RemoveableMusicItem( filename, filename, ui->imported_songs_list);
+        int id = musicStore->add(filename);
+        RemoveableMusicItem *item =  new RemoveableMusicItem( filename, 0, ui->imported_songs_list);
         ui->imported_songs_list->insertItem(0,item);
-        songs_filenames.insert(0, filename );
         ui->imported_songs_list->setItemWidget(item, item->Item);
+
+        MusicRecord record;
+        record.id =id;
+        record.title=filename;
+        record.fav = false;
+        library.insert(library.begin(), record);
     }
 }
 
 
 void MelodiMix::onMusicItemClicked(QListWidgetItem *item){
+
+    qDebug() <<"Library song is being clicked";
     if(item){
-        if(*currentSongIndex != -1){
-            MusicItem *prev_music_item = dynamic_cast<MusicItem*>(ui->music_list->item(*currentSongIndex));
+
+        emit playListChange(Enums::Library);
+
+        if((*currentSong).index != -1){
+            MusicItem *prev_music_item = dynamic_cast<MusicItem*>(ui->music_list->item((*currentSong).index));
             prev_music_item->setUnActive();
         }
         MusicItem *music_item = dynamic_cast<MusicItem*>(item);
         ui->song_title->setText(music_item->filename);
+        favbutton->fav(playlist[music_item->index].fav);
+
+        currentlyPlayingSong.id =  playlist[music_item->index].id; //===================>
+        currentlyPlayingSong.fav = playlist[music_item->index].fav;
+
     }
 }
 
@@ -243,13 +270,14 @@ void MelodiMix::load_music(){
 
     ui->music_list->clear();
     // songs_filenames = ImportFolder::load();
-    songs_filenames = musicStore->loadAll();
+    library = musicStore->loadAll();
     ui->music_list->setStyleSheet("QListWidget::item { border-bottom: 1px solid white; }");
 
-    for(int i=0;i<songs_filenames.length(); i++) {
-        QString& filename= songs_filenames[i];
-        MusicItem *item = new MusicItem(filename, filename, i );
-        if(*currentSongIndex !=-1 && *currentSongIndex == i){
+    for(int i=0;i<library.length(); i++) {
+        QString& filename= library[i].title;
+        MusicItem *item = new MusicItem(filename, library[i].id, i , library[i].fav);
+
+        if((*currentSong).type == Enums::Library && (*currentSong).index == i){
             item->setActive();
         }
         ui->music_list->addItem(item);
@@ -257,22 +285,99 @@ void MelodiMix::load_music(){
     }
 }
 
+void MelodiMix::load_fav_music() {
+
+    qDebug() << "All fav music"<< (*currentSong).index;
+    ui->fav_list->clear();
+    fav_songs = musicStore->loadAllFav();
+    ui->fav_list->setStyleSheet("QListWidget::item { border-bottom: 1px solid white; }");
+    int index=0;
+
+    for(MusicRecord &record: fav_songs){
+        FavMusicItem *item= new FavMusicItem(record.title, record.id, index);
+        QObject::connect(item->favbutton, &FavButton::clicked, this, [this, item](){
+
+            musicStore->removeFromFav(item->getId());
+
+            if(item->index <= (*currentSong).index && (*currentSong).type == Enums::Favorite){
+
+                qDebug()<<"Reduce by 1";
+
+                (*currentSong).index = (*currentSong).index <= 0 ? 0 : (*currentSong).index -1;
+                // (*currentSong).id = fav_songs[(*currentSong).index].id;
+                // load_fav_music();
+                // emit playListChange(Enums::Favorite);
+            }
+            load_fav_music();
+            if((*currentSong).type == Enums::Favorite){
+                emit playListChange(Enums::Favorite);
+
+            }
+
+
+            // emit playListChange(Enums::Favorite);
+
+        });
+        if((*currentSong).type == Enums::Favorite && (*currentSong).id == item->id && (*currentSong).index == item->index){
+            item->setActive();
+        }
+
+        ui->fav_list->addItem(item);
+        ui->fav_list->setItemWidget(item, item->Item);
+        index+=1;
+    }
+}
+
 void MelodiMix::skip(){
-    if(*currentSongIndex == -1){
+
+    if((*currentSong).index == -1 || playlist.count() <=0){
         return;
     }
-    ui->song_title->setText(songs_filenames[*currentSongIndex]);
-    musicandlers->playAt(player, songs_filenames, *currentSongIndex);
+
+    qDebug() <<"Current Playlist : ";
+    for(MusicRecord &record: playlist){
+        qDebug() << record.title;;
+    }
+
+    qDebug() <<"Index at ----------------------"<<(*currentSong).index;
+    ui->song_title->setText(playlist[(*currentSong).index].title);
+    musicandlers->playAt(player, playlist[(*currentSong).index].title);
+
+    currentlyPlayingSong.id =  playlist[(*currentSong).index].id; //===================>
+    currentlyPlayingSong.fav = playlist[(*currentSong).index].fav;
+
+
+    favbutton->fav(playlist[(*currentSong).index].fav);
+    (*currentSong).id = playlist[(*currentSong).index].id;
 
 }
 
 void MelodiMix::on_add_to_fav_btn_clciked() {
 
-    if(*currentSongIndex == -1){
+    if((*currentSong).index == -1 || (*currentSong).id != currentlyPlayingSong.id ){
         return;
     }
-    musicStore->add(songs_filenames[*currentSongIndex]);
-    // favbutton->addToFav(songs_filenames[*currentSongIndex]);
+
+    if(!currentlyPlayingSong.fav){
+        //Add to fav list
+        musicStore->addToFav(currentlyPlayingSong.id);
+        playlist[(*currentSong).index].fav = true;
+        favbutton->fav(true);
+        currentlyPlayingSong.fav = true;
+
+    }else {
+
+        musicStore->removeFromFav(currentlyPlayingSong.id);
+        playlist[(*currentSong).index].fav = false;
+        (*currentSong).index -=1;
+        favbutton->fav(false);
+        currentlyPlayingSong.fav = false;
+    }
+    load_fav_music();
+    if((*currentSong).type == Enums::Favorite){
+
+        emit playListChange(Enums::Favorite);
+    }
 }
 
 void MelodiMix::set_app_logo(){
@@ -281,4 +386,52 @@ void MelodiMix::set_app_logo(){
     int width = ui->logo->width();
     int height = ui->logo->height();
     ui->logo->setPixmap(pixel.scaled(width, height, Qt::KeepAspectRatio));
+}
+
+void MelodiMix::on_fav_music_clicked(QListWidgetItem *item){
+
+    qDebug()<<"Fav List Widget is being clicked" << (*currentSong).index;
+
+    if(item){
+
+        emit playListChange(Enums::Favorite);
+
+        if((*currentSong).index != -1 && (*currentSong).index < playlist.size()){
+
+            qDebug() << "Prev Item : "<< (*currentSong).index;
+            FavMusicItem *prev_music_item = dynamic_cast<FavMusicItem*>(ui->fav_list->item((*currentSong).index));
+            prev_music_item->setUnActive();
+
+        }
+        FavMusicItem *fav_item = dynamic_cast<FavMusicItem*>(item);
+        fav_item->setActive();
+        ui->song_title->setText(fav_item->filename);
+        favbutton->fav(true);
+        (*currentSong).index = fav_item->index;
+        (*currentSong).id = fav_item->id;
+        (*currentSong).type = Enums::Favorite;
+        musicandlers->playAt(player, playlist[(*currentSong).index].title);
+
+        currentlyPlayingSong.id =  playlist[(*currentSong).index].id; //===================>
+        currentlyPlayingSong.fav = playlist[(*currentSong).index].fav;
+    }
+
+    // load_fav_music();
+}
+
+
+
+
+void MelodiMix::on_playlist_change(Enums::PlayListType playlistType) {
+    if(playlistType == Enums::Library){
+        nextbutton->setList(ui->music_list);
+        prevbutton->setList(ui->music_list);
+        playlist = library;
+        (*currentSong).type = Enums::Library;
+    }else{
+        nextbutton->setList(ui->fav_list);
+        prevbutton->setList(ui->fav_list);
+        playlist = fav_songs;
+        (*currentSong).type = Enums::Favorite;
+    }
 }

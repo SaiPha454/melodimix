@@ -10,14 +10,20 @@
 
 class MusicItem : public QListWidgetItem
 {
+
 public:
-    MusicItem(const QString& p_title, const QString& filename, int id);
+    MusicItem(const QString& p_title, int id, int idx, bool is_fav);
     QWidget *Item;
     QString filename;
     int id;
+    int index;
+    bool isFav;
 
     void setActive();
     void setUnActive();
+
+    int getId();
+    int getIndex();
 
 protected:
 

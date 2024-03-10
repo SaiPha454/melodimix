@@ -1,14 +1,19 @@
 /home/sai/Desktop/C++/MelodiMix/build-MelodiMix-Desktop_Qt_6_6_1_GCC_64bit-Debug/MelodiMix_autogen/EWIEGA46WW/moc_melodimix.cpp: /home/sai/Desktop/C++/MelodiMix/MelodiMix/melodimix.h \
   /home/sai/Desktop/C++/MelodiMix/build-MelodiMix-Desktop_Qt_6_6_1_GCC_64bit-Debug/MelodiMix_autogen/moc_predefs.h \
   /home/sai/Desktop/C++/MelodiMix/MelodiMix/clickablelabel.h \
+  /home/sai/Desktop/C++/MelodiMix/MelodiMix/enums.h \
   /home/sai/Desktop/C++/MelodiMix/MelodiMix/favbutton.h \
   /home/sai/Desktop/C++/MelodiMix/MelodiMix/musiceventhandler.h \
   /home/sai/Desktop/C++/MelodiMix/MelodiMix/musicstore.h \
+  /home/sai/Desktop/C++/MelodiMix/MelodiMix/nextbutton.h \
   /home/sai/Desktop/C++/MelodiMix/MelodiMix/playbutton.h \
+  /home/sai/Desktop/C++/MelodiMix/MelodiMix/prevbutton.h \
   /home/sai/Desktop/C++/MelodiMix/MelodiMix/progressbar.h \
+  /home/sai/Desktop/C++/MelodiMix/MelodiMix/structs.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/QObject \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/QString \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/QStringList \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtCore/QVector \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/q20functional.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/q20memory.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/q20type_traits.h \
@@ -130,6 +135,7 @@
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qutf8stringview.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qvariant.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qvarlengtharray.h \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qvector.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qversiontagging.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qxptype_traits.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qyieldcpu.h \
@@ -178,6 +184,7 @@
   /home/sai/Qt/6.8.0/gcc_64/include/QtSql/qtsqlexports.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtSql/qtsqlglobal.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/QLabel \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/QListWidget \
   /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/QListWidgetItem \
   /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/QMainWindow \
   /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/QPushButton \

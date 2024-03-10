@@ -31,12 +31,12 @@ public:
     QPushButton *home_nav;
     QLabel *logo;
     QLabel *home_icon;
-    QPushButton *search_nav;
-    QLabel *search_icon;
     QPushButton *fav_nav;
     QLabel *fav_icon;
     QPushButton *import_nav;
     QLabel *import_icon;
+    QPushButton *search_nav;
+    QLabel *search_icon;
     QStackedWidget *Pages;
     QWidget *HomePage;
     QFrame *frame;
@@ -50,7 +50,8 @@ public:
     QWidget *SearchPage;
     QLabel *label_2;
     QWidget *FavPage;
-    QLabel *label_3;
+    QLabel *label;
+    QListWidget *fav_list;
     QWidget *ImportPage;
     QLabel *import_page_header;
     QPushButton *import_btn;
@@ -102,30 +103,16 @@ public:
         home_icon->setMaximumSize(QSize(18, 18));
         home_icon->setStyleSheet(QString::fromUtf8("background-color:\"black\";"));
         home_icon->setPixmap(QPixmap(QString::fromUtf8(":/img/img/home.png")));
-        search_nav = new QPushButton(Nav_frame);
-        search_nav->setObjectName("search_nav");
-        search_nav->setGeometry(QRect(0, 220, 211, 41));
-        search_nav->setFont(font);
-        search_nav->setStyleSheet(QString::fromUtf8("border-bottom: 2px solid #C1C1C1;\n"
-"color:\"white\";"));
-        search_nav->setFlat(true);
-        search_icon = new QLabel(Nav_frame);
-        search_icon->setObjectName("search_icon");
-        search_icon->setGeometry(QRect(30, 230, 18, 18));
-        search_icon->setMinimumSize(QSize(18, 18));
-        search_icon->setMaximumSize(QSize(18, 18));
-        search_icon->setStyleSheet(QString::fromUtf8("background-color:\"black\";"));
-        search_icon->setPixmap(QPixmap(QString::fromUtf8(":/img/img/search.png")));
         fav_nav = new QPushButton(Nav_frame);
         fav_nav->setObjectName("fav_nav");
-        fav_nav->setGeometry(QRect(0, 260, 211, 41));
+        fav_nav->setGeometry(QRect(0, 220, 211, 41));
         fav_nav->setFont(font);
         fav_nav->setStyleSheet(QString::fromUtf8("border-bottom: 2px solid #C1C1C1;\n"
 "color:\"white\";"));
         fav_nav->setFlat(true);
         fav_icon = new QLabel(Nav_frame);
         fav_icon->setObjectName("fav_icon");
-        fav_icon->setGeometry(QRect(30, 270, 18, 18));
+        fav_icon->setGeometry(QRect(30, 230, 18, 18));
         fav_icon->setMinimumSize(QSize(18, 18));
         fav_icon->setMaximumSize(QSize(18, 18));
         fav_icon->setCursor(QCursor(Qt::ArrowCursor));
@@ -146,9 +133,23 @@ public:
         import_icon->setMaximumSize(QSize(18, 18));
         import_icon->setStyleSheet(QString::fromUtf8("background-color:\"black\";"));
         import_icon->setPixmap(QPixmap(QString::fromUtf8(":/img/img/import.png")));
+        search_nav = new QPushButton(Nav_frame);
+        search_nav->setObjectName("search_nav");
+        search_nav->setGeometry(QRect(0, 260, 211, 41));
+        search_nav->setFont(font);
+        search_nav->setStyleSheet(QString::fromUtf8("border-bottom: 2px solid #C1C1C1;\n"
+"color:\"white\";"));
+        search_nav->setFlat(true);
+        search_icon = new QLabel(Nav_frame);
+        search_icon->setObjectName("search_icon");
+        search_icon->setGeometry(QRect(30, 270, 18, 18));
+        search_icon->setMinimumSize(QSize(18, 18));
+        search_icon->setMaximumSize(QSize(18, 18));
+        search_icon->setStyleSheet(QString::fromUtf8("background-color:\"black\";"));
+        search_icon->setPixmap(QPixmap(QString::fromUtf8(":/img/img/search.png")));
         Pages = new QStackedWidget(centralwidget);
         Pages->setObjectName("Pages");
-        Pages->setGeometry(QRect(220, 0, 581, 591));
+        Pages->setGeometry(QRect(230, 0, 581, 591));
         Pages->setAutoFillBackground(false);
         HomePage = new QWidget();
         HomePage->setObjectName("HomePage");
@@ -178,10 +179,10 @@ public:
 "border-radius:\"15px\""));
         music_list = new QListWidget(HomePage);
         music_list->setObjectName("music_list");
-        music_list->setGeometry(QRect(40, 90, 521, 421));
+        music_list->setGeometry(QRect(20, 90, 521, 421));
         player_frame = new QFrame(HomePage);
         player_frame->setObjectName("player_frame");
-        player_frame->setGeometry(QRect(0, 499, 581, 101));
+        player_frame->setGeometry(QRect(-10, 500, 581, 101));
         player_frame->setStyleSheet(QString::fromUtf8("#player_frame{\n"
 "\n"
 "background-color:\"black\";\n"
@@ -207,7 +208,7 @@ public:
         song_title->setStyleSheet(QString::fromUtf8("color: white;"));
         progressbar = new QSlider(player_frame);
         progressbar->setObjectName("progressbar");
-        progressbar->setGeometry(QRect(0, 0, 581, 10));
+        progressbar->setGeometry(QRect(10, 0, 571, 10));
         progressbar->setMinimumSize(QSize(0, 10));
         progressbar->setMaximumSize(QSize(16777215, 10));
         QFont font2;
@@ -240,27 +241,34 @@ public:
         Pages->addWidget(SearchPage);
         FavPage = new QWidget();
         FavPage->setObjectName("FavPage");
-        label_3 = new QLabel(FavPage);
-        label_3->setObjectName("label_3");
-        label_3->setGeometry(QRect(120, 140, 67, 17));
-        label_3->setStyleSheet(QString::fromUtf8("color:\"red\""));
+        label = new QLabel(FavPage);
+        label->setObjectName("label");
+        label->setGeometry(QRect(10, 30, 241, 31));
+        QFont font3;
+        font3.setPointSize(16);
+        label->setFont(font3);
+        label->setStyleSheet(QString::fromUtf8("color:\"white\";\n"
+""));
+        fav_list = new QListWidget(FavPage);
+        fav_list->setObjectName("fav_list");
+        fav_list->setGeometry(QRect(10, 70, 541, 491));
         Pages->addWidget(FavPage);
         ImportPage = new QWidget();
         ImportPage->setObjectName("ImportPage");
         import_page_header = new QLabel(ImportPage);
         import_page_header->setObjectName("import_page_header");
         import_page_header->setGeometry(QRect(210, 30, 201, 41));
-        QFont font3;
-        font3.setPointSize(17);
-        import_page_header->setFont(font3);
+        QFont font4;
+        font4.setPointSize(17);
+        import_page_header->setFont(font4);
         import_page_header->setStyleSheet(QString::fromUtf8("color:\"white\""));
         import_btn = new QPushButton(ImportPage);
         import_btn->setObjectName("import_btn");
         import_btn->setGeometry(QRect(140, 110, 331, 41));
-        QFont font4;
-        font4.setPointSize(15);
-        font4.setBold(true);
-        import_btn->setFont(font4);
+        QFont font5;
+        font5.setPointSize(15);
+        font5.setBold(true);
+        import_btn->setFont(font5);
         import_btn->setStyleSheet(QString::fromUtf8("color:\"black\";\n"
 "background-color:\"white\";\n"
 "border-radius:\"20px\""));
@@ -288,12 +296,12 @@ public:
         home_nav->setText(QCoreApplication::translate("MelodiMix", "Home", nullptr));
         logo->setText(QString());
         home_icon->setText(QString());
-        search_nav->setText(QCoreApplication::translate("MelodiMix", "Search", nullptr));
-        search_icon->setText(QString());
         fav_nav->setText(QCoreApplication::translate("MelodiMix", "Favourites", nullptr));
         fav_icon->setText(QString());
         import_nav->setText(QCoreApplication::translate("MelodiMix", "Import", nullptr));
         import_icon->setText(QString());
+        search_nav->setText(QCoreApplication::translate("MelodiMix", "Library", nullptr));
+        search_icon->setText(QString());
 #if QT_CONFIG(accessibility)
         textEdit->setAccessibleDescription(QCoreApplication::translate("MelodiMix", "Enter song name", nullptr));
 #endif // QT_CONFIG(accessibility)
@@ -301,7 +309,7 @@ public:
         player_icon->setText(QString());
         song_title->setText(QString());
         label_2->setText(QCoreApplication::translate("MelodiMix", "Search", nullptr));
-        label_3->setText(QCoreApplication::translate("MelodiMix", "Fav Page", nullptr));
+        label->setText(QCoreApplication::translate("MelodiMix", "Favorite", nullptr));
         import_page_header->setText(QCoreApplication::translate("MelodiMix", "Import song files", nullptr));
         import_btn->setText(QCoreApplication::translate("MelodiMix", "+ Import ", nullptr));
         imported_files_label->setText(QString());

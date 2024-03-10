@@ -4,19 +4,25 @@
 #include <QtSql/QSqlDatabase>
 #include <QSql>
 #include <QStringList>
+#include <QVector>
+#include "structs.h"
 
 class MusicStore
 {
 public:
     MusicStore(QString dbname, QString tablename);
 
-    void add(QString filename);
+    int add(QString filename);
     void remove(QString filename);
 
     void close();
 
-    QStringList loadAll();
+    QVector<MusicRecord> loadAll();
 
+    QVector<MusicRecord> loadAllFav();
+
+    void addToFav(int id);
+    void removeFromFav(int id);
 
 private:
     QSqlDatabase db;

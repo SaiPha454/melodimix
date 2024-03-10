@@ -51,6 +51,9 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         progressbar.h progressbar.cpp
         favbutton.h favbutton.cpp
         musicstore.h musicstore.cpp
+        structs.h structs.cpp
+        favmusicitem.h favmusicitem.cpp
+        enums.h enums.cpp
 
     )
 # Define target properties for Android with Qt 6 as:

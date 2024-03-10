@@ -8,6 +8,7 @@
 #include "playbutton.h"
 #include <QPixmap>
 #include<QWidget>
+#include "structs.h"
 
 class MusicEventHandler : public QObject
 {
@@ -16,8 +17,8 @@ class MusicEventHandler : public QObject
 public:
     MusicEventHandler(QMediaPlayer *player, PlayButton* p_play_btn);
 
-    void setCurrentSongIndex(int *index);
-    void playAt(QMediaPlayer *player, QStringList song_filenames, int index);
+    void setCurrentSongIndex(currentPlayItem *item);
+    void playAt(QMediaPlayer *player, QString filename);
     static void setMusicItemActive(QListWidgetItem *item);
     static void setMusicItemUnActive(QListWidgetItem *item);
 
@@ -32,7 +33,8 @@ private:
     QPixmap pausePixel= QPixmap(":/img/img/pause.png");
     QPixmap playPixel= QPixmap(":/img/img/play.png");
     QWidget *prevMusicItem = nullptr;
-    int *currentSongIndex;
+    // int *currentSongIndex;
+    currentPlayItem *currentSong;
 
 };
 

@@ -15,6 +15,11 @@
 #include "favbutton.h"
 // #include <QtSql/QSqlDatabase>
 #include "musicstore.h"
+#include <QVector>
+#include "structs.h"
+#include "nextbutton.h"
+#include "prevbutton.h"
+#include "enums.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -31,11 +36,26 @@ public:
     ~MelodiMix();
     std::vector<QPushButton*> navs;
     std::vector<QLabel*> nav_icons;
-    QStringList songs_filenames;
+    // QVector<MusicRecord> songs_filenames;
+    QVector<MusicRecord> playlist;
+    QVector<MusicRecord> library;
+    QVector<MusicRecord> fav_songs;
+    MusicRecord currentlyPlayingSong;
+
+
+    // QStringList songs_filenames;
 
     void set_app_logo();
 
     void load_music();
+
+    void load_fav_music();
+
+
+    Q_ENUM(Enums::PlayListType)
+
+signals:
+    void playListChange(Enums::PlayListType);
 
 private slots:
     void on_home_nav_clicked();
@@ -51,11 +71,16 @@ private slots:
     void on_import_btn_clicked();
 
     void on_add_to_fav_btn_clciked();
+    void on_fav_music_clicked(QListWidgetItem *item);
+
+    void on_playlist_change(Enums::PlayListType);
+
 
 
 private:
     Ui::MelodiMix *ui;
-    int *currentSongIndex = new int(-1);
+    // int *currentSongIndex = new int(-1);
+    currentPlayItem *currentSong = new currentPlayItem {-1, -1, Enums::Library};
     QMediaPlayer *player;
     QAudioOutput *audioOutput;
     PlayButton *playbutton;
@@ -65,6 +90,9 @@ private:
     FavButton *favbutton;
 
     MusicStore *musicStore = nullptr;
+    PrevButton *prevbutton;
+    NextButton *nextbutton;
+    QListWidget *uiPlayList;
 
 };
 #endif // MELODIMIX_H

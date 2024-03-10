@@ -506,9 +506,21 @@
 			null
 		],
 		[
+			"/home/sai/Desktop/C++/MelodiMix/MelodiMix/enums.h",
+			"MU",
+			"EWIEGA46WW/moc_enums.cpp",
+			null
+		],
+		[
 			"/home/sai/Desktop/C++/MelodiMix/MelodiMix/favbutton.h",
 			"MU",
 			"EWIEGA46WW/moc_favbutton.cpp",
+			null
+		],
+		[
+			"/home/sai/Desktop/C++/MelodiMix/MelodiMix/favmusicitem.h",
+			"MU",
+			"EWIEGA46WW/moc_favmusicitem.cpp",
 			null
 		],
 		[
@@ -569,6 +581,12 @@
 			"/home/sai/Desktop/C++/MelodiMix/MelodiMix/removeablemusicitem.h",
 			"MU",
 			"EWIEGA46WW/moc_removeablemusicitem.cpp",
+			null
+		],
+		[
+			"/home/sai/Desktop/C++/MelodiMix/MelodiMix/structs.h",
+			"MU",
+			"EWIEGA46WW/moc_structs.cpp",
 			null
 		]
 	],
@@ -652,7 +670,13 @@
 			"MU",
 			null
 		],
+		[ "/home/sai/Desktop/C++/MelodiMix/MelodiMix/enums.cpp", "MU", null ],
 		[ "/home/sai/Desktop/C++/MelodiMix/MelodiMix/favbutton.cpp", "MU", null ],
+		[
+			"/home/sai/Desktop/C++/MelodiMix/MelodiMix/favmusicitem.cpp",
+			"MU",
+			null
+		],
 		[
 			"/home/sai/Desktop/C++/MelodiMix/MelodiMix/importfolder.cpp",
 			"MU",
@@ -695,7 +719,8 @@
 			"/home/sai/Desktop/C++/MelodiMix/MelodiMix/removeablemusicitem.cpp",
 			"MU",
 			null
-		]
+		],
+		[ "/home/sai/Desktop/C++/MelodiMix/MelodiMix/structs.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],

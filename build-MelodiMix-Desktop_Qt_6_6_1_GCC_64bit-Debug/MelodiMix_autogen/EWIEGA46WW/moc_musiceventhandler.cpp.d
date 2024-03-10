@@ -1,7 +1,9 @@
 /home/sai/Desktop/C++/MelodiMix/build-MelodiMix-Desktop_Qt_6_6_1_GCC_64bit-Debug/MelodiMix_autogen/EWIEGA46WW/moc_musiceventhandler.cpp: /home/sai/Desktop/C++/MelodiMix/MelodiMix/musiceventhandler.h \
   /home/sai/Desktop/C++/MelodiMix/build-MelodiMix-Desktop_Qt_6_6_1_GCC_64bit-Debug/MelodiMix_autogen/moc_predefs.h \
   /home/sai/Desktop/C++/MelodiMix/MelodiMix/clickablelabel.h \
+  /home/sai/Desktop/C++/MelodiMix/MelodiMix/enums.h \
   /home/sai/Desktop/C++/MelodiMix/MelodiMix/playbutton.h \
+  /home/sai/Desktop/C++/MelodiMix/MelodiMix/structs.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/QObject \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/QString \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/q20functional.h \

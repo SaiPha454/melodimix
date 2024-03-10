@@ -4,6 +4,8 @@
 #include <QtSql>
 #include <QCoreApplication>
 #include <QStringList>
+#include <QVector>
+#include "structs.h"
 
 MusicStore::MusicStore(QString dbname, QString tablename) {
 
@@ -63,7 +65,7 @@ MusicStore::MusicStore(QString dbname, QString tablename) {
 }
 
 
-void MusicStore::add(QString filename){
+int MusicStore::add(QString filename){
 
 
     QStringList tables = db.tables();
@@ -85,11 +87,13 @@ void MusicStore::add(QString filename){
     if (!insertQuery.exec()) {
         qDebug() << "Failed to insert data:" << insertQuery.lastError().text();
         db.close();
-        return;
+        return 0;
     }
+
 
     qDebug() << "Data inserted successfully.";
     qDebug() <<"Add to store";
+    return insertQuery.lastInsertId().toInt();
 }
 
 
@@ -97,15 +101,70 @@ void MusicStore::remove(QString filename){
     qDebug() <<"Remove from store";
 }
 
-QStringList MusicStore::loadAll() {
-    QStringList records;
+QVector<MusicRecord> MusicStore::loadAll() {
+    QVector<MusicRecord> records;
     QSqlQuery query("SELECT * FROM "+ table);
     while(query.next()) {
-        QString title = query.value("title").toString();
-        records.append(title);
+
+        MusicRecord record;
+        record.title = query.value("title").toString();
+        record.fav = query.value("favorite").toBool();
+        record.id = query.value("id").toInt();
+        records.append(record);
     }
 
     return records;
+}
+
+
+QVector<MusicRecord> MusicStore::loadAllFav() {
+
+    QVector<MusicRecord> records;
+    QSqlQuery query(db);
+    query.prepare("SELECT * FROM "+ table +" WHERE favorite = :fav");
+    query.bindValue(":fav", true);
+    query.exec();
+
+    while(query.next()) {
+
+        MusicRecord record;
+        record.title = query.value("title").toString();
+        record.fav = query.value("favorite").toBool();
+        record.id = query.value("id").toInt();
+        records.append(record);
+    }
+
+    return records;
+}
+
+void MusicStore::addToFav(int id){
+
+    QString queryString = "UPDATE "+ table + " SET favorite = :fav WHERE id = :id";
+    QSqlQuery query(db);
+    query.prepare(queryString);
+    query.bindValue(":fav", true);
+    query.bindValue(":id", id);
+    if(!query.exec()){
+        qDebug() <<"Fail to update" << query.lastError().text();
+        return;
+    }
+
+    qDebug() << "Updated successfully";
+}
+
+void MusicStore::removeFromFav(int id){
+
+    QString queryString = "UPDATE "+ table + " SET favorite = :fav WHERE id = :id";
+    QSqlQuery query(db);
+    query.prepare(queryString);
+    query.bindValue(":fav", false);
+    query.bindValue(":id", id);
+    if(!query.exec()){
+        qDebug() <<"Fail to update" << query.lastError().text();
+        return;
+    }
+
+    qDebug() << "Remove from fav successfully";
 }
 
 void MusicStore::close(){

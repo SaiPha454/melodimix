@@ -5,11 +5,14 @@
 #include <QWidget>
 #include<QPixmap>
 
-MusicItem::MusicItem(const QString& p_title, const QString& p_filename, int p_id)
+MusicItem::MusicItem(const QString& p_title, int p_id, int p_idx, bool is_fav)
     : QListWidgetItem(p_title)
 {
-    filename = p_filename;
+
+    filename = p_title;
     id = p_id;
+    index = p_idx;
+    isFav = is_fav;
     QPixmap mp3_icon(":/img/img/music_icon.png");
 
     Item = new QWidget();
@@ -35,9 +38,26 @@ MusicItem::MusicItem(const QString& p_title, const QString& p_filename, int p_id
 
 void MusicItem::setActive() {
     Item->setStyleSheet("background-color:rgb(37,130,37);");
+     // Item->setStyleSheet("background-color:black");
+    // Item->setStyleSheet("background-color:red;");
 }
 
 void MusicItem::setUnActive() {
     Item->setStyleSheet("background-color:black");
 }
+
+int MusicItem::getId(){
+    return id;
+}
+
+int MusicItem::getIndex(){
+    return index;
+}
+// void MusicItem::unSetFav(){
+//     isFav = false;
+// }
+
+// void MusicItem::isFav(){
+//     return isFav;
+// }
 

@@ -16,7 +16,7 @@
 class RemoveableMusicItem : public MusicItem
 {
 public:
-    RemoveableMusicItem(QString p_title=QString(),  QString p_id=QString(), QListWidget* list=nullptr);
+    RemoveableMusicItem(QString p_title=QString(),  int p_id=0, QListWidget* list=nullptr);
 
 
 protected :

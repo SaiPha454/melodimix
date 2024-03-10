@@ -5,11 +5,13 @@
 #include <QStringList>
 #include <QMediaPlayer>
 #include <QListWidget>
+#include <QVector>
+#include "structs.h"
 
 class NextButton : public ClickableLabel
 {
 public:
-    NextButton(QWidget *parent = nullptr);
+    NextButton(QWidget *parent = nullptr, QListWidget *playlist = nullptr);
 
     void setCurrentSongIndex(int *index=0);
     void setPlayer(QMediaPlayer *player);
@@ -22,6 +24,7 @@ private:
     int *currentSongIndex;
     QMediaPlayer *player;
     QListWidget *list;
+    QListWidget *playlist;
 
 
 public slots:

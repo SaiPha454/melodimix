@@ -5,8 +5,12 @@ MelodiMix_autogen/timestamp: \
   /home/sai/Desktop/C++/MelodiMix/MelodiMix/clickablelabel.h \
   /home/sai/Desktop/C++/MelodiMix/MelodiMix/deletebutton.cpp \
   /home/sai/Desktop/C++/MelodiMix/MelodiMix/deletebutton.h \
+  /home/sai/Desktop/C++/MelodiMix/MelodiMix/enums.cpp \
+  /home/sai/Desktop/C++/MelodiMix/MelodiMix/enums.h \
   /home/sai/Desktop/C++/MelodiMix/MelodiMix/favbutton.cpp \
   /home/sai/Desktop/C++/MelodiMix/MelodiMix/favbutton.h \
+  /home/sai/Desktop/C++/MelodiMix/MelodiMix/favmusicitem.cpp \
+  /home/sai/Desktop/C++/MelodiMix/MelodiMix/favmusicitem.h \
   /home/sai/Desktop/C++/MelodiMix/MelodiMix/importfolder.cpp \
   /home/sai/Desktop/C++/MelodiMix/MelodiMix/importfolder.h \
   /home/sai/Desktop/C++/MelodiMix/MelodiMix/main.cpp \
@@ -29,6 +33,8 @@ MelodiMix_autogen/timestamp: \
   /home/sai/Desktop/C++/MelodiMix/MelodiMix/progressbar.h \
   /home/sai/Desktop/C++/MelodiMix/MelodiMix/removeablemusicitem.cpp \
   /home/sai/Desktop/C++/MelodiMix/MelodiMix/removeablemusicitem.h \
+  /home/sai/Desktop/C++/MelodiMix/MelodiMix/structs.cpp \
+  /home/sai/Desktop/C++/MelodiMix/MelodiMix/structs.h \
   .qtc/package-manager/auto-setup.cmake \
   CMakeFiles/3.27.7/CMakeCXXCompiler.cmake \
   CMakeFiles/3.27.7/CMakeSystem.cmake \
@@ -36,6 +42,7 @@ MelodiMix_autogen/timestamp: \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/QObject \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/QString \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/QStringList \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtCore/QVector \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/q20functional.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/q20memory.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/q20type_traits.h \
@@ -157,6 +164,7 @@ MelodiMix_autogen/timestamp: \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qutf8stringview.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qvariant.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qvarlengtharray.h \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qvector.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qversiontagging.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qxptype_traits.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qyieldcpu.h \
@@ -200,11 +208,15 @@ MelodiMix_autogen/timestamp: \
   /home/sai/Qt/6.8.0/gcc_64/include/QtMultimedia/qtmultimediaglobal.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtSql/QSql \
   /home/sai/Qt/6.8.0/gcc_64/include/QtSql/QSqlDatabase \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtSql/QSqlQuery \
   /home/sai/Qt/6.8.0/gcc_64/include/QtSql/qsqldatabase.h \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtSql/qsqlquery.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtSql/qtsql-config.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtSql/qtsqlexports.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtSql/qtsqlglobal.h \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/QHBoxLayout \
   /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/QLabel \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/QListWidget \
   /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/QListWidgetItem \
   /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/QMainWindow \
   /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/QPushButton \
@@ -216,8 +228,12 @@ MelodiMix_autogen/timestamp: \
   /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/qabstractscrollarea.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/qabstractslider.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/qabstractspinbox.h \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/qboxlayout.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/qframe.h \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/qgridlayout.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/qlabel.h \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/qlayout.h \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/qlayoutitem.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/qlistview.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/qlistwidget.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/qmainwindow.h \

@@ -35,8 +35,10 @@ namespace {
 struct qt_meta_stringdata_CLASSMelodiMixENDCLASS_t {};
 constexpr auto qt_meta_stringdata_CLASSMelodiMixENDCLASS = QtMocHelpers::stringData(
     "MelodiMix",
-    "on_home_nav_clicked",
+    "playListChange",
     "",
+    "Enums::PlayListType",
+    "on_home_nav_clicked",
     "on_search_nav_clicked",
     "on_fav_nav_clicked",
     "on_import_nav_clicked",
@@ -45,7 +47,9 @@ constexpr auto qt_meta_stringdata_CLASSMelodiMixENDCLASS = QtMocHelpers::stringD
     "item",
     "skip",
     "on_import_btn_clicked",
-    "on_add_to_fav_btn_clciked"
+    "on_add_to_fav_btn_clciked",
+    "on_fav_music_clicked",
+    "on_playlist_change"
 );
 #else  // !QT_MOC_HAS_STRINGDATA
 #error "qtmochelpers.h not found or too old."
@@ -58,34 +62,53 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSMelodiMixENDCLASS[] = {
       12,       // revision
        0,       // classname
        0,    0, // classinfo
-       8,   14, // methods
+      11,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       0,       // signalCount
+       1,       // signalCount
+
+ // signals: name, argc, parameters, tag, flags, initial metatype offsets
+       1,    1,   80,    2, 0x06,    1 /* Public */,
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   62,    2, 0x08,    1 /* Private */,
-       3,    0,   63,    2, 0x08,    2 /* Private */,
-       4,    0,   64,    2, 0x08,    3 /* Private */,
-       5,    0,   65,    2, 0x08,    4 /* Private */,
-       6,    1,   66,    2, 0x08,    5 /* Private */,
-       9,    0,   69,    2, 0x08,    7 /* Private */,
-      10,    0,   70,    2, 0x08,    8 /* Private */,
-      11,    0,   71,    2, 0x08,    9 /* Private */,
+       4,    0,   83,    2, 0x08,    3 /* Private */,
+       5,    0,   84,    2, 0x08,    4 /* Private */,
+       6,    0,   85,    2, 0x08,    5 /* Private */,
+       7,    0,   86,    2, 0x08,    6 /* Private */,
+       8,    1,   87,    2, 0x08,    7 /* Private */,
+      11,    0,   90,    2, 0x08,    9 /* Private */,
+      12,    0,   91,    2, 0x08,   10 /* Private */,
+      13,    0,   92,    2, 0x08,   11 /* Private */,
+      14,    1,   93,    2, 0x08,   12 /* Private */,
+      15,    1,   96,    2, 0x08,   14 /* Private */,
+
+ // signals: parameters
+    QMetaType::Void, 0x80000000 | 3,    2,
 
  // slots: parameters
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 7,    8,
+    QMetaType::Void, 0x80000000 | 9,   10,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 9,   10,
+    QMetaType::Void, 0x80000000 | 3,    2,
+
+ // enums: name, alias, flags, count, data
+
+ // enum data: key, value
 
        0        // eod
+};
+
+Q_CONSTINIT static const QMetaObject::SuperData qt_meta_extradata_CLASSMelodiMixENDCLASS[] = {
+    QMetaObject::SuperData::link<Enums::staticMetaObject>(),
+    nullptr
 };
 
 Q_CONSTINIT const QMetaObject MelodiMix::staticMetaObject = { {
@@ -93,10 +116,13 @@ Q_CONSTINIT const QMetaObject MelodiMix::staticMetaObject = { {
     qt_meta_stringdata_CLASSMelodiMixENDCLASS.offsetsAndSizes,
     qt_meta_data_CLASSMelodiMixENDCLASS,
     qt_static_metacall,
-    nullptr,
+    qt_meta_extradata_CLASSMelodiMixENDCLASS,
     qt_incomplete_metaTypeArray<qt_meta_stringdata_CLASSMelodiMixENDCLASS_t,
         // Q_OBJECT / Q_GADGET
         QtPrivate::TypeAndForceComplete<MelodiMix, std::true_type>,
+        // method 'playListChange'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<Enums::PlayListType, std::false_type>,
         // method 'on_home_nav_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_search_nav_clicked'
@@ -113,7 +139,13 @@ Q_CONSTINIT const QMetaObject MelodiMix::staticMetaObject = { {
         // method 'on_import_btn_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_add_to_fav_btn_clciked'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_fav_music_clicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<QListWidgetItem *, std::false_type>,
+        // method 'on_playlist_change'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<Enums::PlayListType, std::false_type>
     >,
     nullptr
 } };
@@ -124,15 +156,27 @@ void MelodiMix::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
         auto *_t = static_cast<MelodiMix *>(_o);
         (void)_t;
         switch (_id) {
-        case 0: _t->on_home_nav_clicked(); break;
-        case 1: _t->on_search_nav_clicked(); break;
-        case 2: _t->on_fav_nav_clicked(); break;
-        case 3: _t->on_import_nav_clicked(); break;
-        case 4: _t->onMusicItemClicked((*reinterpret_cast< std::add_pointer_t<QListWidgetItem*>>(_a[1]))); break;
-        case 5: _t->skip(); break;
-        case 6: _t->on_import_btn_clicked(); break;
-        case 7: _t->on_add_to_fav_btn_clciked(); break;
+        case 0: _t->playListChange((*reinterpret_cast< std::add_pointer_t<Enums::PlayListType>>(_a[1]))); break;
+        case 1: _t->on_home_nav_clicked(); break;
+        case 2: _t->on_search_nav_clicked(); break;
+        case 3: _t->on_fav_nav_clicked(); break;
+        case 4: _t->on_import_nav_clicked(); break;
+        case 5: _t->onMusicItemClicked((*reinterpret_cast< std::add_pointer_t<QListWidgetItem*>>(_a[1]))); break;
+        case 6: _t->skip(); break;
+        case 7: _t->on_import_btn_clicked(); break;
+        case 8: _t->on_add_to_fav_btn_clciked(); break;
+        case 9: _t->on_fav_music_clicked((*reinterpret_cast< std::add_pointer_t<QListWidgetItem*>>(_a[1]))); break;
+        case 10: _t->on_playlist_change((*reinterpret_cast< std::add_pointer_t<Enums::PlayListType>>(_a[1]))); break;
         default: ;
+        }
+    } else if (_c == QMetaObject::IndexOfMethod) {
+        int *result = reinterpret_cast<int *>(_a[0]);
+        {
+            using _t = void (MelodiMix::*)(Enums::PlayListType );
+            if (_t _q_method = &MelodiMix::playListChange; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
+                *result = 0;
+                return;
+            }
         }
     }
 }
@@ -156,14 +200,21 @@ int MelodiMix::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 8)
+        if (_id < 11)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 8;
+        _id -= 11;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 8)
+        if (_id < 11)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 8;
+        _id -= 11;
     }
     return _id;
+}
+
+// SIGNAL 0
+void MelodiMix::playListChange(Enums::PlayListType _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 0, _a);
 }
 QT_WARNING_POP

@@ -142,71 +142,11 @@ background-color:&quot;black&quot;;</string>
       <pixmap resource="Resources.qrc">:/img/img/home.png</pixmap>
      </property>
     </widget>
-    <widget class="QPushButton" name="search_nav">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>220</y>
-       <width>211</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <bold>true</bold>
-       <strikeout>false</strikeout>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border-bottom: 2px solid #C1C1C1;
-color:&quot;white&quot;;</string>
-     </property>
-     <property name="text">
-      <string>Search</string>
-     </property>
-     <property name="default">
-      <bool>false</bool>
-     </property>
-     <property name="flat">
-      <bool>true</bool>
-     </property>
-    </widget>
-    <widget class="QLabel" name="search_icon">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>230</y>
-       <width>18</width>
-       <height>18</height>
-      </rect>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>18</width>
-       <height>18</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>18</width>
-       <height>18</height>
-      </size>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color:&quot;black&quot;;</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="pixmap">
-      <pixmap resource="Resources.qrc">:/img/img/search.png</pixmap>
-     </property>
-    </widget>
     <widget class="QPushButton" name="fav_nav">
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>260</y>
+       <y>220</y>
        <width>211</width>
        <height>41</height>
       </rect>
@@ -232,7 +172,7 @@ color:&quot;white&quot;;</string>
      <property name="geometry">
       <rect>
        <x>30</x>
-       <y>270</y>
+       <y>230</y>
        <width>18</width>
        <height>18</height>
       </rect>
@@ -322,11 +262,71 @@ color:&quot;white&quot;;</string>
       <pixmap resource="Resources.qrc">:/img/img/import.png</pixmap>
      </property>
     </widget>
+    <widget class="QPushButton" name="search_nav">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>260</y>
+       <width>211</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <bold>true</bold>
+       <strikeout>false</strikeout>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-bottom: 2px solid #C1C1C1;
+color:&quot;white&quot;;</string>
+     </property>
+     <property name="text">
+      <string>Library</string>
+     </property>
+     <property name="default">
+      <bool>false</bool>
+     </property>
+     <property name="flat">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="search_icon">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>270</y>
+       <width>18</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>18</width>
+       <height>18</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>18</width>
+       <height>18</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:&quot;black&quot;;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="Resources.qrc">:/img/img/search.png</pixmap>
+     </property>
+    </widget>
    </widget>
    <widget class="QStackedWidget" name="Pages">
     <property name="geometry">
      <rect>
-      <x>220</x>
+      <x>230</x>
       <y>0</y>
       <width>581</width>
       <height>591</height>
@@ -422,7 +422,7 @@ border-radius:&quot;15px&quot;</string>
      <widget class="QListWidget" name="music_list">
       <property name="geometry">
        <rect>
-        <x>40</x>
+        <x>20</x>
         <y>90</y>
         <width>521</width>
         <height>421</height>
@@ -432,8 +432,8 @@ border-radius:&quot;15px&quot;</string>
      <widget class="QFrame" name="player_frame">
       <property name="geometry">
        <rect>
-        <x>0</x>
-        <y>499</y>
+        <x>-10</x>
+        <y>500</y>
         <width>581</width>
         <height>101</height>
        </rect>
@@ -508,9 +508,9 @@ border-radius:40;</string>
       <widget class="QSlider" name="progressbar">
        <property name="geometry">
         <rect>
-         <x>0</x>
+         <x>10</x>
          <y>0</y>
-         <width>581</width>
+         <width>571</width>
          <height>10</height>
         </rect>
        </property>
@@ -600,20 +600,36 @@ border:&quot;none&quot;;</string>
      </widget>
     </widget>
     <widget class="QWidget" name="FavPage">
-     <widget class="QLabel" name="label_3">
+     <widget class="QLabel" name="label">
       <property name="geometry">
        <rect>
-        <x>120</x>
-        <y>140</y>
-        <width>67</width>
-        <height>17</height>
+        <x>10</x>
+        <y>30</y>
+        <width>241</width>
+        <height>31</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
       <property name="styleSheet">
-       <string notr="true">color:&quot;red&quot;</string>
+       <string notr="true">color:&quot;white&quot;;
+</string>
       </property>
       <property name="text">
-       <string>Fav Page</string>
+       <string>Favorite</string>
+      </property>
+     </widget>
+     <widget class="QListWidget" name="fav_list">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>70</y>
+        <width>541</width>
+        <height>491</height>
+       </rect>
       </property>
      </widget>
     </widget>

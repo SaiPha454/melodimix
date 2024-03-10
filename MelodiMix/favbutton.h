@@ -8,10 +8,12 @@
 
 class FavButton : public ClickableLabel
 {
+
 public:
     FavButton(QWidget *parent = nullptr);
 
-    void addToFav(QString filename);
+    void fav(bool isFav);
+    void unfav();
 
 public slots:
     void onClick();
