@@ -9,11 +9,6 @@ FavButton::FavButton(QWidget *parent) : ClickableLabel(parent) {
 }
 
 
-void FavButton::onClick(){
-
-}
-
-
 void FavButton::fav(bool isFav){
     if(isFav){
         this->setPixmap(fav_filled.scaled(32,20, Qt::KeepAspectRatio));

@@ -41,7 +41,7 @@ public:
     QVector<MusicRecord> playlist;
     QVector<MusicRecord> library;
     QVector<MusicRecord> fav_songs;
-    MusicRecord currentlyPlayingSong;
+    PlayingSong currentlyPlayingSong;
 
 
     // QStringList songs_filenames;
@@ -76,13 +76,13 @@ private slots:
 
     void on_playlist_change(Enums::PlayListType);
 
-
-
     void load_library();
+
+    void on_player_end(QMediaPlayer::MediaStatus status);
 
 private:
     Ui::MelodiMix *ui;
-    // int *currentSongIndex = new int(-1);
+
     currentPlayItem *currentSong = new currentPlayItem {-1, -1, Enums::Library};
     QMediaPlayer *player;
     QAudioOutput *audioOutput;
@@ -95,7 +95,6 @@ private:
     MusicStore *musicStore = nullptr;
     PrevButton *prevbutton;
     NextButton *nextbutton;
-    QListWidget *uiPlayList;
 
     ImportFolder *importfolder;
 

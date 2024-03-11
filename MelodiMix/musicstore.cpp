@@ -40,25 +40,6 @@ MusicStore::MusicStore(QString dbname, QString tablename) {
         }
     }else{
         qDebug()<<"Table already exist";
-
-
-
-        query.prepare("SELECT * FROM "+ table); // Provide your table name here
-
-        // Check if the query execution was successful
-        if (!query.exec()) {
-            qDebug() << "Failed to execute query:" << query.lastError().text();
-            return ;
-        }
-
-        // Iterate over the result set and print each row's data
-        while (query.next()) {
-            int id = query.value(0).toInt(); // Assuming the first column is an integer (change index as needed)
-            QString title = query.value(1).toString(); // Assuming the second column is a string (change index as needed)
-            bool favorite = query.value(2).toBool(); // Assuming the third column is a boolean (change index as needed)
-
-            qDebug() << "ID:" << id << "Title:" << title << "Favorite:" << favorite;
-        }
     }
 
     db.commit();

@@ -17,5 +17,4 @@ void ClickableLabel::mousePressEvent(QMouseEvent *event) {
 
 
 void ClickableLabel::onClick() {
-    qDebug()<<"Hello I am Clickable!";
 }

@@ -43,11 +43,11 @@ file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/home/sai/Desktop/C++/MelodiM
 set(OLD_GLOB
   "/home/sai/Desktop/C++/MelodiMix/MelodiMix/CMakeFiles/3.28.3/CompilerIdCXX/CMakeCXXCompilerId.cpp"
   "/home/sai/Desktop/C++/MelodiMix/MelodiMix/clickablelabel.cpp"
-  "/home/sai/Desktop/C++/MelodiMix/MelodiMix/deletebutton.cpp"
   "/home/sai/Desktop/C++/MelodiMix/MelodiMix/enums.cpp"
   "/home/sai/Desktop/C++/MelodiMix/MelodiMix/favbutton.cpp"
   "/home/sai/Desktop/C++/MelodiMix/MelodiMix/favmusicitem.cpp"
   "/home/sai/Desktop/C++/MelodiMix/MelodiMix/importfolder.cpp"
+  "/home/sai/Desktop/C++/MelodiMix/MelodiMix/importmusicitem.cpp"
   "/home/sai/Desktop/C++/MelodiMix/MelodiMix/librarydeletebutton.cpp"
   "/home/sai/Desktop/C++/MelodiMix/MelodiMix/librarymusicitem.cpp"
   "/home/sai/Desktop/C++/MelodiMix/MelodiMix/main.cpp"
@@ -59,7 +59,6 @@ set(OLD_GLOB
   "/home/sai/Desktop/C++/MelodiMix/MelodiMix/playbutton.cpp"
   "/home/sai/Desktop/C++/MelodiMix/MelodiMix/prevbutton.cpp"
   "/home/sai/Desktop/C++/MelodiMix/MelodiMix/progressbar.cpp"
-  "/home/sai/Desktop/C++/MelodiMix/MelodiMix/removeablemusicitem.cpp"
   "/home/sai/Desktop/C++/MelodiMix/MelodiMix/structs.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
@@ -80,12 +79,12 @@ endif()
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/home/sai/Desktop/C++/MelodiMix/MelodiMix/*.h")
 set(OLD_GLOB
   "/home/sai/Desktop/C++/MelodiMix/MelodiMix/clickablelabel.h"
-  "/home/sai/Desktop/C++/MelodiMix/MelodiMix/deletebutton.h"
   "/home/sai/Desktop/C++/MelodiMix/MelodiMix/enums.h"
   "/home/sai/Desktop/C++/MelodiMix/MelodiMix/favbutton.h"
   "/home/sai/Desktop/C++/MelodiMix/MelodiMix/favmusicitem.h"
   "/home/sai/Desktop/C++/MelodiMix/MelodiMix/homepage.h"
   "/home/sai/Desktop/C++/MelodiMix/MelodiMix/importfolder.h"
+  "/home/sai/Desktop/C++/MelodiMix/MelodiMix/importmusicitem.h"
   "/home/sai/Desktop/C++/MelodiMix/MelodiMix/librarydeletebutton.h"
   "/home/sai/Desktop/C++/MelodiMix/MelodiMix/librarymusicitem.h"
   "/home/sai/Desktop/C++/MelodiMix/MelodiMix/melodimix.h"
@@ -96,7 +95,6 @@ set(OLD_GLOB
   "/home/sai/Desktop/C++/MelodiMix/MelodiMix/playbutton.h"
   "/home/sai/Desktop/C++/MelodiMix/MelodiMix/prevbutton.h"
   "/home/sai/Desktop/C++/MelodiMix/MelodiMix/progressbar.h"
-  "/home/sai/Desktop/C++/MelodiMix/MelodiMix/removeablemusicitem.h"
   "/home/sai/Desktop/C++/MelodiMix/MelodiMix/structs.h"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")

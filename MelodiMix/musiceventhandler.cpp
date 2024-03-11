@@ -33,10 +33,10 @@ void MusicEventHandler::onMusicItemClicked(QListWidgetItem *item){
         player->play();
         playbutton->setPixmap(pausePixel.scaled(21, 21, Qt::KeepAspectRatio));
 
-        music_item->Item->setStyleSheet("background-color:rgb(37,130,37);");
-        (*currentSong).id = music_item->id;
-        (*currentSong).index = music_item->index;
-        (*currentSong).type = Enums::Library;
+        music_item->setActive();
+        // (*currentSong).id = music_item->id;
+        // (*currentSong).index = music_item->index;
+        // (*currentSong).type = Enums::Library;
     }
 }
 

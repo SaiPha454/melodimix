@@ -428,6 +428,9 @@ border-radius:&quot;15px&quot;</string>
         <height>421</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">QListWidget::item { border-bottom: 1px solid white; }</string>
+      </property>
      </widget>
      <widget class="QFrame" name="player_frame">
       <property name="geometry">
@@ -645,6 +648,9 @@ border:&quot;none&quot;;</string>
         <width>541</width>
         <height>491</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QListWidget::item { border-bottom: 1px solid white; }</string>
       </property>
      </widget>
     </widget>

@@ -4,7 +4,7 @@
 #include "favbutton.h"
 #include <QCoreApplication>
 #include <QPushButton>
-#include "deletebutton.h"
+#include "enums.h"
 
 FavMusicItem::FavMusicItem(QString p_title, int p_id, int idx) : MusicItem(p_title, p_id, idx, true) {
 
@@ -20,5 +20,16 @@ FavMusicItem::FavMusicItem(QString p_title, int p_id, int idx) : MusicItem(p_tit
     layout->addWidget(btn_frame);
     title->setMinimumWidth(400);
     title->setMaximumWidth(400);
+
+}
+
+void FavMusicItem::removeFromFav(MusicStore *musicStore, currentPlayItem *currentSong) {
+
+    musicStore->removeFromFav(id);
+
+    if(index <= (*currentSong).index && (*currentSong).type == Enums::Favorite){
+
+        (*currentSong).index = (*currentSong).index <= 0 ? 0 : (*currentSong).index -1;
+    }
 
 }

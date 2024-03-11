@@ -3,8 +3,6 @@ MelodiMix_autogen/timestamp: \
 	/home/sai/Desktop/C++/MelodiMix/MelodiMix/Resources.qrc \
 	/home/sai/Desktop/C++/MelodiMix/MelodiMix/clickablelabel.cpp \
 	/home/sai/Desktop/C++/MelodiMix/MelodiMix/clickablelabel.h \
-	/home/sai/Desktop/C++/MelodiMix/MelodiMix/deletebutton.cpp \
-	/home/sai/Desktop/C++/MelodiMix/MelodiMix/deletebutton.h \
 	/home/sai/Desktop/C++/MelodiMix/MelodiMix/enums.cpp \
 	/home/sai/Desktop/C++/MelodiMix/MelodiMix/enums.h \
 	/home/sai/Desktop/C++/MelodiMix/MelodiMix/favbutton.cpp \
@@ -13,6 +11,8 @@ MelodiMix_autogen/timestamp: \
 	/home/sai/Desktop/C++/MelodiMix/MelodiMix/favmusicitem.h \
 	/home/sai/Desktop/C++/MelodiMix/MelodiMix/importfolder.cpp \
 	/home/sai/Desktop/C++/MelodiMix/MelodiMix/importfolder.h \
+	/home/sai/Desktop/C++/MelodiMix/MelodiMix/importmusicitem.cpp \
+	/home/sai/Desktop/C++/MelodiMix/MelodiMix/importmusicitem.h \
 	/home/sai/Desktop/C++/MelodiMix/MelodiMix/librarydeletebutton.cpp \
 	/home/sai/Desktop/C++/MelodiMix/MelodiMix/librarydeletebutton.h \
 	/home/sai/Desktop/C++/MelodiMix/MelodiMix/librarymusicitem.cpp \
@@ -34,8 +34,6 @@ MelodiMix_autogen/timestamp: \
 	/home/sai/Desktop/C++/MelodiMix/MelodiMix/prevbutton.h \
 	/home/sai/Desktop/C++/MelodiMix/MelodiMix/progressbar.cpp \
 	/home/sai/Desktop/C++/MelodiMix/MelodiMix/progressbar.h \
-	/home/sai/Desktop/C++/MelodiMix/MelodiMix/removeablemusicitem.cpp \
-	/home/sai/Desktop/C++/MelodiMix/MelodiMix/removeablemusicitem.h \
 	/home/sai/Desktop/C++/MelodiMix/MelodiMix/structs.cpp \
 	/home/sai/Desktop/C++/MelodiMix/MelodiMix/structs.h \
 	/home/sai/Desktop/C++/MelodiMix/build-MelodiMix-Desktop_Qt_6_6_1_GCC_64bit-Debug/.qtc/package-manager/auto-setup.cmake \

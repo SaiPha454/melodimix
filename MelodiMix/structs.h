@@ -13,6 +13,14 @@ struct MusicRecord {
 
 };
 
+
+struct PlayingSong {
+    int id;
+    bool fav;
+    int index;
+
+};
+
 struct currentPlayItem {
     int id;
     int index;

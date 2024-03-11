@@ -181,6 +181,7 @@ public:
         music_list = new QListWidget(HomePage);
         music_list->setObjectName("music_list");
         music_list->setGeometry(QRect(20, 90, 521, 421));
+        music_list->setStyleSheet(QString::fromUtf8("QListWidget::item { border-bottom: 1px solid white; }"));
         player_frame = new QFrame(HomePage);
         player_frame->setObjectName("player_frame");
         player_frame->setGeometry(QRect(-10, 500, 581, 101));
@@ -257,6 +258,7 @@ public:
         fav_list = new QListWidget(FavPage);
         fav_list->setObjectName("fav_list");
         fav_list->setGeometry(QRect(10, 70, 541, 491));
+        fav_list->setStyleSheet(QString::fromUtf8("QListWidget::item { border-bottom: 1px solid white; }"));
         Pages->addWidget(FavPage);
         ImportPage = new QWidget();
         ImportPage->setObjectName("ImportPage");

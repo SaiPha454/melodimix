@@ -11,9 +11,9 @@ class ImportFolder
 public:
     static void create(const QString foldername);
 
-    static QStringList import();
+    QStringList import();
 
-    static QStringList load();
+    QStringList load();
 
     static QString getHomePath();
 

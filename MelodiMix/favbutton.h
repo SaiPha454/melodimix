@@ -15,10 +15,6 @@ public:
     void fav(bool isFav);
     void unfav();
 
-public slots:
-    void onClick();
-
-
 private:
     QPixmap fav_outlined= QPixmap(":/img/img/fav_outlined.png");
     QPixmap fav_filled = QPixmap(":/img/img/fav_filled.png");

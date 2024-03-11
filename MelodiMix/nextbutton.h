@@ -11,7 +11,7 @@
 class NextButton : public ClickableLabel
 {
 public:
-    NextButton(QWidget *parent = nullptr, QListWidget *playlist = nullptr);
+    NextButton(QWidget *parent = nullptr);
 
     void setCurrentSongIndex(int *index=0);
     void setPlayer(QMediaPlayer *player);

@@ -1,11 +1,15 @@
 /home/sai/Desktop/C++/MelodiMix/build-MelodiMix-Desktop_Qt_6_6_1_GCC_64bit-Debug/MelodiMix_autogen/EWIEGA46WW/moc_favmusicitem.cpp: /home/sai/Desktop/C++/MelodiMix/MelodiMix/favmusicitem.h \
   /home/sai/Desktop/C++/MelodiMix/build-MelodiMix-Desktop_Qt_6_6_1_GCC_64bit-Debug/MelodiMix_autogen/moc_predefs.h \
   /home/sai/Desktop/C++/MelodiMix/MelodiMix/clickablelabel.h \
-  /home/sai/Desktop/C++/MelodiMix/MelodiMix/deletebutton.h \
+  /home/sai/Desktop/C++/MelodiMix/MelodiMix/enums.h \
   /home/sai/Desktop/C++/MelodiMix/MelodiMix/favbutton.h \
   /home/sai/Desktop/C++/MelodiMix/MelodiMix/musicitem.h \
+  /home/sai/Desktop/C++/MelodiMix/MelodiMix/musicstore.h \
+  /home/sai/Desktop/C++/MelodiMix/MelodiMix/structs.h \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtCore/QObject \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/QString \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/QStringList \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtCore/QVector \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/q20functional.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/q20memory.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/q20type_traits.h \
@@ -126,6 +130,7 @@
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qutf8stringview.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qvariant.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qvarlengtharray.h \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qvector.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qversiontagging.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qxptype_traits.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qyieldcpu.h \
@@ -158,6 +163,8 @@
   /home/sai/Qt/6.8.0/gcc_64/include/QtGui/qtransform.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtGui/qvalidator.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtGui/qwindowdefs.h \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtSql/QSql \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtSql/QSqlDatabase \
   /home/sai/Qt/6.8.0/gcc_64/include/QtSql/QSqlQuery \
   /home/sai/Qt/6.8.0/gcc_64/include/QtSql/qsqldatabase.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtSql/qsqlquery.h \
@@ -166,7 +173,6 @@
   /home/sai/Qt/6.8.0/gcc_64/include/QtSql/qtsqlglobal.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/QHBoxLayout \
   /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/QLabel \
-  /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/QListWidget \
   /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/QListWidgetItem \
   /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/QWidget \
   /home/sai/Qt/6.8.0/gcc_64/include/QtWidgets/qabstractitemdelegate.h \

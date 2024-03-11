@@ -500,12 +500,6 @@
 			null
 		],
 		[
-			"/home/sai/Desktop/C++/MelodiMix/MelodiMix/deletebutton.h",
-			"MU",
-			"EWIEGA46WW/moc_deletebutton.cpp",
-			null
-		],
-		[
 			"/home/sai/Desktop/C++/MelodiMix/MelodiMix/enums.h",
 			"MU",
 			"EWIEGA46WW/moc_enums.cpp",
@@ -527,6 +521,12 @@
 			"/home/sai/Desktop/C++/MelodiMix/MelodiMix/importfolder.h",
 			"MU",
 			"EWIEGA46WW/moc_importfolder.cpp",
+			null
+		],
+		[
+			"/home/sai/Desktop/C++/MelodiMix/MelodiMix/importmusicitem.h",
+			"MU",
+			"EWIEGA46WW/moc_importmusicitem.cpp",
 			null
 		],
 		[
@@ -587,12 +587,6 @@
 			"/home/sai/Desktop/C++/MelodiMix/MelodiMix/progressbar.h",
 			"MU",
 			"EWIEGA46WW/moc_progressbar.cpp",
-			null
-		],
-		[
-			"/home/sai/Desktop/C++/MelodiMix/MelodiMix/removeablemusicitem.h",
-			"MU",
-			"EWIEGA46WW/moc_removeablemusicitem.cpp",
 			null
 		],
 		[
@@ -677,11 +671,6 @@
 			"MU",
 			null
 		],
-		[
-			"/home/sai/Desktop/C++/MelodiMix/MelodiMix/deletebutton.cpp",
-			"MU",
-			null
-		],
 		[ "/home/sai/Desktop/C++/MelodiMix/MelodiMix/enums.cpp", "MU", null ],
 		[ "/home/sai/Desktop/C++/MelodiMix/MelodiMix/favbutton.cpp", "MU", null ],
 		[
@@ -691,6 +680,11 @@
 		],
 		[
 			"/home/sai/Desktop/C++/MelodiMix/MelodiMix/importfolder.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/sai/Desktop/C++/MelodiMix/MelodiMix/importmusicitem.cpp",
 			"MU",
 			null
 		],
@@ -734,11 +728,6 @@
 		],
 		[
 			"/home/sai/Desktop/C++/MelodiMix/MelodiMix/progressbar.cpp",
-			"MU",
-			null
-		],
-		[
-			"/home/sai/Desktop/C++/MelodiMix/MelodiMix/removeablemusicitem.cpp",
 			"MU",
 			null
 		],

@@ -3,8 +3,9 @@
 
 #include "musicitem.h"
 #include "favbutton.h"
-#include "deletebutton.h"
 #include <QSqlQuery>
+#include "musicstore.h"
+#include "structs.h"
 
 class FavMusicItem : public QObject, public MusicItem
 {
@@ -13,6 +14,8 @@ public:
     FavMusicItem(QString title, int id, int idx);
     // int index;
     FavButton *favbutton;
+
+    void removeFromFav(MusicStore *store, currentPlayItem *currentSong);
 
 private:
 

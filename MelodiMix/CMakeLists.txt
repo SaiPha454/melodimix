@@ -45,8 +45,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         prevbutton.h prevbutton.cpp
         nextbutton.h nextbutton.cpp
         importfolder.h importfolder.cpp
-        removeablemusicitem.h removeablemusicitem.cpp
-        deletebutton.h deletebutton.cpp
+        importmusicitem.h importmusicitem.cpp
+
         favbutton.h favbutton.cpp
         progressbar.h progressbar.cpp
         favbutton.h favbutton.cpp
