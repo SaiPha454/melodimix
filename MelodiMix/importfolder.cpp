@@ -66,3 +66,18 @@ QString ImportFolder::getHomePath(){
     QDir desktopDir(desktopLocation);
     return desktopDir.filePath("MelodiMix");
 }
+
+void ImportFolder::removeFile(QString filename) {
+
+    QString filepath = ImportFolder::getHomePath() + "/"+filename;
+    QFile file(filepath);
+    if (file.exists()) {
+        if (file.remove()) {
+            qDebug() << "File removed successfully";
+        } else {
+            qDebug() << "Error removing file:" << file.errorString();
+        }
+    } else {
+        qDebug() << "File does not exist.";
+    }
+}

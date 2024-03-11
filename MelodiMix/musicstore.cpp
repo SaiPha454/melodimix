@@ -68,19 +68,16 @@ MusicStore::MusicStore(QString dbname, QString tablename) {
 int MusicStore::add(QString filename){
 
 
-    QStringList tables = db.tables();
+    QSqlQuery insertQuery(db);
 
-    if (tables.isEmpty()) {
-        qDebug() << "No tables found in the database.";
-    } else {
-        qDebug() << "Tables in the database:";
-        for (const QString& tableName : tables) {
-            qDebug() << tableName;
-        }
+    insertQuery.prepare("SELECT COUNT(*) FROM "+ table + " WHERE title = :title");
+    insertQuery.bindValue(":title", filename);
+    insertQuery.exec();
+    int count = insertQuery.value(0).toInt();
+    if(count > 0){
+        return -1;
     }
 
-
-    QSqlQuery insertQuery(db);
     insertQuery.prepare("INSERT INTO " + table + " (title, favorite) VALUES (:title, :favorite)");
     insertQuery.bindValue(":title", filename);
     insertQuery.bindValue(":favorite", false);
@@ -97,8 +94,17 @@ int MusicStore::add(QString filename){
 }
 
 
-void MusicStore::remove(QString filename){
-    qDebug() <<"Remove from store";
+void MusicStore::remove(int id){
+
+    QSqlQuery deleteQeury(db);
+    deleteQeury.prepare("DELETE FROM "+ table + " WHERE id = :id");
+    // deleteQeury.bindValue(":table", table);
+    deleteQeury.bindValue(":id",id);
+    if(deleteQeury.exec()){
+        qDebug() <<"Delete successfully";
+    }else{
+        qDebug()<<"Fail to delete"<<deleteQeury.lastError().text();
+    }
 }
 
 QVector<MusicRecord> MusicStore::loadAll() {

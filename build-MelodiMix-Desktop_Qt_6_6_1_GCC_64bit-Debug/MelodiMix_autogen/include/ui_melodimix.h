@@ -35,7 +35,7 @@ public:
     QLabel *fav_icon;
     QPushButton *import_nav;
     QLabel *import_icon;
-    QPushButton *search_nav;
+    QPushButton *library_nav;
     QLabel *search_icon;
     QStackedWidget *Pages;
     QWidget *HomePage;
@@ -47,8 +47,9 @@ public:
     QLabel *player_icon;
     QLabel *song_title;
     QSlider *progressbar;
-    QWidget *SearchPage;
-    QLabel *label_2;
+    QWidget *LibraryPage;
+    QLabel *title;
+    QListWidget *library_list;
     QWidget *FavPage;
     QLabel *label;
     QListWidget *fav_list;
@@ -133,13 +134,13 @@ public:
         import_icon->setMaximumSize(QSize(18, 18));
         import_icon->setStyleSheet(QString::fromUtf8("background-color:\"black\";"));
         import_icon->setPixmap(QPixmap(QString::fromUtf8(":/img/img/import.png")));
-        search_nav = new QPushButton(Nav_frame);
-        search_nav->setObjectName("search_nav");
-        search_nav->setGeometry(QRect(0, 260, 211, 41));
-        search_nav->setFont(font);
-        search_nav->setStyleSheet(QString::fromUtf8("border-bottom: 2px solid #C1C1C1;\n"
+        library_nav = new QPushButton(Nav_frame);
+        library_nav->setObjectName("library_nav");
+        library_nav->setGeometry(QRect(0, 260, 211, 41));
+        library_nav->setFont(font);
+        library_nav->setStyleSheet(QString::fromUtf8("border-bottom: 2px solid #C1C1C1;\n"
 "color:\"white\";"));
-        search_nav->setFlat(true);
+        library_nav->setFlat(true);
         search_icon = new QLabel(Nav_frame);
         search_icon->setObjectName("search_icon");
         search_icon->setGeometry(QRect(30, 270, 18, 18));
@@ -232,20 +233,24 @@ public:
         progressbar->setTickPosition(QSlider::NoTicks);
         progressbar->setTickInterval(0);
         Pages->addWidget(HomePage);
-        SearchPage = new QWidget();
-        SearchPage->setObjectName("SearchPage");
-        label_2 = new QLabel(SearchPage);
-        label_2->setObjectName("label_2");
-        label_2->setGeometry(QRect(230, 160, 67, 17));
-        label_2->setStyleSheet(QString::fromUtf8("color:\"red\";"));
-        Pages->addWidget(SearchPage);
+        LibraryPage = new QWidget();
+        LibraryPage->setObjectName("LibraryPage");
+        title = new QLabel(LibraryPage);
+        title->setObjectName("title");
+        title->setGeometry(QRect(20, 30, 281, 17));
+        QFont font3;
+        font3.setPointSize(16);
+        title->setFont(font3);
+        title->setStyleSheet(QString::fromUtf8("color:\"white\";"));
+        library_list = new QListWidget(LibraryPage);
+        library_list->setObjectName("library_list");
+        library_list->setGeometry(QRect(20, 70, 521, 511));
+        Pages->addWidget(LibraryPage);
         FavPage = new QWidget();
         FavPage->setObjectName("FavPage");
         label = new QLabel(FavPage);
         label->setObjectName("label");
         label->setGeometry(QRect(10, 30, 241, 31));
-        QFont font3;
-        font3.setPointSize(16);
         label->setFont(font3);
         label->setStyleSheet(QString::fromUtf8("color:\"white\";\n"
 ""));
@@ -284,7 +289,7 @@ public:
 
         retranslateUi(MelodiMix);
 
-        search_nav->setDefault(false);
+        library_nav->setDefault(false);
 
 
         QMetaObject::connectSlotsByName(MelodiMix);
@@ -300,7 +305,7 @@ public:
         fav_icon->setText(QString());
         import_nav->setText(QCoreApplication::translate("MelodiMix", "Import", nullptr));
         import_icon->setText(QString());
-        search_nav->setText(QCoreApplication::translate("MelodiMix", "Library", nullptr));
+        library_nav->setText(QCoreApplication::translate("MelodiMix", "Library", nullptr));
         search_icon->setText(QString());
 #if QT_CONFIG(accessibility)
         textEdit->setAccessibleDescription(QCoreApplication::translate("MelodiMix", "Enter song name", nullptr));
@@ -308,7 +313,7 @@ public:
         pushButton->setText(QCoreApplication::translate("MelodiMix", "Search", nullptr));
         player_icon->setText(QString());
         song_title->setText(QString());
-        label_2->setText(QCoreApplication::translate("MelodiMix", "Search", nullptr));
+        title->setText(QCoreApplication::translate("MelodiMix", "Songs library", nullptr));
         label->setText(QCoreApplication::translate("MelodiMix", "Favorite", nullptr));
         import_page_header->setText(QCoreApplication::translate("MelodiMix", "Import song files", nullptr));
         import_btn->setText(QCoreApplication::translate("MelodiMix", "+ Import ", nullptr));

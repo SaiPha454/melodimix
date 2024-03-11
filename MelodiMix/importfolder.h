@@ -16,6 +16,8 @@ public:
     static QStringList load();
 
     static QString getHomePath();
+
+    void removeFile(QString filename);
 };
 
 #endif // IMPORTFOLDER_H

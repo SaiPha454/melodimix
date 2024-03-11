@@ -13,7 +13,7 @@ public:
     MusicStore(QString dbname, QString tablename);
 
     int add(QString filename);
-    void remove(QString filename);
+    void remove(int id);
 
     void close();
 

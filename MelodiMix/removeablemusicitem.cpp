@@ -7,11 +7,6 @@
 RemoveableMusicItem::RemoveableMusicItem(QString p_title, int p_id,QListWidget* list)
     : MusicItem(p_title, p_id, 0, false) {
 
-    QWidget *btn_frame = new QWidget();
-    button = new DeleteButton(btn_frame, p_title, list);
-    button->setParent(btn_frame);
-
-    layout->addWidget(btn_frame);
     title->setMinimumWidth(350);
     title->setMaximumWidth(350);
 

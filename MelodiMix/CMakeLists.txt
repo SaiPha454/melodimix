@@ -54,6 +54,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         structs.h structs.cpp
         favmusicitem.h favmusicitem.cpp
         enums.h enums.cpp
+        librarymusicitem.h librarymusicitem.cpp
+        librarydeletebutton.h librarydeletebutton.cpp
 
     )
 # Define target properties for Android with Qt 6 as:

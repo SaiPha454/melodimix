@@ -19,6 +19,8 @@
 #include "favbutton.h"
 #include "musicstore.h"
 #include "favmusicitem.h"
+#include "librarymusicitem.h"
+#include <QMessageBox>
 
 MelodiMix::MelodiMix(QWidget *parent)
     : QMainWindow(parent)
@@ -32,9 +34,10 @@ MelodiMix::MelodiMix(QWidget *parent)
     currentlyPlayingSong.fav = false;
 
     // create default folder
+    importfolder = new ImportFolder();
     ImportFolder::create("MelodiMix");
 
-    navs={ui->home_nav, ui->search_nav, ui->fav_nav, ui->import_nav};
+    navs={ui->home_nav, ui->library_nav, ui->fav_nav, ui->import_nav};
     nav_icons={ui->home_icon, ui->search_icon, ui->fav_icon, ui->import_icon};
 
 
@@ -65,6 +68,7 @@ MelodiMix::MelodiMix(QWidget *parent)
 
     load_music();
     load_fav_music();
+    load_library();
 
 
     nextbutton->setPlayer(player);
@@ -138,7 +142,7 @@ void MelodiMix::on_home_nav_clicked()
 }
 
 
-void MelodiMix::on_search_nav_clicked()
+void MelodiMix::on_library_nav_clicked()
 {
 
     ui->player_frame->setParent(ui->Pages->widget(1));
@@ -146,12 +150,12 @@ void MelodiMix::on_search_nav_clicked()
     ui->player_frame->hide();
     ui->player_frame->setParent(ui->Pages->widget(1));
 
-    QPushButton* search_nav= ui->search_nav;
+    QPushButton* library_nav= ui->library_nav;
     QLabel* search_icon = ui->search_icon;
-    search_nav->setAutoFillBackground(true);
+    library_nav->setAutoFillBackground(true);
 
     for(QPushButton *btn: navs){
-        if(btn->objectName() == search_nav->objectName()){
+        if(btn->objectName() == library_nav->objectName()){
             btn->setPalette(QPalette(QColor(Qt::gray)));
             search_icon->setStyleSheet("background-color:gray;");
         }else{
@@ -163,6 +167,8 @@ void MelodiMix::on_search_nav_clicked()
             }
         }
     }
+
+    load_library();
 }
 
 
@@ -172,6 +178,7 @@ void MelodiMix::on_fav_nav_clicked()
 
     ui->player_frame->setParent(ui->Pages->widget(2));
     ui->Pages->setCurrentIndex(2);
+    ui->player_frame->show();
 
     QPushButton* fav_nav= ui->fav_nav;
     QLabel* fav_icon = ui->fav_icon;
@@ -227,11 +234,16 @@ void MelodiMix::on_import_nav_clicked()
 
 void MelodiMix::on_import_btn_clicked()
 {
+    int inserted_count=0;
     QStringList filenames = ImportFolder::import();
-    ui->imported_files_label->setText(QString::number(filenames.length()) + " files were imported");
+
     for(QString &filename : filenames) {
 
         int id = musicStore->add(filename);
+        if(id <=0) {
+
+            continue;
+        }
         RemoveableMusicItem *item =  new RemoveableMusicItem( filename, 0, ui->imported_songs_list);
         ui->imported_songs_list->insertItem(0,item);
         ui->imported_songs_list->setItemWidget(item, item->Item);
@@ -241,7 +253,9 @@ void MelodiMix::on_import_btn_clicked()
         record.title=filename;
         record.fav = false;
         library.insert(library.begin(), record);
+        inserted_count +=1;
     }
+    ui->imported_files_label->setText( QString::number(inserted_count) + " files were imported");
 }
 
 
@@ -304,18 +318,13 @@ void MelodiMix::load_fav_music() {
                 qDebug()<<"Reduce by 1";
 
                 (*currentSong).index = (*currentSong).index <= 0 ? 0 : (*currentSong).index -1;
-                // (*currentSong).id = fav_songs[(*currentSong).index].id;
-                // load_fav_music();
-                // emit playListChange(Enums::Favorite);
+
             }
             load_fav_music();
             if((*currentSong).type == Enums::Favorite){
+
                 emit playListChange(Enums::Favorite);
-
             }
-
-
-            // emit playListChange(Enums::Favorite);
 
         });
         if((*currentSong).type == Enums::Favorite && (*currentSong).id == item->id && (*currentSong).index == item->index){
@@ -435,3 +444,39 @@ void MelodiMix::on_playlist_change(Enums::PlayListType playlistType) {
         (*currentSong).type = Enums::Favorite;
     }
 }
+
+
+void MelodiMix::load_library(){
+
+    ui->library_list->clear();
+
+    int index=0;
+    for(MusicRecord &record : library) {
+
+        LibraryMusicItem *item =  new LibraryMusicItem( record.title, record.id, index, record.fav );
+        connect(item->button, &LibraryDeleteButton::clicked, this, [this, item](){
+
+            musicStore->remove(item->id);
+            importfolder->removeFile(item->filename);
+            if(item->index <= (*currentSong).index && (*currentSong).index > 0){
+
+                qDebug()<<"Remove from Library";
+                (*currentSong).index = (*currentSong).index <= 0 ? 0 : (*currentSong).index -1;
+
+            }
+            load_music();
+            load_fav_music();
+            load_library();
+            if( (*currentSong).type == Enums::Library ){
+                emit playListChange(Enums::Library);
+            }else{
+                emit playListChange(Enums::Favorite);
+            }
+        });
+        ui->library_list->addItem(item);
+        ui->library_list->setItemWidget(item, item->Item);
+        index++;
+    }
+}
+
+

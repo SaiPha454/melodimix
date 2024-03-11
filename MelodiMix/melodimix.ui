@@ -262,7 +262,7 @@ color:&quot;white&quot;;</string>
       <pixmap resource="Resources.qrc">:/img/img/import.png</pixmap>
      </property>
     </widget>
-    <widget class="QPushButton" name="search_nav">
+    <widget class="QPushButton" name="library_nav">
      <property name="geometry">
       <rect>
        <x>0</x>
@@ -581,21 +581,36 @@ border:&quot;none&quot;;</string>
       </widget>
      </widget>
     </widget>
-    <widget class="QWidget" name="SearchPage">
-     <widget class="QLabel" name="label_2">
+    <widget class="QWidget" name="LibraryPage">
+     <widget class="QLabel" name="title">
       <property name="geometry">
        <rect>
-        <x>230</x>
-        <y>160</y>
-        <width>67</width>
+        <x>20</x>
+        <y>30</y>
+        <width>281</width>
         <height>17</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
       <property name="styleSheet">
-       <string notr="true">color:&quot;red&quot;;</string>
+       <string notr="true">color:&quot;white&quot;;</string>
       </property>
       <property name="text">
-       <string>Search</string>
+       <string>Songs library</string>
+      </property>
+     </widget>
+     <widget class="QListWidget" name="library_list">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>70</y>
+        <width>521</width>
+        <height>511</height>
+       </rect>
       </property>
      </widget>
     </widget>

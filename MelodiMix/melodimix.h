@@ -20,6 +20,7 @@
 #include "nextbutton.h"
 #include "prevbutton.h"
 #include "enums.h"
+#include "importfolder.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -60,7 +61,7 @@ signals:
 private slots:
     void on_home_nav_clicked();
 
-    void on_search_nav_clicked();
+    void on_library_nav_clicked();
 
     void on_fav_nav_clicked();
 
@@ -76,6 +77,8 @@ private slots:
     void on_playlist_change(Enums::PlayListType);
 
 
+
+    void load_library();
 
 private:
     Ui::MelodiMix *ui;
@@ -93,6 +96,8 @@ private:
     PrevButton *prevbutton;
     NextButton *nextbutton;
     QListWidget *uiPlayList;
+
+    ImportFolder *importfolder;
 
 };
 #endif // MELODIMIX_H
