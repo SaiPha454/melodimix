@@ -578,6 +578,12 @@
 			null
 		],
 		[
+			"/home/sai/Desktop/C++/MelodiMix/MelodiMix/player.h",
+			"MU",
+			"EWIEGA46WW/moc_player.cpp",
+			null
+		],
+		[
 			"/home/sai/Desktop/C++/MelodiMix/MelodiMix/prevbutton.h",
 			"MU",
 			"EWIEGA46WW/moc_prevbutton.cpp",
@@ -721,6 +727,7 @@
 			"MU",
 			null
 		],
+		[ "/home/sai/Desktop/C++/MelodiMix/MelodiMix/player.cpp", "MU", null ],
 		[
 			"/home/sai/Desktop/C++/MelodiMix/MelodiMix/prevbutton.cpp",
 			"MU",

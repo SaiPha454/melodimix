@@ -37,9 +37,8 @@ MusicItem::MusicItem(const QString& p_title, int p_id, int p_idx, bool is_fav)
 }
 
 void MusicItem::setActive() {
+
     Item->setStyleSheet("background-color:rgb(37,130,37);");
-     // Item->setStyleSheet("background-color:black");
-    // Item->setStyleSheet("background-color:red;");
 }
 
 void MusicItem::setUnActive() {
@@ -53,11 +52,4 @@ int MusicItem::getId(){
 int MusicItem::getIndex(){
     return index;
 }
-// void MusicItem::unSetFav(){
-//     isFav = false;
-// }
-
-// void MusicItem::isFav(){
-//     return isFav;
-// }
 

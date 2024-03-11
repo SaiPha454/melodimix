@@ -10,6 +10,7 @@ class PlayButton : public ClickableLabel
 {
 public:
     PlayButton(QWidget *parent = nullptr, QMediaPlayer *p_player= new QMediaPlayer());
+    void setPlay();
 
 private:
     QMediaPlayer *player;

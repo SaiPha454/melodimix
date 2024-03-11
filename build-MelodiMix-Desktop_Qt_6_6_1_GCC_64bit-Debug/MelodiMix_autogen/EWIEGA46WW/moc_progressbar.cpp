@@ -38,7 +38,9 @@ constexpr auto qt_meta_stringdata_CLASSProgressBarENDCLASS = QtMocHelpers::strin
     "",
     "pos",
     "updateProgressbarDuration",
-    "duration"
+    "duration",
+    "onSetPlayerPostion",
+    "value"
 );
 #else  // !QT_MOC_HAS_STRINGDATA
 #error "qtmochelpers.h not found or too old."
@@ -51,7 +53,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSProgressBarENDCLASS[] = {
       12,       // revision
        0,       // classname
        0,    0, // classinfo
-       2,   14, // methods
+       3,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -59,12 +61,14 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSProgressBarENDCLASS[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    1,   26,    2, 0x0a,    1 /* Public */,
-       4,    1,   29,    2, 0x0a,    3 /* Public */,
+       1,    1,   32,    2, 0x0a,    1 /* Public */,
+       4,    1,   35,    2, 0x0a,    3 /* Public */,
+       6,    1,   38,    2, 0x0a,    5 /* Public */,
 
  // slots: parameters
     QMetaType::Void, QMetaType::LongLong,    3,
     QMetaType::Void, QMetaType::LongLong,    5,
+    QMetaType::Void, QMetaType::LongLong,    7,
 
        0        // eod
 };
@@ -83,6 +87,9 @@ Q_CONSTINIT const QMetaObject ProgressBar::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<qint64, std::false_type>,
         // method 'updateProgressbarDuration'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<qint64, std::false_type>,
+        // method 'onSetPlayerPostion'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<qint64, std::false_type>
     >,
     nullptr
@@ -96,6 +103,7 @@ void ProgressBar::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
         switch (_id) {
         case 0: _t->updateProgressbar((*reinterpret_cast< std::add_pointer_t<qint64>>(_a[1]))); break;
         case 1: _t->updateProgressbarDuration((*reinterpret_cast< std::add_pointer_t<qint64>>(_a[1]))); break;
+        case 2: _t->onSetPlayerPostion((*reinterpret_cast< std::add_pointer_t<qint64>>(_a[1]))); break;
         default: ;
         }
     }
@@ -120,13 +128,13 @@ int ProgressBar::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 2)
+        if (_id < 3)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 2;
+        _id -= 3;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 2)
+        if (_id < 3)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 2;
+        _id -= 3;
     }
     return _id;
 }

@@ -15,36 +15,6 @@
     playbutton = p_play_btn;
 }
 
-void MusicEventHandler::onMusicItemClicked(QListWidgetItem *item){
-
-    qDebug() <<"Music hndler is clicked";
-
-    if(item){
-
-        MusicItem *music_item = dynamic_cast<MusicItem*>(item);
-        QString filename = music_item->filename;
-
-        QString desktopLocation = QStandardPaths::writableLocation(QStandardPaths::DesktopLocation);
-        QDir desktopDir(desktopLocation);
-        QString f = desktopDir.filePath("MelodiMix") +"/" +filename;
-
-
-        player->setSource(QUrl::fromLocalFile(f));
-        player->play();
-        playbutton->setPixmap(pausePixel.scaled(21, 21, Qt::KeepAspectRatio));
-
-        music_item->setActive();
-        // (*currentSong).id = music_item->id;
-        // (*currentSong).index = music_item->index;
-        // (*currentSong).type = Enums::Library;
-    }
-}
-
-
-void MusicEventHandler::setCurrentSongIndex(currentPlayItem *currentItem){
-    currentSong = currentItem;
-}
-
 void MusicEventHandler::setMusicItemActive(QListWidgetItem *item) {
 
 
@@ -59,20 +29,3 @@ void MusicEventHandler::setMusicItemUnActive(QListWidgetItem *item) {
     musicItem->setUnActive();
 }
 
-void MusicEventHandler::playAt(QMediaPlayer *player, QString filename){
-
-
-    // QString filename = song_filenames[index];
-    QString songFilePath = ImportFolder::getHomePath() + "/" + filename;
-    player->setSource(QUrl::fromLocalFile(songFilePath));
-    player->play();
-
-    playbutton->setPixmap(pausePixel.scaled(21, 21, Qt::KeepAspectRatio));
-
-}
-
-void MusicEventHandler::onSetPlayerPostion(qint64 value) {
-
-    player->setPosition(value);
-
-}

@@ -17,16 +17,9 @@ class MusicEventHandler : public QObject
 public:
     MusicEventHandler(QMediaPlayer *player, PlayButton* p_play_btn);
 
-    void setCurrentSongIndex(currentPlayItem *item);
-    void playAt(QMediaPlayer *player, QString filename);
     static void setMusicItemActive(QListWidgetItem *item);
     static void setMusicItemUnActive(QListWidgetItem *item);
 
-
-public slots:
-    void onMusicItemClicked(QListWidgetItem *item);
-
-    void onSetPlayerPostion(qint64 val);
 private:
     QMediaPlayer *player;
     PlayButton *playbutton;

@@ -18,7 +18,6 @@ void FavButton::fav(bool isFav){
 
 }
 
-
 void FavButton::unfav(){
     this->setPixmap(fav_outlined.scaled(36,25, Qt::KeepAspectRatio));
 }

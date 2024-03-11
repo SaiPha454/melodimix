@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-c0d2a52f5c9724fb2c5c.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "MelodiMix",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "MelodiMix::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-MelodiMix-Debug-3d580c55d5ab9a88983c.json",
+					"name" : "MelodiMix",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "MelodiMix_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-MelodiMix_autogen-Debug-f1b7245dceb005223c94.json",
+					"name" : "MelodiMix_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "MelodiMix_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-MelodiMix_autogen_timestamp_deps-Debug-9c3576e3b3ea5185c0f3.json",
+					"name" : "MelodiMix_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/sai/Desktop/C++/MelodiMix/build-MelodiMix-Desktop_Qt_6_6_1_GCC_64bit-Debug",
+		"source" : "/home/sai/Desktop/C++/MelodiMix/MelodiMix"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

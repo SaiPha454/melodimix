@@ -25,11 +25,10 @@ FavMusicItem::FavMusicItem(QString p_title, int p_id, int idx) : MusicItem(p_tit
 
 void FavMusicItem::removeFromFav(MusicStore *musicStore, currentPlayItem *currentSong) {
 
-    musicStore->removeFromFav(id);
+    // musicStore->removeFromFav(id);
+    // if(index <= (*currentSong).index && (*currentSong).type == Enums::Favorite){
 
-    if(index <= (*currentSong).index && (*currentSong).type == Enums::Favorite){
-
-        (*currentSong).index = (*currentSong).index <= 0 ? 0 : (*currentSong).index -1;
-    }
+    //     (*currentSong).index = (*currentSong).index <= 0 ? 0 : (*currentSong).index -1;
+    // }
 
 }

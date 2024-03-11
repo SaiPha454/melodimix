@@ -30,6 +30,8 @@ MelodiMix_autogen/timestamp: \
 	/home/sai/Desktop/C++/MelodiMix/MelodiMix/nextbutton.h \
 	/home/sai/Desktop/C++/MelodiMix/MelodiMix/playbutton.cpp \
 	/home/sai/Desktop/C++/MelodiMix/MelodiMix/playbutton.h \
+	/home/sai/Desktop/C++/MelodiMix/MelodiMix/player.cpp \
+	/home/sai/Desktop/C++/MelodiMix/MelodiMix/player.h \
 	/home/sai/Desktop/C++/MelodiMix/MelodiMix/prevbutton.cpp \
 	/home/sai/Desktop/C++/MelodiMix/MelodiMix/prevbutton.h \
 	/home/sai/Desktop/C++/MelodiMix/MelodiMix/progressbar.cpp \

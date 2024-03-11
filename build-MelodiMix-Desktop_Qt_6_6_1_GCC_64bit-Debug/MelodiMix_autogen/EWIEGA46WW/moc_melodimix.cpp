@@ -45,7 +45,7 @@ constexpr auto qt_meta_stringdata_CLASSMelodiMixENDCLASS = QtMocHelpers::stringD
     "onMusicItemClicked",
     "QListWidgetItem*",
     "item",
-    "skip",
+    "on_skip",
     "on_import_btn_clicked",
     "on_add_to_fav_btn_clciked",
     "on_fav_music_clicked",
@@ -53,7 +53,9 @@ constexpr auto qt_meta_stringdata_CLASSMelodiMixENDCLASS = QtMocHelpers::stringD
     "load_library",
     "on_player_end",
     "QMediaPlayer::MediaStatus",
-    "status"
+    "status",
+    "on_playing_next",
+    "on_playing_previous"
 );
 #else  // !QT_MOC_HAS_STRINGDATA
 #error "qtmochelpers.h not found or too old."
@@ -66,7 +68,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSMelodiMixENDCLASS[] = {
       12,       // revision
        0,       // classname
        0,    0, // classinfo
-      13,   14, // methods
+      15,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -74,21 +76,23 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSMelodiMixENDCLASS[] = {
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    1,   92,    2, 0x06,    1 /* Public */,
+       1,    1,  104,    2, 0x06,    1 /* Public */,
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       4,    0,   95,    2, 0x08,    3 /* Private */,
-       5,    0,   96,    2, 0x08,    4 /* Private */,
-       6,    0,   97,    2, 0x08,    5 /* Private */,
-       7,    0,   98,    2, 0x08,    6 /* Private */,
-       8,    1,   99,    2, 0x08,    7 /* Private */,
-      11,    0,  102,    2, 0x08,    9 /* Private */,
-      12,    0,  103,    2, 0x08,   10 /* Private */,
-      13,    0,  104,    2, 0x08,   11 /* Private */,
-      14,    1,  105,    2, 0x08,   12 /* Private */,
-      15,    1,  108,    2, 0x08,   14 /* Private */,
-      16,    0,  111,    2, 0x08,   16 /* Private */,
-      17,    1,  112,    2, 0x08,   17 /* Private */,
+       4,    0,  107,    2, 0x08,    3 /* Private */,
+       5,    0,  108,    2, 0x08,    4 /* Private */,
+       6,    0,  109,    2, 0x08,    5 /* Private */,
+       7,    0,  110,    2, 0x08,    6 /* Private */,
+       8,    1,  111,    2, 0x08,    7 /* Private */,
+      11,    0,  114,    2, 0x08,    9 /* Private */,
+      12,    0,  115,    2, 0x08,   10 /* Private */,
+      13,    0,  116,    2, 0x08,   11 /* Private */,
+      14,    1,  117,    2, 0x08,   12 /* Private */,
+      15,    1,  120,    2, 0x08,   14 /* Private */,
+      16,    0,  123,    2, 0x08,   16 /* Private */,
+      17,    1,  124,    2, 0x08,   17 /* Private */,
+      20,    0,  127,    2, 0x08,   19 /* Private */,
+      21,    0,  128,    2, 0x08,   20 /* Private */,
 
  // signals: parameters
     QMetaType::Void, 0x80000000 | 3,    2,
@@ -106,6 +110,8 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSMelodiMixENDCLASS[] = {
     QMetaType::Void, 0x80000000 | 3,    2,
     QMetaType::Void,
     QMetaType::Void, 0x80000000 | 18,   19,
+    QMetaType::Void,
+    QMetaType::Void,
 
  // enums: name, alias, flags, count, data
 
@@ -142,7 +148,7 @@ Q_CONSTINIT const QMetaObject MelodiMix::staticMetaObject = { {
         // method 'onMusicItemClicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<QListWidgetItem *, std::false_type>,
-        // method 'skip'
+        // method 'on_skip'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_import_btn_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
@@ -158,7 +164,11 @@ Q_CONSTINIT const QMetaObject MelodiMix::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_player_end'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        QtPrivate::TypeAndForceComplete<QMediaPlayer::MediaStatus, std::false_type>
+        QtPrivate::TypeAndForceComplete<QMediaPlayer::MediaStatus, std::false_type>,
+        // method 'on_playing_next'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_playing_previous'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
 } };
@@ -175,13 +185,15 @@ void MelodiMix::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
         case 3: _t->on_fav_nav_clicked(); break;
         case 4: _t->on_import_nav_clicked(); break;
         case 5: _t->onMusicItemClicked((*reinterpret_cast< std::add_pointer_t<QListWidgetItem*>>(_a[1]))); break;
-        case 6: _t->skip(); break;
+        case 6: _t->on_skip(); break;
         case 7: _t->on_import_btn_clicked(); break;
         case 8: _t->on_add_to_fav_btn_clciked(); break;
         case 9: _t->on_fav_music_clicked((*reinterpret_cast< std::add_pointer_t<QListWidgetItem*>>(_a[1]))); break;
         case 10: _t->on_playlist_change((*reinterpret_cast< std::add_pointer_t<Enums::PlayListType>>(_a[1]))); break;
         case 11: _t->load_library(); break;
         case 12: _t->on_player_end((*reinterpret_cast< std::add_pointer_t<QMediaPlayer::MediaStatus>>(_a[1]))); break;
+        case 13: _t->on_playing_next(); break;
+        case 14: _t->on_playing_previous(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -215,13 +227,13 @@ int MelodiMix::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 13)
+        if (_id < 15)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 13;
+        _id -= 15;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 13)
+        if (_id < 15)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 13;
+        _id -= 15;
     }
     return _id;
 }

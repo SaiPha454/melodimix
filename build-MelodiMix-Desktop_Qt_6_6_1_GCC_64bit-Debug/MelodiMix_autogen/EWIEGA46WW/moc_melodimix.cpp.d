@@ -8,6 +8,7 @@
   /home/sai/Desktop/C++/MelodiMix/MelodiMix/musicstore.h \
   /home/sai/Desktop/C++/MelodiMix/MelodiMix/nextbutton.h \
   /home/sai/Desktop/C++/MelodiMix/MelodiMix/playbutton.h \
+  /home/sai/Desktop/C++/MelodiMix/MelodiMix/player.h \
   /home/sai/Desktop/C++/MelodiMix/MelodiMix/prevbutton.h \
   /home/sai/Desktop/C++/MelodiMix/MelodiMix/progressbar.h \
   /home/sai/Desktop/C++/MelodiMix/MelodiMix/structs.h \

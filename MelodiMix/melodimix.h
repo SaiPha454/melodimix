@@ -18,9 +18,10 @@
 #include <QVector>
 #include "structs.h"
 #include "nextbutton.h"
-#include "prevbutton.h"
 #include "enums.h"
 #include "importfolder.h"
+#include "player.h"
+#include "prevbutton.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -41,7 +42,7 @@ public:
     QVector<MusicRecord> playlist;
     QVector<MusicRecord> library;
     QVector<MusicRecord> fav_songs;
-    PlayingSong currentlyPlayingSong;
+    // PlayingSong currentlyPlayingSong;
 
 
     // QStringList songs_filenames;
@@ -68,7 +69,7 @@ private slots:
     void on_import_nav_clicked();
 
     void onMusicItemClicked(QListWidgetItem *item);
-    void skip();
+    void on_skip();
     void on_import_btn_clicked();
 
     void on_add_to_fav_btn_clciked();
@@ -79,12 +80,13 @@ private slots:
     void load_library();
 
     void on_player_end(QMediaPlayer::MediaStatus status);
+    void on_playing_next();
+    void on_playing_previous();
 
 private:
     Ui::MelodiMix *ui;
 
-    currentPlayItem *currentSong = new currentPlayItem {-1, -1, Enums::Library};
-    QMediaPlayer *player;
+    Player *player;
     QAudioOutput *audioOutput;
     PlayButton *playbutton;
 

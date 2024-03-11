@@ -2,9 +2,10 @@
 #include <QSlider>
 
 
-ProgressBar::ProgressBar(QSlider *slider) {
+ProgressBar::ProgressBar(QSlider *slider, Player *p_player) {
 
     progressbar = slider;
+    player = p_player;
     progressbar->setStyleSheet("QSlider::groove:horizontal {"
                                "border: none;"
                                "height: 7px;"
@@ -27,4 +28,10 @@ void ProgressBar::updateProgressbar(qint64 pos){
 
 void ProgressBar::updateProgressbarDuration(qint64 duration){
     progressbar->setMaximum(duration);
+}
+
+void ProgressBar::onSetPlayerPostion(qint64 value) {
+
+    player->player->setPosition(value);
+
 }
