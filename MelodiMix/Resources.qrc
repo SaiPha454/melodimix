@@ -13,6 +13,7 @@
         <file>img/play.png</file>
         <file>img/fav_filled.png</file>
         <file>img/fav_outlined.png</file>
+        <file>img/logo.png</file>
     </qresource>
     <qresource prefix="/new/prefix1">
         <file>img/play.png</file>

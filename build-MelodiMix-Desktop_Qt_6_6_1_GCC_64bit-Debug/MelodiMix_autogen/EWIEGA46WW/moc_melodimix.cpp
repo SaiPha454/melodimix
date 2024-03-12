@@ -56,7 +56,8 @@ constexpr auto qt_meta_stringdata_CLASSMelodiMixENDCLASS = QtMocHelpers::stringD
     "status",
     "on_playing_next",
     "on_playing_previous",
-    "onSearchTextChange"
+    "onSearchTextChange",
+    "rotatePlayerIcon"
 );
 #else  // !QT_MOC_HAS_STRINGDATA
 #error "qtmochelpers.h not found or too old."
@@ -69,7 +70,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSMelodiMixENDCLASS[] = {
       12,       // revision
        0,       // classname
        0,    0, // classinfo
-      16,   14, // methods
+      17,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -77,24 +78,25 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSMelodiMixENDCLASS[] = {
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    1,  110,    2, 0x06,    1 /* Public */,
+       1,    1,  116,    2, 0x06,    1 /* Public */,
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       4,    0,  113,    2, 0x08,    3 /* Private */,
-       5,    0,  114,    2, 0x08,    4 /* Private */,
-       6,    0,  115,    2, 0x08,    5 /* Private */,
-       7,    0,  116,    2, 0x08,    6 /* Private */,
-       8,    1,  117,    2, 0x08,    7 /* Private */,
-      11,    0,  120,    2, 0x08,    9 /* Private */,
-      12,    0,  121,    2, 0x08,   10 /* Private */,
-      13,    0,  122,    2, 0x08,   11 /* Private */,
-      14,    1,  123,    2, 0x08,   12 /* Private */,
-      15,    1,  126,    2, 0x08,   14 /* Private */,
-      16,    0,  129,    2, 0x08,   16 /* Private */,
-      17,    1,  130,    2, 0x08,   17 /* Private */,
-      20,    0,  133,    2, 0x08,   19 /* Private */,
-      21,    0,  134,    2, 0x08,   20 /* Private */,
-      22,    0,  135,    2, 0x08,   21 /* Private */,
+       4,    0,  119,    2, 0x08,    3 /* Private */,
+       5,    0,  120,    2, 0x08,    4 /* Private */,
+       6,    0,  121,    2, 0x08,    5 /* Private */,
+       7,    0,  122,    2, 0x08,    6 /* Private */,
+       8,    1,  123,    2, 0x08,    7 /* Private */,
+      11,    0,  126,    2, 0x08,    9 /* Private */,
+      12,    0,  127,    2, 0x08,   10 /* Private */,
+      13,    0,  128,    2, 0x08,   11 /* Private */,
+      14,    1,  129,    2, 0x08,   12 /* Private */,
+      15,    1,  132,    2, 0x08,   14 /* Private */,
+      16,    0,  135,    2, 0x08,   16 /* Private */,
+      17,    1,  136,    2, 0x08,   17 /* Private */,
+      20,    0,  139,    2, 0x08,   19 /* Private */,
+      21,    0,  140,    2, 0x08,   20 /* Private */,
+      22,    0,  141,    2, 0x08,   21 /* Private */,
+      23,    0,  142,    2, 0x08,   22 /* Private */,
 
  // signals: parameters
     QMetaType::Void, 0x80000000 | 3,    2,
@@ -112,6 +114,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSMelodiMixENDCLASS[] = {
     QMetaType::Void, 0x80000000 | 3,    2,
     QMetaType::Void,
     QMetaType::Void, 0x80000000 | 18,   19,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -173,6 +176,8 @@ Q_CONSTINIT const QMetaObject MelodiMix::staticMetaObject = { {
         // method 'on_playing_previous'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'onSearchTextChange'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'rotatePlayerIcon'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
@@ -200,6 +205,7 @@ void MelodiMix::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
         case 13: _t->on_playing_next(); break;
         case 14: _t->on_playing_previous(); break;
         case 15: _t->onSearchTextChange(); break;
+        case 16: _t->rotatePlayerIcon(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -233,13 +239,13 @@ int MelodiMix::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 16)
+        if (_id < 17)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 16;
+        _id -= 17;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 16)
+        if (_id < 17)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 16;
+        _id -= 17;
     }
     return _id;
 }

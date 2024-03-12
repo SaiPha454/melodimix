@@ -72,6 +72,7 @@ int MusicStore::add(QString filename){
     insertQuery.prepare("SELECT COUNT(*) FROM "+ table + " WHERE title = :title");
     insertQuery.bindValue(":title", filename);
     insertQuery.exec();
+    insertQuery.next();
     int count = insertQuery.value(0).toInt();
     if(count > 0){
         return -1;
@@ -109,6 +110,7 @@ void MusicStore::remove(int id){
 QVector<MusicRecord> MusicStore::loadAll() {
     QVector<MusicRecord> records;
     QSqlQuery query("SELECT * FROM "+ table);
+    query.exec();
     while(query.next()) {
 
         MusicRecord record;
@@ -206,12 +208,19 @@ void MusicStore::updateResumeSong(QString title, int id, int index, bool isfav) 
 ResumeSong MusicStore::getResumeSong(){
 
     QSqlQuery selectQuery(db);
+    QSqlQuery storeQuery(db);
+
     selectQuery.prepare("SELECT * FROM "+ resumeTable + " WHERE id = 1");
     selectQuery.exec();
     selectQuery.next();
 
-    ResumeSong resume;
     if(selectQuery.value(0).toInt() > 0){
+        storeQuery.prepare("SELECT * FROM "+ resumeTable + " WHERE id = "+ selectQuery.value("song_id").toString());
+        storeQuery.exec();
+        storeQuery.next();
+    }
+    ResumeSong resume;
+    if(selectQuery.value(0).toInt() > 0 && storeQuery.value(0).toInt() > 0){
         resume.id = selectQuery.value("song_id").toInt();
         resume.index = selectQuery.value("song_index").toInt();
         resume.title = selectQuery.value("song_title").toString();

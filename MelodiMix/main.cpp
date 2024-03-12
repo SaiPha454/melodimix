@@ -6,9 +6,17 @@
 
 int main(int argc, char *argv[])
 {
+    // QApplication a(argc, argv);
+
+    // MelodiMix w;
+    // w.show();
+    // return a.exec();
+
+
+
     QApplication a(argc, argv);
 
-    MelodiMix w;
-    w.show();
+    MelodiMix *w = new MelodiMix(nullptr, argc, argv);
+    w->show();
     return a.exec();
 }

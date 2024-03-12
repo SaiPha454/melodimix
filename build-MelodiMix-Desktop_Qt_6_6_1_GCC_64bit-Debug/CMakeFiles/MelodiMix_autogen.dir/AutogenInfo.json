@@ -530,6 +530,12 @@
 			null
 		],
 		[
+			"/home/sai/Desktop/C++/MelodiMix/MelodiMix/instancewindow.h",
+			"MU",
+			"EWIEGA46WW/moc_instancewindow.cpp",
+			null
+		],
+		[
 			"/home/sai/Desktop/C++/MelodiMix/MelodiMix/librarydeletebutton.h",
 			"MU",
 			"EWIEGA46WW/moc_librarydeletebutton.cpp",
@@ -691,6 +697,11 @@
 		],
 		[
 			"/home/sai/Desktop/C++/MelodiMix/MelodiMix/importmusicitem.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/sai/Desktop/C++/MelodiMix/MelodiMix/instancewindow.cpp",
 			"MU",
 			null
 		],

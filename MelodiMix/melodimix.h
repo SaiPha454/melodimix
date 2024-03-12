@@ -22,6 +22,7 @@
 #include "importfolder.h"
 #include "player.h"
 #include "prevbutton.h"
+#include <QTimer>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -34,7 +35,7 @@ class MelodiMix : public QMainWindow
     Q_OBJECT
 
 public:
-    MelodiMix(QWidget *parent = nullptr);
+    MelodiMix(QWidget *parent = nullptr, int argc=1, char *argv[]= {});
     ~MelodiMix();
     std::vector<QPushButton*> navs;
     std::vector<QLabel*> nav_icons;
@@ -86,6 +87,8 @@ private slots:
 
     void onSearchTextChange();
 
+    void rotatePlayerIcon();
+
 private:
 
     Ui::MelodiMix *ui;
@@ -103,6 +106,9 @@ private:
     NextButton *nextbutton;
 
     ImportFolder *importfolder;
+
+    int player_icon_rotate_angle = 0;
+    QTimer *player_icon_rotate_timer;
 
 };
 #endif // MELODIMIX_H

@@ -17,6 +17,7 @@
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/QStandardPaths \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/QString \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/QStringList \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtCore/QTimer \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/QVector \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/q20functional.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/q20memory.h \
@@ -32,6 +33,7 @@
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qatomic.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qatomic_cxx11.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qbasicatomic.h \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qbasictimer.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qbindingstorage.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qbytearray.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qbytearrayalgorithms.h \
@@ -132,6 +134,7 @@
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qtdeprecationmarkers.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qtenvironmentvariables.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qtextstream.h \
+  /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qtimer.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qtimezone.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qtmetamacros.h \
   /home/sai/Qt/6.8.0/gcc_64/include/QtCore/qtnoop.h \

@@ -26,6 +26,7 @@ set(PROJECT_SOURCES
         melodimix.cpp
         melodimix.h
         melodimix.ui
+
         ${TS_FILES}
 )
 
@@ -57,6 +58,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         librarymusicitem.h librarymusicitem.cpp
         librarydeletebutton.h librarydeletebutton.cpp
         player.h player.cpp
+        instancewindow.h instancewindow.cpp
+
 
 
 

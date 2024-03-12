@@ -21,17 +21,27 @@
 #include "librarymusicitem.h"
 #include <QMessageBox>
 #include <QTextEdit>
+#include <QPainter>
 
-MelodiMix::MelodiMix(QWidget *parent)
+#include "instancewindow.h"
+
+MelodiMix::MelodiMix(QWidget *parent, int argc, char *argv[])
     : QMainWindow(parent)
     , ui(new Ui::MelodiMix)
 {
+
+    if(argc >=2) {
+        InstanceWindow *IW = new InstanceWindow(this, argv[1]);
+        IW->show();
+        return;
+    }
+
     ui->setupUi(this);
     set_app_logo();
     musicStore = new MusicStore("melodimix.db", "music", "resume");
     importfolder = new ImportFolder();
     importfolder->create("MelodiMix");
-
+    player_icon_rotate_timer = new QTimer(this);
 
 
     navs={ui->home_nav, ui->library_nav, ui->fav_nav, ui->import_nav};
@@ -83,6 +93,10 @@ MelodiMix::MelodiMix(QWidget *parent)
     connect(this, &MelodiMix::playListChange, this, &MelodiMix::on_playlist_change);
     connect(player->player, &QMediaPlayer::mediaStatusChanged, this, &MelodiMix::on_player_end);
     connect(ui->search_box, &QTextEdit::textChanged, this, &MelodiMix::onSearchTextChange);
+    connect(player_icon_rotate_timer, &QTimer::timeout, this, &MelodiMix::rotatePlayerIcon);
+
+    player_icon_rotate_timer->start(500);
+
 
     emit playListChange(player->currentSongType ? Enums::Favorite : Enums::Library);
 }
@@ -510,5 +524,19 @@ void MelodiMix::onSearchTextChange()
             }
         }
     }
+}
+
+void MelodiMix::rotatePlayerIcon(){
+
+    if (!(ui->song_title->text().isEmpty())) {
+        // Shift the displayed text to create a scrolling effect
+        QString displayedText = ui->song_title->text();
+        displayedText = displayedText.mid(1) + displayedText.at(0);
+        ui->song_title->setText(displayedText);
+    }
+
+
+
+
 }
 

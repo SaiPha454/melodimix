@@ -188,7 +188,7 @@ public:
         player_icon->setObjectName("player_icon");
         player_icon->setGeometry(QRect(20, 30, 41, 41));
         player_icon->setMinimumSize(QSize(41, 41));
-        player_icon->setMaximumSize(QSize(60, 60));
+        player_icon->setMaximumSize(QSize(41, 41));
         player_icon->setStyleSheet(QString::fromUtf8("color: white;\n"
 "border-radius:40;"));
         player_icon->setPixmap(QPixmap(QString::fromUtf8(":/new/prefix1/img/disk.png")));
