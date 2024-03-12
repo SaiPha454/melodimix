@@ -24,6 +24,7 @@ public:
     void next(QListWidget *list);
     void back(QListWidget *list);
     void updateCurrentSongInfo(int id, int index, Enums::PlayListType type);
+    void setResume(QString filename);
 };
 
 #endif // PLAYER_H

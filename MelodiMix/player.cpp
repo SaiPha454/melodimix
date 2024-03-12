@@ -25,6 +25,13 @@ void Player::play(QString filename){
     QString songFilePath = ImportFolder::getHomePath() + "/" + filename;
     player->setSource(QUrl::fromLocalFile(songFilePath));
     player->play();
+
+}
+
+void Player::setResume(QString filename){
+
+    QString songFilePath = ImportFolder::getHomePath() + "/" + filename;
+    player->setSource(QUrl::fromLocalFile(songFilePath));
 }
 
 void Player::next(QListWidget *list) {

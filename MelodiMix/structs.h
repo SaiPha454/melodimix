@@ -28,4 +28,11 @@ struct currentPlayItem {
 
 };
 
+struct ResumeSong {
+    int id;
+    int index;
+    QString title;
+    bool isfav;
+};
+
 #endif // STRUCTS_H

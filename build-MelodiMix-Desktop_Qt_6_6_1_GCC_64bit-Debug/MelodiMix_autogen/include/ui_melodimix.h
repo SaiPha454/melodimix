@@ -40,8 +40,7 @@ public:
     QStackedWidget *Pages;
     QWidget *HomePage;
     QFrame *frame;
-    QTextEdit *textEdit;
-    QPushButton *pushButton;
+    QTextEdit *search_box;
     QListWidget *music_list;
     QFrame *player_frame;
     QLabel *player_icon;
@@ -159,25 +158,17 @@ public:
         frame->setGeometry(QRect(0, 0, 571, 81));
         frame->setFrameShape(QFrame::StyledPanel);
         frame->setFrameShadow(QFrame::Raised);
-        textEdit = new QTextEdit(frame);
-        textEdit->setObjectName("textEdit");
-        textEdit->setGeometry(QRect(60, 20, 361, 40));
-        textEdit->setMinimumSize(QSize(0, 40));
-        textEdit->setMaximumSize(QSize(16777215, 40));
-        textEdit->setStyleSheet(QString::fromUtf8("background-color:\"white\";\n"
+        search_box = new QTextEdit(frame);
+        search_box->setObjectName("search_box");
+        search_box->setGeometry(QRect(60, 20, 451, 40));
+        search_box->setMinimumSize(QSize(0, 40));
+        search_box->setMaximumSize(QSize(16777215, 40));
+        search_box->setStyleSheet(QString::fromUtf8("background-color:\"white\";\n"
 "color:\"black\";\n"
 "border-radius:\"15px\";\n"
 "padding:\"10px\""));
-        textEdit->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-        textEdit->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-        pushButton = new QPushButton(frame);
-        pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(430, 20, 81, 35));
-        pushButton->setMinimumSize(QSize(0, 35));
-        pushButton->setMaximumSize(QSize(16777215, 35));
-        pushButton->setStyleSheet(QString::fromUtf8("background-color:\"white\";\n"
-"color:\"black\";\n"
-"border-radius:\"15px\""));
+        search_box->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        search_box->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         music_list = new QListWidget(HomePage);
         music_list->setObjectName("music_list");
         music_list->setGeometry(QRect(20, 90, 521, 421));
@@ -310,9 +301,8 @@ public:
         library_nav->setText(QCoreApplication::translate("MelodiMix", "Library", nullptr));
         search_icon->setText(QString());
 #if QT_CONFIG(accessibility)
-        textEdit->setAccessibleDescription(QCoreApplication::translate("MelodiMix", "Enter song name", nullptr));
+        search_box->setAccessibleDescription(QCoreApplication::translate("MelodiMix", "Enter song name", nullptr));
 #endif // QT_CONFIG(accessibility)
-        pushButton->setText(QCoreApplication::translate("MelodiMix", "Search", nullptr));
         player_icon->setText(QString());
         song_title->setText(QString());
         title->setText(QCoreApplication::translate("MelodiMix", "Songs library", nullptr));

@@ -7,7 +7,7 @@
 #include <QVector>
 #include "structs.h"
 
-MusicStore::MusicStore(QString dbname, QString tablename) {
+MusicStore::MusicStore(QString dbname, QString tablename, QString resumeTablename) {
 
     // Check if the specified connection name already exists
     qDebug() << "Already exist : " << QCoreApplication::applicationDirPath() + "/" + dbname;
@@ -15,7 +15,7 @@ MusicStore::MusicStore(QString dbname, QString tablename) {
     db = QSqlDatabase::addDatabase("QSQLITE");
     db.setDatabaseName(QCoreApplication::applicationDirPath() + "/" + dbname);
     table = tablename;
-
+    resumeTable = resumeTablename;
 
     if(!db.open()){
         qDebug() <<"Can't open the database";
@@ -26,20 +26,38 @@ MusicStore::MusicStore(QString dbname, QString tablename) {
 
     // QSqlQuery query;
 
-    QSqlQuery query(db);
+    QSqlQuery storeTableQuery(db);
+
 
     if(!db.tables().contains(table)){
-        QString table_query = "CREATE TABLE " +  table +" ("
+        QString store_table_query = "CREATE TABLE " +  table +" ("
                                                       "id INTEGER PRIMARY KEY,"
                                                       "title VARCHAR(255) NOT NULL,"
                                                       "favorite BOOLEAN)";
-        if(query.exec(table_query)) {
-            qDebug() <<"table is created successfully";
-        }else{
-            qDebug() <<"Fail to create table"<< query.lastError().text();
-        }
+
+        storeTableQuery.exec(store_table_query);
+
     }else{
         qDebug()<<"Table already exist";
+    }
+
+    QSqlQuery resumeTableQuery(db);
+    if(!db.tables().contains(resumeTable)){
+
+        QString resume_table_query = "CREATE TABLE " +  resumeTable +" ("
+                                                               "id INTEGER PRIMARY KEY,"
+                                                               "song_id INTEGER,"
+                                                               "song_index INTEGER,"
+                                                               "song_title VARCHAR(255), "
+                                                               "favorite BOOLEAN)";
+        if(resumeTableQuery.exec(resume_table_query)){
+            qDebug()<<"Created resume table";
+        }else{
+            qDebug()<<"fail to create resume table "<<resumeTableQuery.lastError().text();
+        }
+
+    }else{
+        qDebug()<<"Resume Table already exist";
     }
 
     db.commit();
@@ -152,6 +170,62 @@ void MusicStore::removeFromFav(int id){
     }
 
     qDebug() << "Remove from fav successfully";
+}
+
+void MusicStore::updateResumeSong(QString title, int id, int index, bool isfav) {
+
+    QSqlQuery selectQuery(db);
+    QSqlQuery updateQuery(db);
+    selectQuery.prepare("SELECT * FROM "+ resumeTable + " WHERE id = 1");
+    selectQuery.exec();
+    selectQuery.next();
+    if(selectQuery.value(0).toInt() > 0){
+
+        updateQuery.prepare("UPDATE "+ resumeTable + " SET "
+                                                      "song_title = :title, song_id = :id,"
+                                                      "song_index = :index, favorite = :fav WHERE id = 1");
+        qDebug()<<"Update resume table";
+
+
+    }else{
+
+        updateQuery.prepare("INSERT INTO " + resumeTable + " (song_title, song_id, song_index, favorite) "
+                                                           "VALUES (:title, :id, :index, :fav)");
+        qDebug()<<"Added to resume  table";
+    }
+    qDebug()<<"resume title : "<< title;
+    updateQuery.bindValue(":title", title);
+    updateQuery.bindValue(":id", id);
+    updateQuery.bindValue(":index", index);
+    updateQuery.bindValue(":fav", isfav);
+    if(!updateQuery.exec()){
+        qDebug()<<"Error on resume table " <<updateQuery.lastError().text();
+    }
+}
+
+ResumeSong MusicStore::getResumeSong(){
+
+    QSqlQuery selectQuery(db);
+    selectQuery.prepare("SELECT * FROM "+ resumeTable + " WHERE id = 1");
+    selectQuery.exec();
+    selectQuery.next();
+
+    ResumeSong resume;
+    if(selectQuery.value(0).toInt() > 0){
+        resume.id = selectQuery.value("song_id").toInt();
+        resume.index = selectQuery.value("song_index").toInt();
+        resume.title = selectQuery.value("song_title").toString();
+        resume.isfav = selectQuery.value("favorite").toBool();
+    }else{
+
+        resume.id = -1;
+        resume.index = -1;
+        resume.title = "";
+        resume.isfav = false;
+    }
+
+    return resume;
+
 }
 
 void MusicStore::close(){

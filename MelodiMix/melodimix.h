@@ -53,6 +53,7 @@ public:
 
     void load_fav_music();
 
+    void setResumeSong();
 
     Q_ENUM(Enums::PlayListType)
 
@@ -83,7 +84,10 @@ private slots:
     void on_playing_next();
     void on_playing_previous();
 
+    void onSearchTextChange();
+
 private:
+
     Ui::MelodiMix *ui;
 
     Player *player;

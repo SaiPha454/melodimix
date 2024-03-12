@@ -20,6 +20,7 @@
 #include "favmusicitem.h"
 #include "librarymusicitem.h"
 #include <QMessageBox>
+#include <QTextEdit>
 
 MelodiMix::MelodiMix(QWidget *parent)
     : QMainWindow(parent)
@@ -27,9 +28,10 @@ MelodiMix::MelodiMix(QWidget *parent)
 {
     ui->setupUi(this);
     set_app_logo();
-    musicStore = new MusicStore("melodimix.db", "music");
+    musicStore = new MusicStore("melodimix.db", "music", "resume");
     importfolder = new ImportFolder();
     importfolder->create("MelodiMix");
+
 
 
     navs={ui->home_nav, ui->library_nav, ui->fav_nav, ui->import_nav};
@@ -56,7 +58,7 @@ MelodiMix::MelodiMix(QWidget *parent)
     //load music list
     musicandlers= new MusicEventHandler(player->player, playbutton);
 
-
+    setResumeSong();
     load_music();
     load_fav_music();
     load_library();
@@ -80,7 +82,9 @@ MelodiMix::MelodiMix(QWidget *parent)
 
     connect(this, &MelodiMix::playListChange, this, &MelodiMix::on_playlist_change);
     connect(player->player, &QMediaPlayer::mediaStatusChanged, this, &MelodiMix::on_player_end);
+    connect(ui->search_box, &QTextEdit::textChanged, this, &MelodiMix::onSearchTextChange);
 
+    emit playListChange(player->currentSongType ? Enums::Favorite : Enums::Library);
 }
 
 MelodiMix::~MelodiMix()
@@ -260,6 +264,8 @@ void MelodiMix::onMusicItemClicked(QListWidgetItem *item){
         player->play(music_item->filename);
         player->updateCurrentSongInfo(music_item->id, music_item->index, Enums::Library);
         player->updatePlayerInfo(music_item->index,playlist[music_item->index].id, playlist[music_item->index].fav);
+        musicStore->updateResumeSong(music_item->filename, music_item->id, music_item->index, false);
+
     }
 }
 
@@ -316,6 +322,7 @@ void MelodiMix::load_fav_music() {
 void MelodiMix::on_skip(){
 
     if(player->currentSongIndex == -1 || playlist.count() <=0){
+        qDebug()<<"Stop skipping : Index : "<<player->currentSongIndex << " Playlist Count : "<<playlist.count();
         return;
     }
 
@@ -325,7 +332,7 @@ void MelodiMix::on_skip(){
     player->play(playlist[player->currentSongIndex].title);
     player->currentSongId = playlist[player->currentSongIndex].id;
     player->updatePlayerInfo(player->currentSongIndex, player->currentSongId, playlist[player->currentSongIndex].fav);
-
+    musicStore->updateResumeSong(playlist[player->currentSongIndex].title, player->id, player->index, player->isfav);
 }
 
 void MelodiMix::on_playing_next() {
@@ -413,7 +420,7 @@ void MelodiMix::on_fav_music_clicked(QListWidgetItem *item){
         player->updateCurrentSongInfo(fav_item->id, fav_item->index,Enums::Favorite);
         player->play( playlist[player->currentSongIndex].title);
         player->updatePlayerInfo(player->currentSongIndex, playlist[player->currentSongIndex].id, playlist[player->currentSongIndex].fav );
-
+        musicStore->updateResumeSong(fav_item->filename,fav_item->id, fav_item->index, true);
     }
 }
 
@@ -463,10 +470,45 @@ void MelodiMix::load_library(){
     }
 }
 
+void MelodiMix::setResumeSong(){
+
+    ResumeSong info = musicStore->getResumeSong();
+
+    player->updateCurrentSongInfo(info.id, info.index, info.isfav ? Enums::Favorite : Enums::Library);
+    player->updatePlayerInfo(info.index, info.id, info.isfav);
+    player->setResume(info.title);
+    ui->song_title->setText(info.title);
+    favbutton->fav(info.isfav);
+
+}
 
 void MelodiMix::on_player_end(QMediaPlayer::MediaStatus status){
     if (status == QMediaPlayer::EndOfMedia){
         emit nextbutton->clicked();
+    }
+}
+
+
+void MelodiMix::onSearchTextChange()
+{
+
+    QString search_text = ui->search_box->toPlainText().trimmed();
+    qDebug()<<"Searching...."<< search_text;
+
+    for(int i=0; i < ui->music_list->count(); i++){
+        QListWidgetItem *item = ui->music_list->item(i);
+
+        if (item) {
+            // Compare the text of the item with the search text
+            QString itemText = item->text();
+            if (!itemText.contains(search_text, Qt::CaseInsensitive)) { // Case insensitive comparison
+                // Hide items that do not match the search text
+                item->setHidden(true);
+            } else {
+                // Show items that match the search text
+                item->setHidden(false);
+            }
+        }
     }
 }
 
