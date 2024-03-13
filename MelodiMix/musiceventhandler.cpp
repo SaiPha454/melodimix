@@ -18,14 +18,14 @@
 void MusicEventHandler::setMusicItemActive(QListWidgetItem *item) {
 
 
-    MusicItem *musicItem = dynamic_cast<MusicItem*>(item);
-    musicItem->setActive();
+    // MusicItem *musicItem = dynamic_cast<MusicItem*>(item);
+    // musicItem->setActive();
 }
 
 void MusicEventHandler::setMusicItemUnActive(QListWidgetItem *item) {
 
 
-    MusicItem *musicItem = dynamic_cast<MusicItem*>(item);
-    musicItem->setUnActive();
+    // MusicItem *musicItem = dynamic_cast<MusicItem*>(item);
+    // musicItem->setUnActive();
 }
 

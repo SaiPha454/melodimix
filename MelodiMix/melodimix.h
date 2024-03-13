@@ -87,7 +87,7 @@ private slots:
 
     void onSearchTextChange();
 
-    void rotatePlayerIcon();
+    void scroll_song_title();
 
 private:
 
@@ -108,7 +108,7 @@ private:
     ImportFolder *importfolder;
 
     int player_icon_rotate_angle = 0;
-    QTimer *player_icon_rotate_timer;
+    QTimer *scroll_title_timer;
 
 };
 #endif // MELODIMIX_H

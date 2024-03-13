@@ -181,6 +181,7 @@ void MusicStore::updateResumeSong(QString title, int id, int index, bool isfav) 
     selectQuery.prepare("SELECT * FROM "+ resumeTable + " WHERE id = 1");
     selectQuery.exec();
     selectQuery.next();
+
     if(selectQuery.value(0).toInt() > 0){
 
         updateQuery.prepare("UPDATE "+ resumeTable + " SET "
@@ -215,7 +216,7 @@ ResumeSong MusicStore::getResumeSong(){
     selectQuery.next();
 
     if(selectQuery.value(0).toInt() > 0){
-        storeQuery.prepare("SELECT * FROM "+ resumeTable + " WHERE id = "+ selectQuery.value("song_id").toString());
+        storeQuery.prepare("SELECT * FROM "+ resumeTable + " WHERE song_id = "+ selectQuery.value("song_id").toString());
         storeQuery.exec();
         storeQuery.next();
     }

@@ -57,7 +57,7 @@ constexpr auto qt_meta_stringdata_CLASSMelodiMixENDCLASS = QtMocHelpers::stringD
     "on_playing_next",
     "on_playing_previous",
     "onSearchTextChange",
-    "rotatePlayerIcon"
+    "scroll_song_title"
 );
 #else  // !QT_MOC_HAS_STRINGDATA
 #error "qtmochelpers.h not found or too old."
@@ -177,7 +177,7 @@ Q_CONSTINIT const QMetaObject MelodiMix::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'onSearchTextChange'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'rotatePlayerIcon'
+        // method 'scroll_song_title'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
@@ -205,7 +205,7 @@ void MelodiMix::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
         case 13: _t->on_playing_next(); break;
         case 14: _t->on_playing_previous(); break;
         case 15: _t->onSearchTextChange(); break;
-        case 16: _t->rotatePlayerIcon(); break;
+        case 16: _t->scroll_song_title(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {

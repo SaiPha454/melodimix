@@ -30,6 +30,7 @@ MelodiMix::MelodiMix(QWidget *parent, int argc, char *argv[])
     , ui(new Ui::MelodiMix)
 {
 
+    //If the app open with arguments, open a minimal Window instead;
     if(argc >=2) {
         InstanceWindow *IW = new InstanceWindow(this, argv[1]);
         IW->show();
@@ -38,18 +39,20 @@ MelodiMix::MelodiMix(QWidget *parent, int argc, char *argv[])
 
     ui->setupUi(this);
     set_app_logo();
-    musicStore = new MusicStore("melodimix.db", "music", "resume");
-    importfolder = new ImportFolder();
-    importfolder->create("MelodiMix");
-    player_icon_rotate_timer = new QTimer(this);
-
-
+    //Set up page navigation list
     navs={ui->home_nav, ui->library_nav, ui->fav_nav, ui->import_nav};
     nav_icons={ui->home_icon, ui->search_icon, ui->fav_icon, ui->import_icon};
 
+    //Set up Database and File storage folder
+    musicStore = new MusicStore("melodimix.db", "music", "resume");
+    importfolder = new ImportFolder();
+    importfolder->create("MelodiMix");
+    scroll_title_timer = new QTimer(this);
+
+
+    //Create Media Player
     player = new Player();
 
-    //setup player frame
     ui->player_frame->setParent(ui->Pages->widget(0));
     playbutton = new PlayButton(ui->player_frame, player->player);
     playbutton->setGeometry(390,30,32,32);
@@ -74,42 +77,44 @@ MelodiMix::MelodiMix(QWidget *parent, int argc, char *argv[])
     load_library();
 
 
-    //Events
+    //Setup connections between Signals and Slots
     connect(ui->music_list, &QListWidget::itemClicked, this, &MelodiMix::onMusicItemClicked);
     connect(ui->fav_list, &QListWidget::itemClicked, this, &MelodiMix::on_fav_music_clicked);
-
-
     connect(player->player, &QMediaPlayer::positionChanged, progressbar, &ProgressBar::updateProgressbar);
     connect(player->player, &QMediaPlayer::durationChanged, progressbar, &ProgressBar::updateProgressbarDuration);
     connect(ui->progressbar, &QSlider::sliderMoved, progressbar, &ProgressBar::onSetPlayerPostion);
-
     connect(nextbutton, &NextButton::clicked, this, &MelodiMix::on_playing_next );
     connect(nextbutton, &NextButton::clicked, this, &MelodiMix::on_skip );
-
     connect(prevbutton, &PrevButton::clicked, this, &MelodiMix::on_playing_previous );
     connect(prevbutton, &PrevButton::clicked, this, &MelodiMix::on_skip );
     connect(favbutton, &FavButton::clicked, this, &MelodiMix::on_add_to_fav_btn_clciked);
-
     connect(this, &MelodiMix::playListChange, this, &MelodiMix::on_playlist_change);
     connect(player->player, &QMediaPlayer::mediaStatusChanged, this, &MelodiMix::on_player_end);
     connect(ui->search_box, &QTextEdit::textChanged, this, &MelodiMix::onSearchTextChange);
-    connect(player_icon_rotate_timer, &QTimer::timeout, this, &MelodiMix::rotatePlayerIcon);
+    connect(scroll_title_timer, &QTimer::timeout, this, &MelodiMix::scroll_song_title);
 
-    player_icon_rotate_timer->start(500);
-
-
+    scroll_title_timer->start(500);
     emit playListChange(player->currentSongType ? Enums::Favorite : Enums::Library);
 }
 
 MelodiMix::~MelodiMix()
 {
     delete ui;
+    //Close the database connection when the app is closed
     if(musicStore != nullptr){
         musicStore->close();
     }
 }
 
 
+/*
+ * Slot function
+ * Set the ui->pages stack index to homepage
+ *
+ * @param None
+ * returns none
+
+ */
 
 void MelodiMix::on_home_nav_clicked()
 {
@@ -137,7 +142,14 @@ void MelodiMix::on_home_nav_clicked()
     load_music();
 }
 
-
+/*
+ * Slot function
+ * Set the ui->pages stack index to library page
+ *
+ * @param None
+ * returns none
+ *
+ */
 void MelodiMix::on_library_nav_clicked()
 {
 
@@ -168,7 +180,14 @@ void MelodiMix::on_library_nav_clicked()
 }
 
 
-
+/*
+ * Slot function
+ * Set the ui->pages stack index to favortie playlist page
+ *
+ *  @param None
+ * returns none
+ *
+ */
 void MelodiMix::on_fav_nav_clicked()
 {
 
@@ -197,6 +216,15 @@ void MelodiMix::on_fav_nav_clicked()
     load_fav_music();
 }
 
+
+/*
+ * Slot function
+ * Set the ui->pages stack index to import page
+ *
+ * @param None
+ * returns none
+ *
+ */
 void MelodiMix::on_import_nav_clicked()
 {
 
@@ -227,7 +255,16 @@ void MelodiMix::on_import_nav_clicked()
     ui->imported_files_label->clear();
 }
 
-
+/*
+ * Slot function
+ * Add the import filename to the database &&
+ * Store the file in the /Desktop/MelodiMix folder
+ * The function also update playlist so that it is update with imported files
+ *
+ * @param None
+ * returns none
+ *
+ */
 
 void MelodiMix::on_import_btn_clicked()
 {
@@ -257,6 +294,16 @@ void MelodiMix::on_import_btn_clicked()
     emit playListChange(Enums::Library);
 }
 
+/*
+ * Slot function
+ * Play the song when a MusicItem in the Library playlist is clicked
+ * Also update the current Playig Song information in the database for later resume when reopen the app
+ *
+ *
+ * @param None
+ * returns none
+ *
+ */
 
 void MelodiMix::onMusicItemClicked(QListWidgetItem *item){
 
@@ -285,6 +332,17 @@ void MelodiMix::onMusicItemClicked(QListWidgetItem *item){
     }
 }
 
+
+/*
+ *
+ * Load music records from database and
+ * Update playlist in the home page
+ *
+ * @param None
+ * returns none
+ *
+ */
+
 void MelodiMix::load_music(){
 
     ui->music_list->clear();
@@ -302,6 +360,15 @@ void MelodiMix::load_music(){
     }
 }
 
+/*
+ *
+ * Load music favorite records from database and
+ * Update favorite playlist in the favorite page
+ *
+ * @param None
+ * returns none
+ *
+ */
 void MelodiMix::load_fav_music() {
 
     ui->fav_list->clear();
@@ -335,6 +402,18 @@ void MelodiMix::load_fav_music() {
     }
 }
 
+
+/*
+ * Slot function
+ *
+ * Get called when the music player is skipped next or previous
+ * It play the music and update current playing song information in the database
+ *
+ * @param None
+ * returns none
+ *
+ */
+
 void MelodiMix::on_skip(){
 
     if(player->currentSongIndex == -1 || playlist.count() <=0){
@@ -346,11 +425,22 @@ void MelodiMix::on_skip(){
     favbutton->fav(playlist[player->currentSongIndex].fav);
 
     player->play(playlist[player->currentSongIndex].title);
+    playbutton->setPlay();
     player->currentSongId = playlist[player->currentSongIndex].id;
     player->updatePlayerInfo(player->currentSongIndex, player->currentSongId, playlist[player->currentSongIndex].fav);
     musicStore->updateResumeSong(playlist[player->currentSongIndex].title, player->id, player->index, player->isfav);
 }
 
+/*
+ * Slot function
+ *
+ * Set the player media source to th next song in the playlist &&
+ * Update the current Playing Song index
+ *
+ * @param None
+ * returns none
+ *
+ */
 void MelodiMix::on_playing_next() {
 
     QListWidget *list =player->currentSongType == Enums::Library ? ui->music_list : ui->fav_list;
@@ -362,6 +452,16 @@ void MelodiMix::on_playing_next() {
 
 }
 
+/*
+ * Slot function
+ *
+ * Set the player media source to th previous song in the playlist &&
+ * Update the current Playing Song index
+ *
+ * @param None
+ * returns none
+ *
+ */
 void MelodiMix::on_playing_previous() {
 
     QListWidget *list =player->currentSongType == Enums::Library ? ui->music_list : ui->fav_list;
@@ -371,6 +471,17 @@ void MelodiMix::on_playing_previous() {
     }
     player->back(list);
 }
+
+
+/*
+ * Slot function
+ *
+ * Toggle of adding the current playing music to favorite playlist
+ *
+ * @param None
+ * returns none
+ *
+ */
 
 void MelodiMix::on_add_to_fav_btn_clciked() {
 
@@ -407,6 +518,13 @@ void MelodiMix::on_add_to_fav_btn_clciked() {
     }
 }
 
+/*
+ *Set up the app logo image
+ *
+ * @param None
+ * returns none
+ *
+ */
 void MelodiMix::set_app_logo(){
 
     QPixmap pixel(":/img/img/logo.png");
@@ -441,8 +559,16 @@ void MelodiMix::on_fav_music_clicked(QListWidgetItem *item){
 }
 
 
-
-
+/*
+ * Slot function
+ *
+ * Get called when the PlaylistChange(Enums::Type) signal is emitted
+ * Update the playlist and current playing song type to Library or Favorite
+ *
+ * @param None
+ * returns none
+ *
+ */
 void MelodiMix::on_playlist_change(Enums::PlayListType playlistType) {
     if(playlistType == Enums::Library){
 
@@ -455,6 +581,15 @@ void MelodiMix::on_playlist_change(Enums::PlayListType playlistType) {
     }
 }
 
+/*
+ *
+ * Retrive all the music record from the database &&
+ * Update the library list
+ *
+ * @param None
+ * returns none
+ *
+ */
 
 void MelodiMix::load_library(){
 
@@ -486,10 +621,20 @@ void MelodiMix::load_library(){
     }
 }
 
+
+/*
+ *
+ * When the app is open again, retrive the previous playing music  from database
+ * And set up the player to resume the song.
+ *
+ * @param None
+ * returns none
+ *
+ */
 void MelodiMix::setResumeSong(){
 
     ResumeSong info = musicStore->getResumeSong();
-
+    qDebug() <<"Resume Index : "<<info.index;
     player->updateCurrentSongInfo(info.id, info.index, info.isfav ? Enums::Favorite : Enums::Library);
     player->updatePlayerInfo(info.index, info.id, info.isfav);
     player->setResume(info.title);
@@ -498,6 +643,15 @@ void MelodiMix::setResumeSong(){
 
 }
 
+/*
+ * Slot function
+ *
+ * Playing next song when the current playing song ended
+ *
+ * @param None
+ * returns none
+ *
+ */
 void MelodiMix::on_player_end(QMediaPlayer::MediaStatus status){
     if (status == QMediaPlayer::EndOfMedia){
         emit nextbutton->clicked();
@@ -505,6 +659,16 @@ void MelodiMix::on_player_end(QMediaPlayer::MediaStatus status){
 }
 
 
+/*
+ * Slot function
+ *
+ * Filter the songs list in the home page
+ * That match the search key word
+ *
+ * @param None
+ * returns none
+ *
+ */
 void MelodiMix::onSearchTextChange()
 {
 
@@ -528,7 +692,7 @@ void MelodiMix::onSearchTextChange()
     }
 }
 
-void MelodiMix::rotatePlayerIcon(){
+void MelodiMix::scroll_song_title(){
 
     if (!(ui->song_title->text().isEmpty())) {
         // Shift the displayed text to create a scrolling effect
@@ -536,9 +700,6 @@ void MelodiMix::rotatePlayerIcon(){
         displayedText = displayedText.mid(1) + displayedText.at(0);
         ui->song_title->setText(displayedText);
     }
-
-
-
 
 }
 
