@@ -253,6 +253,8 @@ void MelodiMix::on_import_btn_clicked()
         inserted_count +=1;
     }
     ui->imported_files_label->setText( QString::number(inserted_count) + " files were imported");
+    load_music();
+    emit playListChange(Enums::Library);
 }
 
 
@@ -407,7 +409,7 @@ void MelodiMix::on_add_to_fav_btn_clciked() {
 
 void MelodiMix::set_app_logo(){
 
-    QPixmap pixel(":/img/img/melodimix.png");
+    QPixmap pixel(":/img/img/logo.png");
     int width = ui->logo->width();
     int height = ui->logo->height();
     ui->logo->setPixmap(pixel.scaled(width, height, Qt::KeepAspectRatio));
